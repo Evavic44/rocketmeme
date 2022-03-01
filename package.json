@@ -1,0 +1,44 @@
+{
+  "name": "memefy",
+  "version": "0.0.0",
+  "description": "A collection of interesting and funny programming memes to help lighten up your mood ",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "lint": "eslint ./src --ext .js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Evavic44/memefy.git"
+  },
+  "keywords": [
+    "memes",
+    "editor",
+    "fun",
+    "laugh",
+    "code",
+    "programming"
+  ],
+  "author": "Eke Victor, Spiff Jekey-Green",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Evavic44/memefy/issues"
+  },
+  "homepage": "https://github.com/Evavic44/memefy#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.1"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.3.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
+  }
+}
