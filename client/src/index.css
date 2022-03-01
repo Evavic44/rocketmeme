@@ -1,0 +1,134 @@
+/* Global Styles */
+:root {
+  /* Colors */
+  --primary-color: #63ad44;
+  --secondary-color: #b1f395;
+  --tertiary-color: #64a3eb;
+  --bg-dark: #000000;
+  --text-dark: #333333;
+  --bg-light: #ffffff;
+  --text-light: #ffffff;
+  --light-grey: #f0f0f0;
+  --dark-grey: #555555;
+
+  /* Border */
+  --border-light: 1px solid #e5e7eb;
+  --border-medium: 1px solid #73707e4f;
+  --border-dark: 1px solid #73707e85;
+  --border-black: 1px solid #333333;
+  --border-primary: 1px solid #b1f395;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  color: var(--text-dark);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -1px;
+}
+
+h3 {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.visually-hidden {
+  display: hidden;
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.logo img {
+  display: block;
+  width: 87px;
+}
+
+/* Highlight */
+.highlight {
+  color: var(--primary-color);
+}
+
+.animateY {
+  animation: animateY infinite 1s alternate-reverse ease-in-out;
+}
+
+@keyframes animateY {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(10px);
+  }
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.5rem 1.7rem;
+  border-radius: 3px;
+  transition: 0.3s ease-in-out;
+  color: var(--white);
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: var(--bg-light);
+  font-weight: 500;
+}
+.btn-primary:hover {
+  opacity: 0.8;
+}
+
+.btn-secondary {
+  background: var(--secondary-color);
+}
+
+.btn-light {
+  background: var(--white);
+  color: var(--text-dark);
+  border: var(--border-light);
+}
+
+.btn-light:hover {
+  box-shadow: 1px 4px 7px var(--light-grey);
+}
+
+.btn-tertiary {
+  border: var(--border-medium);
+}
