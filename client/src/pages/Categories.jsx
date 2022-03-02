@@ -85,6 +85,10 @@ const Container = styled.main`
   background-attachment: fixed;
   background-size: cover;
 
+  @media (max-width: 500px) {
+    background: var(--bg-light);
+  }
+
   .container {
     display: flex;
     align-items: center;

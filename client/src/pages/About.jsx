@@ -154,6 +154,10 @@ const Container = styled.main`
   background-attachment: fixed;
   background-size: cover;
 
+  @media (max-width: 500px) {
+    background: var(--bg-light);
+  }
+
   min-height: 25rem;
   margin: 7.5rem auto 0;
   padding: 1.3rem 1.5rem;
@@ -296,11 +300,11 @@ const Section = styled.section`
         }
       }
       &:nth-child(3) {
-        background: #acf570;
+        background: var(--bg-light);
+        border: var(--border-light);
       }
       &:nth-child(4) {
-        background: var(--tertiary-color);
-        color: #fff;
+        background: var(--primary-color);
         transform: translateY(100px);
         @media (max-width: 768px) {
           transform: translateY(0px);

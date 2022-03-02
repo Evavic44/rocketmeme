@@ -101,10 +101,11 @@ const Container = styled.main`
   .right-container {
     img {
       display: block;
-      width: 500px;
+      width: 300px;
 
       @media (max-width: 800px) {
-        width: 300px;
+        margin-bottom: 1rem;
+        width: 150px;
       }
     }
   }
