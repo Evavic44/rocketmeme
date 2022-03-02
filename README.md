@@ -1,5 +1,5 @@
 <div align="center">
-<a href="https://rocketmeme.netlify.app"><img src="https://user-images.githubusercontent.com/62628408/154801219-768570f8-b74c-4394-bcba-c720c04c261a.svg" width="80px"></a>
+<a href="https://rocketmeme.netlify.app"><img src="https://user-images.githubusercontent.com/62628408/156283195-028f807e-633f-479f-9244-4cdd795a3183.svg" width="80px"></a>
 </div>
 
 <div align="center">
@@ -61,7 +61,7 @@
 # 👀 Preview 
 Click this link to view <a href="https://rocketmeme.netlify.app">rocketmeme</a>
 
-<img src="https://user-images.githubusercontent.com/62628408/155638608-3552264a-3ce8-4f27-8e75-8b08f61fb061.png" alt="Rocketmeme Preview">
+<img src="https://user-images.githubusercontent.com/62628408/156283042-c7680c8d-3888-4b2d-9923-4e07c02aeb47.png" alt="Rocketmeme Preview">
 
 <div align="left">
     <h1>How to run locally ✨</h1>
