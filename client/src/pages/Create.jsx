@@ -231,10 +231,10 @@ export default function Create() {
         <div className="editContainer">
           <EditView ref={imageContainer}></EditView>
           <Actions>
-            <ActionButton className="btn btn-primary">
+            <ActionButton className="btn btn-light">
               Post <i className="fas fa-share-from-square"></i>
             </ActionButton>
-            <ActionButton className="btn btn-tertiary" onClick={downloadMeme}>
+            <ActionButton className="btn btn-secondary" onClick={downloadMeme}>
               Download <i className="fas fa-cloud-arrow-down"></i>
             </ActionButton>
           </Actions>
@@ -243,13 +243,10 @@ export default function Create() {
         {/* Editing Controls */}
         <Controls>
           <Actions>
-            <ActionButton className="btn btn-primary" onClick={AddTextToCanvas}>
+            <ActionButton className="btn btn-light" onClick={AddTextToCanvas}>
               Add Text <i className="fas fa-text-height"></i>
             </ActionButton>
-            <ActionButton
-              className="btn btn-primary"
-              onClick={AddImageToCanvas}
-            >
+            <ActionButton className="btn btn-light" onClick={AddImageToCanvas}>
               Add Image <i className="fas fa-image"></i>
             </ActionButton>
           </Actions>
@@ -276,7 +273,7 @@ export default function Create() {
 
             <div>
               <p>Font color:</p>
-              <input type="color" />
+              <input type="color" value="#000000"></input>
             </div>
           </div>
           <div className="formatting">
@@ -307,18 +304,17 @@ export default function Create() {
             <div>
               <p>Stroke color:</p>
               <div className="inputStroke">
-                <input type="color" />
+                <input type="color" value="#ffcf4b" />
               </div>
             </div>
 
             {/* Background Color */}
-            <div>
+            {/* <div>
               <p>BG Color:</p>
               <div className="bgColor">
-                {/* icon */}
                 <input type="color" />
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="formatting">
             <div className="range">
@@ -326,10 +322,8 @@ export default function Create() {
               <input type="range" />
             </div>
           </div>
-          <div className="delete">
-            <ActionButton bg="red" color="white">
-              Remove
-            </ActionButton>
+          <div>
+            <ActionButton className="btn delete">Reset</ActionButton>
           </div>
         </Controls>
       </Flex>
@@ -376,7 +370,6 @@ const HomeCategory = styled.section`
     grid-template-rows: 100%;
     flex-wrap: nowrap;
     overflow: auto;
-    margin-bottom: 2rem;
 
     .card {
       display: flex;
@@ -424,7 +417,7 @@ const Flex = styled.div`
   padding: 1.5rem;
 
   .editContainer .btn {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
 `;
 
@@ -435,10 +428,18 @@ const Actions = styled.div`
 `;
 
 const ActionButton = styled.button`
+  padding: 0.5rem;
   width: 50%;
+  border-radius: 3px;
 
   i {
     margin-left: 0.2rem;
+  }
+
+  &.delete {
+    border: 1px solid #f85656;
+    color: #f85656;
+    width: 20%;
   }
 `;
 
@@ -527,9 +528,10 @@ const Controls = styled.div`
       }
 
       button {
-        background: var(--primary-color);
+        background: #fff;
+        color: var(--text-dark);
+        border: var(--border-light);
         border-radius: 3px;
-        color: var(--text-light);
         font-family: "Times New Roman", Serif;
         font-weight: bold;
         font-size: 1rem;
