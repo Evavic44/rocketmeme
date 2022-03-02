@@ -268,7 +268,7 @@ export default function Create() {
 
             <div>
               <p>Font size:</p>
-              <input type="text" maxLength={3} />
+              <input type="text" placeholder="10" maxLength={3} />
             </div>
 
             <div>
@@ -297,7 +297,7 @@ export default function Create() {
             <div>
               <p>Stroke width:</p>
               <div className="inputStroke">
-                <input type="text" />
+                <input type="text" placeholder="3" />
               </div>
             </div>
 
@@ -316,12 +316,12 @@ export default function Create() {
               </div>
             </div> */}
           </div>
-          <div className="formatting">
+          {/* <div className="formatting">
             <div className="range">
               <p>Opacity:</p>
               <input type="range" />
             </div>
-          </div>
+          </div> */}
           <div>
             <ActionButton className="btn delete">Reset</ActionButton>
           </div>
@@ -419,6 +419,13 @@ const Flex = styled.div`
   .editContainer .btn {
     margin-top: 1.5rem;
   }
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1.2fr 1.2fr;
+  }
+  @media (max-width: 880px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Actions = styled.div`
@@ -498,8 +505,13 @@ const Controls = styled.div`
     grid-template-columns: repeat(3, 1fr);
     padding: 8px 0;
 
+    @media (max-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     input {
-      margin-top: 0.2rem;
+      margin-top: 0.5rem;
       background: none;
       border: var(--border-light);
 
