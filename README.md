@@ -48,7 +48,9 @@
 <img src="https://img.shields.io/badge/Vite-B73BFE?style=flat-square&logo=vite&logoColor=FFD62E">
 </a>
 
-<!-- Add netlify badge -->
+<a href="https://app.netlify.com/sites/rocketmeme/deploys">
+    <img src="https://api.netlify.com/api/v1/badges/6a4fdf68-75a7-458f-87aa-36fbe5f31a7a/deploy-status">
+</a>
 </p>
 
 <p align="center">
@@ -56,10 +58,10 @@
 <img src="https://forthebadge.com/images/badges/open-source.svg">
 </p>
 
-## 👀 Preview
+# 👀 Preview 
+Click this link to view <a href="https://rocketmeme.netlify.app">rocketmeme</a>
 
-Visit [rocketmeme](rocketmeme.netlify.app) to see the site.
-![rcoketmeme](https://user-images.githubusercontent.com/62628408/155638608-3552264a-3ce8-4f27-8e75-8b08f61fb061.png)
+<img src="https://user-images.githubusercontent.com/62628408/155638608-3552264a-3ce8-4f27-8e75-8b08f61fb061.png" alt="Rocketmeme Preview">
 
 <div align="left">
     <h1>How to run locally ✨</h1>
