@@ -7,7 +7,7 @@ const Login = (props) => {
     <Nav>
       <Container>
         <a className="logo" href="/">
-          <img src="/images/logo-dark.svg" alt="logo" loading="eager"></img>
+          <img src="/images/logo.svg" alt="logo" loading="eager"></img> Rocket
         </a>
 
         <NavContainer>
@@ -19,11 +19,11 @@ const Login = (props) => {
           </div>
 
           <NavButtons>
-            <Upload>
+            <Create>
               <a className="btn btn-light" href="/create">
                 Create
               </a>
-            </Upload>
+            </Create>
 
             <LogIn>
               <a className="btn btn-primary" href="/login">
@@ -47,7 +47,7 @@ const Nav = styled.nav`
   width: 100%;
   height: 80px;
   padding: 1.5rem;
-  font-size: 0.9rem;
+  font-size: var(--font-xsmall);
   z-index: 5;
 
   @media (max-width: 768px) {
@@ -63,12 +63,23 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-wrap: nowrap;
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
 `;
 
 // Navigation links
 const NavContainer = styled.div`
   display: flex;
   align-items: center;
+
+  @media (max-width: 500px) {
+    .border-medium {
+      display: none;
+    }
+  }
 
   .nav-links {
     display: flex;
@@ -92,13 +103,10 @@ const NavContainer = styled.div`
 
 //Nav-buttons
 const NavButtons = styled.div`
-  button {
-    font-size: 0.9rem;
-  }
   padding-left: 1rem;
 `;
 
-const Upload = styled.button`
+const Create = styled.button`
   margin-right: 1rem;
 
   @media (max-width: 400px) {
@@ -106,8 +114,6 @@ const Upload = styled.button`
   }
 `;
 
-const LogIn = styled.button`
-  color: var(--text-light);
-`;
+const LogIn = styled.button``;
 
 export default Login;

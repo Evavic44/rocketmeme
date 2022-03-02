@@ -1,9 +1,9 @@
 /* Global Styles */
 :root {
   /* Colors */
-  --primary-color: #63ad44;
-  --secondary-color: #b1f395;
-  --tertiary-color: #64a3eb;
+  --primary-color: #ffcf4b;
+  --secondary-color: #003566;
+  --tertiary-color: #0066ff;
   --bg-dark: #000000;
   --text-dark: #333333;
   --bg-light: #ffffff;
@@ -12,11 +12,22 @@
   --dark-grey: #555555;
 
   /* Border */
-  --border-light: 1px solid #e5e7eb;
+  --border-light: 1px solid #f3f4f7;
+  --border-mid: 1px solid #e5e7eb;
   --border-medium: 1px solid #73707e4f;
   --border-dark: 1px solid #73707e85;
   --border-black: 1px solid #333333;
-  --border-primary: 1px solid #b1f395;
+  --border-primary: 1px solid #ffcf4b;
+  --border-secondary: 1px solid #003566;
+
+  /* Font */
+  --font-tiny: 0.7rem;
+  --font-xsmall: 0.8rem;
+  --font-small: 0.9rem;
+  --font-mid: 1rem;
+  --font-medium: 1.3rem;
+  --font-big: 1.5rem;
+  --font-large: 3rem;
 }
 
 * {
@@ -55,7 +66,6 @@ h3 {
 }
 
 h3 {
-  font-size: 0.9rem;
   font-weight: 500;
 }
 
@@ -69,12 +79,17 @@ button {
   outline: none;
   background: transparent;
   cursor: pointer;
-  color: var(--primary-color);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: var(--font-medium);
 }
 
 .logo img {
   display: block;
-  width: 87px;
+  width: 37px;
+  margin-right: 0.3rem;
 }
 
 /* Highlight */
@@ -103,12 +118,11 @@ button {
   padding: 0.5rem 1.7rem;
   border-radius: 3px;
   transition: 0.3s ease-in-out;
-  color: var(--white);
 }
 
 .btn-primary {
   background: var(--primary-color);
-  color: var(--bg-light);
+  color: var(--bg-dark);
   font-weight: 500;
 }
 .btn-primary:hover {
@@ -117,6 +131,7 @@ button {
 
 .btn-secondary {
   background: var(--secondary-color);
+  color: #fff;
 }
 
 .btn-light {

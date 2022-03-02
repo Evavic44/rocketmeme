@@ -8,7 +8,7 @@ function Footer() {
         <Social>
           <div>
             <a href="/" className="logo">
-              <img src="/images/logo-light.svg" alt="Logo" loading="lazy" />
+              <img src="/images/logo.svg" alt="Logo" loading="lazy" />
             </a>
 
             <p>Collection of interesting and funny programming memes.</p>
@@ -156,8 +156,15 @@ const Content = styled.div`
 const Social = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   height: 100%;
   padding: 0 2rem 0;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
   p {
     font-size: 0.85rem;
@@ -228,6 +235,7 @@ const FooterLink = styled.div`
     h3 {
       margin-bottom: 1rem;
       padding-left: 0.4rem;
+      font-size: var(--font-mid);
     }
 
     a {

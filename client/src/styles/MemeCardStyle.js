@@ -39,7 +39,7 @@ const MemeCardStyle = styled.div`
     .tag-category {
       font-size: 0.78rem;
       font-weight: 400;
-      color: var(--primary-color);
+      color: var(--secondary-color);
       text-decoration: underline;
     }
   }
