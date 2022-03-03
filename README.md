@@ -61,7 +61,9 @@
 # 👀 Preview 
 Click this link to view <a href="https://rocketmeme.netlify.app">rocketmeme</a>
 
-<img src="https://user-images.githubusercontent.com/62628408/156283042-c7680c8d-3888-4b2d-9923-4e07c02aeb47.png" alt="Rocketmeme Preview">
+<a href="https://rocketmeme.netlify.app">
+<img src="https://user-images.githubusercontent.com/62628408/156625869-36fc5d11-ed4b-45bb-85d8-4d601c19505e.png" alt="Rocketmeme Preview">
+</a>
 
 <div align="left">
     <h1>How to run locally ✨</h1>
