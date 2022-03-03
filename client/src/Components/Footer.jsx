@@ -138,6 +138,10 @@ const Container = styled.footer`
   background-attachment: fixed;
   background-size: cover;
 
+  @media (max-width: 500px) {
+    background: var(--bg-dark);
+  }
+
   a {
     color: var(--white);
     transition: 0.2s ease-in-out;

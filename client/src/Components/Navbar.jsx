@@ -26,9 +26,9 @@ const Login = (props) => {
             </Create>
 
             <LogIn>
-              <a className="btn btn-primary" href="/login">
+              <NavLink className="btn btn-primary" to="/login">
                 Login
-              </a>
+              </NavLink>
             </LogIn>
           </NavButtons>
         </NavContainer>
