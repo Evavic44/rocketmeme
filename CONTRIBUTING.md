@@ -50,4 +50,4 @@ You can refer to the following articles on basics of Git and Github and also con
 - <a href="https://lab.github.com/githubtraining/introduction-to-github">Learn GitHub from Scratch</a>
 
 Thank you for reading and Happy Coding. 🤩
-<img src="https://user-images.githubusercontent.com/62628408/155861397-5b5977a5-f329-48f1-a29f-d0a103ab5513.jpg" width="100%" alt="rocketmeme banner">
+<img src="https://user-images.githubusercontent.com/62628408/156625624-1213ef38-be59-45a8-87eb-7359b6c6f5c0.png" width="100%" alt="rocketmeme banner">
