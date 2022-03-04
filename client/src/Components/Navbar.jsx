@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { Button } from "./Button";
 import { NavLink } from "react-router-dom";
 import Dropdown from "./Dropdown";
 import styled from "styled-components";
@@ -12,7 +11,7 @@ function Navbar() {
   const closeMobileMenu = () => setClick(false);
 
   const onMouseEnter = () => {
-    if (window.innerWidth < 960) {
+    if (window.innerWidth < 800) {
       setDropdown(false);
     } else {
       setDropdown(true);
@@ -21,7 +20,7 @@ function Navbar() {
 
   // Change it to onMouseLeave
   const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
+    if (window.innerWidth < 800) {
       setDropdown(false);
     } else {
       setDropdown(false);
@@ -33,9 +32,11 @@ function Navbar() {
       <Container className="navbar">
         {/* Logo */}
         <a href="/" className="logo" onClick={closeMobileMenu}>
-          <img src="/images/logo.svg" alt="logo" loading="eager" /> Rocket
+          <img src="/images/logo.svg" alt="logo" loading="eager" />{" "}
+          <span className="hidden">Rocket</span>
         </a>
 
+        {/* Navlinks */}
         <NavContainer>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
@@ -53,7 +54,7 @@ function Navbar() {
               onMouseLeave={onMouseLeave}
             >
               <NavLink
-                to="/services"
+                to="/about"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
@@ -73,16 +74,16 @@ function Navbar() {
             </li>
             <li>
               <NavLink
-                to="/sign-up"
-                className="nav-links-mobile"
+                to="/create"
+                className="btn btn-light nav-links-mobile"
                 onClick={closeMobileMenu}
               >
-                Create
+                Start Creating
               </NavLink>
             </li>
           </ul>
 
-          <Create>
+          <Create className="hidden">
             <a className="btn btn-light" href="/create">
               Create
             </a>
@@ -95,7 +96,11 @@ function Navbar() {
           </LogIn>
 
           <div className="menu-icon" onClick={handleClick}>
-            <i className={click ? "fas fa-times" : "fas fa-bars"} />
+            <i
+              className={
+                click ? "fas fa-bars-staggered" : "fas fa-bars-staggered"
+              }
+            />
           </div>
         </NavContainer>
       </Container>
@@ -114,6 +119,12 @@ const Container = styled.div`
   .logo {
     display: flex;
     align-items: center;
+  }
+
+  @media (max-width: 800px) {
+    .hidden {
+      display: none;
+    }
   }
 `;
 
@@ -148,32 +159,27 @@ const Nav = styled.div`
     margin: 1.5rem 0;
   }
 
-  .fa-firstdraft {
-    margin-left: 0.5rem;
-    font-size: 1.6rem;
-  }
-
   .nav-menu {
     display: flex;
     align-items: center;
   }
 
+  /* Navbar links */
   .nav-links {
-    margin: 0 0.3rem;
-    padding: 1.5rem 1rem;
+    padding: 1rem;
     transition: all 0.2s ease-out;
   }
 
-  .nav-links:hover {
-    color: var(--primary-color);
-  }
-
-  .fa-bars {
+  .fa-bars-staggered {
     font-size: 1.5rem;
   }
 
   .fa-angle-down {
     margin-left: 0.2rem;
+
+    @media (max-width: 800px) {
+      display: none;
+    }
   }
 
   .nav-links-mobile {
@@ -184,49 +190,56 @@ const Nav = styled.div`
     display: none;
   }
 
-  @media screen and (max-width: 960px) {
-    .NavbarItems {
-      position: relative;
-    }
-
+  @media (max-width: 800px) {
     .nav-menu {
       display: flex;
+      align-items: stretch;
+      justify-content: center;
       flex-direction: column;
-      width: 400px;
-      min-height: 300px;
+      min-width: 400px;
+      min-height: 200px;
       position: absolute;
       top: 75px;
       right: -100%;
       opacity: 1;
-      transition: all 0.5s cubic-bezier(0.98, 0.01, 0, 0.96);
-      border: var(--border-light);
+      transition: 0.2s cubic-bezier(0.98, 0.01, 0, 0.96);
+      box-shadow: var(--shadow-primary);
       border-radius: 3px;
+
+      @media (max-width: 500px) {
+        min-width: 90vw;
+      }
+    }
+
+    /* Dropdown bubble  */
+    .nav-menu::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      bottom: 100%;
+      right: 8px;
+      border: 0.8rem solid transparent;
+      border-bottom-color: #fff;
+      filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 10, 0.1));
     }
 
     .nav-menu.active {
       background: var(--bg-light);
-      right: 0;
+      right: 10px;
       opacity: 1;
-      transition: all 0.2s cubic-bezier(0.98, 0.01, 0, 0.96);
-      z-index: 1;
+      transition: all 0.2s cubic-bezier(0.2, 0.01, 0, 1);
+      z-index: 55;
     }
 
     .nav-links {
+      display: block;
       text-align: center;
-      padding: 2rem;
       width: 100%;
-      display: table;
     }
 
     .nav-links:hover {
-      background-color: var(--light-grey);
-    }
-
-    .navbar-logo {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translate(25%, 50%);
+      color: var(--primary-color);
     }
 
     .menu-icon {
@@ -235,21 +248,12 @@ const Nav = styled.div`
       margin-left: 1rem;
     }
 
-    .fa-times {
-      color: var(--text-dark);
-      font-size: 2rem;
-    }
-
     .nav-links-mobile {
       display: block;
-      text-align: center;
-      padding: 1.5rem;
-      margin: 2rem auto;
-      border-radius: 4px;
+      margin: 1rem auto 2rem;
+      border-radius: 3px;
       width: 80%;
-      background: var(--primary-color);
-      text-decoration: none;
-      font-size: 1.5rem;
+      text-align: center;
     }
 
     button {
@@ -263,17 +267,6 @@ const NavContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  /* .nav-links {
-    display: flex;
-
-    .border-medium {
-      background: #ccc;
-      width: 1px;
-      height: 22px;
-      margin: 0 0.5rem;
-    }
-  } */
 `;
 
 const Create = styled.div`

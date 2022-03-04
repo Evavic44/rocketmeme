@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { MenuItems } from "./MenuItems";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 function Dropdown() {
@@ -17,13 +16,13 @@ function Dropdown() {
         {MenuItems.map((item, index) => {
           return (
             <li key={index}>
-              <Link
+              <a
                 className={item.cName}
-                to={item.path}
+                href={item.path}
                 onClick={() => setClick(false)}
               >
                 {item.title}
-              </Link>
+              </a>
             </li>
           );
         })}
@@ -40,15 +39,14 @@ const DropDownContainer = styled.div`
     position: absolute;
     top: 72px;
     width: 22em;
-    right: 300px;
-    text-align: left;
+    right: 310px;
     z-index: 100;
     background-color: var(--bg-light);
-    padding: 1.125em 1.5em;
-    font-size: 1.25em;
-    border: 1px solid #d2d5d9;
+    padding: 1.1rem 1.3em;
+    font-size: var(--font-small);
+    border: var(--border-medium);
     border-radius: 4px;
-    box-shadow: 0 5px 30px 5px rgba(66, 71, 76, 0.1);
+    box-shadow: var(--shadow-primary);
   }
 
   /* Dropdown bubble  */
@@ -58,18 +56,24 @@ const DropDownContainer = styled.div`
     width: 0;
     height: 0;
     bottom: 100%;
-    right: 4.2em;
+    right: 68px;
     border: 0.8rem solid transparent;
     border-bottom-color: #fff;
     filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 10, 0.2));
   }
 
+  /* Dropdown links */
   .dropdown-menu li {
-    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    border-left: 2px solid transparent;
   }
 
+  /* Dropdown links hover*/
   .dropdown-menu li:hover {
-    background: #f4f4f4;
+    background: #f7f7f7;
+    border-left: 2px solid var(--primary-color);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
   }
 
   .dropdown-menu.clicked {
@@ -78,11 +82,10 @@ const DropDownContainer = styled.div`
 
   .dropdown-link {
     display: block;
-    color: var(--text-dark);
     padding: 0.5rem;
   }
 
-  @media screen and (max-width: 960px) {
+  @media (max-width: 800px) {
     .fa-angle-down {
       display: none;
     }

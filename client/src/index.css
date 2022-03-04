@@ -28,6 +28,9 @@
   --font-medium: 1.3rem;
   --font-big: 1.5rem;
   --font-large: 3rem;
+
+  /* Shadow */
+  --shadow-primary: 0 5px 30px 5px rgba(66, 71, 76, 0.1);
 }
 
 * {
