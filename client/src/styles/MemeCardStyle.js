@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 const MemeCardStyle = styled.div`
+  /* Remove to show meme cards */
+  display: none;
+  /* Remove to show meme cards */
   .image-container {
     display: flex;
     flex-direction: column;
