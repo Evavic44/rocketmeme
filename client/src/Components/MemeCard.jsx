@@ -1,12 +1,31 @@
 import React from "react";
 import MemeCardStyle from "../styles/MemeCardStyle";
 import { Link } from "react-router-dom";
+import {
+  LazyLoadImage,
+  trackWindowScroll,
+} from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
-function MemeCard({ link, downloads, likes, views, id }) {
+function MemeCard({
+  images,
+  scrollPosition,
+  link,
+  downloads,
+  likes,
+  views,
+  id,
+}) {
   return (
     <MemeCardStyle>
       <div className="image-container">
-        <img className="gallery-image" src={link} alt="Meme" />
+        <LazyLoadImage
+          className="gallery-image"
+          effect="blur"
+          src={link}
+          alt="Meme"
+          scrollPosition={scrollPosition}
+        />
 
         <div className="gallery-tag">
           <p className="tag-title">Copy from Stackoverflow</p>

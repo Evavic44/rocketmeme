@@ -1,14 +1,25 @@
 import React from "react";
 import styled from "styled-components";
+import {
+  LazyLoadImage,
+  trackWindowScroll,
+} from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
-function Footer() {
+function Footer({ scrollPosition }) {
   return (
     <Container>
       <Content>
         <Social>
           <div>
             <a href="/" className="logo">
-              <img src="/images/logo.svg" alt="Logo" loading="lazy" />
+              <LazyLoadImage
+                className="gallery-image"
+                effect="blur"
+                src="/images/logo.svg"
+                alt="Logo"
+                scrollPosition={scrollPosition}
+              />
             </a>
 
             <p>Collection of interesting and funny programming memes.</p>
@@ -110,10 +121,12 @@ function Footer() {
 
       <Masthead>
         <a href="https://www.buymeacoffee.com/evavic44" className="bmc-button">
-          <img
-            src="https://r6fp86mr.tinifycdn.com/images/bmc-button.png"
+          <LazyLoadImage
+            className="gallery-image"
+            effect="blur"
+            src="/images/bmc-button.png"
             alt="buymeacoffee"
-            loading="lazy"
+            scrollPosition={scrollPosition}
           />
         </a>
 

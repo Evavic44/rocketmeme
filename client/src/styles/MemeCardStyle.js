@@ -13,8 +13,8 @@ const MemeCardStyle = styled.div`
   }
 
   .gallery-image {
-    width: 100%;
-    height: 100%;
+    height: 300px;
+    width: 350px;
     object-fit: cover;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
