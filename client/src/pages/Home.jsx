@@ -85,10 +85,7 @@ export default function Home() {
           >
             The Internet's most awesome free meme marketplace and editor for
             creating and downloading memes
-            <Image
-              src="https://r6fp86mr.tinifycdn.com/images/cool_dog.gif"
-              alt="dodge dog"
-            ></Image>
+            <Image src="/images/cool_dog.gif" alt="dodge dog"></Image>
           </motion.p>
         </Content>
       </ContentContainer>
@@ -185,15 +182,15 @@ export default function Home() {
               ? allMemes.map((i, idx) => <MemeCard link={i.url} key={idx} />)
               : null}
           </InfiniteScroll>
-          {/* <MemeCard link="https://r6fp86mr.tinifycdn.com/images/memes/image-one.jpg" />
-          <MemeCard link="https://r6fp86mr.tinifycdn.com/images/memes/image-two.jpg" />
-          <MemeCard link="https://r6fp86mr.tinifycdn.com/images/memes/image-three.jpg" />
-          <MemeCard link="https://r6fp86mr.tinifycdn.com/images/memes/image-five.jpg" />
-          <MemeCard link="https://r6fp86mr.tinifycdn.com/images/memes/image-four.jpg" />
-          <MemeCard link="https://r6fp86mr.tinifycdn.com/images/memes/image-six.jpg" />
-          <MemeCard link="https://r6fp86mr.tinifycdn.com/images/memes/image-seven.jpg" />
-          <MemeCard link="https://r6fp86mr.tinifycdn.com/images/memes/image-eight.jpg" />
-          <MemeCard link="https://r6fp86mr.tinifycdn.com/images/memes/image-nine.jpg" /> */}
+          {/* <MemeCard link="/images/memes/image-one.jpg" />
+          <MemeCard link="/images/memes/image-two.jpg" />
+          <MemeCard link="/images/memes/image-three.jpg" />
+          <MemeCard link="/images/memes/image-five.jpg" />
+          <MemeCard link="/images/memes/image-four.jpg" />
+          <MemeCard link="/images/memes/image-six.jpg" />
+          <MemeCard link="/images/memes/image-seven.jpg" />
+          <MemeCard link="/images/memes/image-eight.jpg" />
+          <MemeCard link="/images/memes/image-nine.jpg" /> */}
         </div>
       </GridGallery>
     </Container>
@@ -399,25 +396,32 @@ const HomeCategory = styled.section`
       }
 
       .title-one {
-        background-image: url(https://r6fp86mr.tinifycdn.com/images/imageCategory/category-one.webp);
+        background-color: purple;
+        background-image: url(/images/imageCategory/category-one.webp);
       }
       .title-two {
-        background-image: url(https://r6fp86mr.tinifycdn.com/images/imageCategory/category-two.webp);
+        background-color: orangered;
+        background-image: url(/images/imageCategory/category-two.webp);
       }
       .title-three {
-        background-image: url(https://r6fp86mr.tinifycdn.com/images/imageCategory/category-three.webp);
+        background-color: #ffcf4b;
+        background-image: url(/images/imageCategory/category-three.webp);
       }
       .title-four {
-        background-image: url(https://r6fp86mr.tinifycdn.com/images/imageCategory/category-one.webp);
+        background-color: purple;
+        background-image: url(/images/imageCategory/category-one.webp);
       }
       .title-five {
-        background-image: url(https://r6fp86mr.tinifycdn.com/images/imageCategory/category-two.webp);
+        background-color: orangered;
+        background-image: url(/images/imageCategory/category-two.webp);
       }
       .title-six {
-        background-image: url(https://r6fp86mr.tinifycdn.com/images/imageCategory/category-three.webp);
+        background-color: #ffcf4b;
+        background-image: url(/images/imageCategory/category-three.webp);
       }
       .title-seven {
-        background-image: url(https://r6fp86mr.tinifycdn.com/images/imageCategory/category-one.webp);
+        background-color: purple;
+        background-image: url(/images/imageCategory/category-one.webp);
       }
     }
   }
