@@ -12,7 +12,6 @@ function Footer() {
               <img
                 className="lazyload"
                 data-src="/images/logo.svg"
-                src="/images/logo.svg"
                 alt="Logo"
               />
             </a>
@@ -119,7 +118,6 @@ function Footer() {
           <img
             className="lazyload"
             data-src="/images/bmc-button.png"
-            src="/images/bmc-button.png"
             alt="buymeacoffee"
           />
         </a>

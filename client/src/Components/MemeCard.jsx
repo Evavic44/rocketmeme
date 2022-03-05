@@ -6,12 +6,12 @@ function MemeCard({ link, downloads, likes, views, id }) {
   return (
     <MemeCardStyle>
       <div className="image-container">
-        <img
+        {/* <img
           className="lazyload gallery-image"
           data-src={link}
           src={link}
           alt="Meme"
-        />
+        /> */}
 
         <div className="gallery-tag">
           <p className="tag-title">Copy from Stackoverflow</p>

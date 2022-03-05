@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import MemeCard from "../Components/MemeCard";
 import InfiniteScroll from "react-infinite-scroller";
 import axios from "axios";
@@ -82,7 +82,6 @@ export default function Home() {
             The Internet's most awesome free meme marketplace and editor for
             creating and downloading memes
             <Image
-              src="/images/dog.gif"
               data-src="/images/dog.gif"
               className="lazyload"
               alt="dodge dog"
