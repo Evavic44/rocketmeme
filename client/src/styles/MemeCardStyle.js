@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
 const MemeCardStyle = styled.div`
-  /* Remove to show meme cards */
-  display: none;
-  /* Remove to show meme cards */
   .image-container {
     display: flex;
     flex-direction: column;
@@ -16,6 +13,8 @@ const MemeCardStyle = styled.div`
   }
 
   .gallery-image {
+    background-color: #fff8db;
+    background-size: cover;
     width: 100%;
     height: 100%;
     object-fit: cover;

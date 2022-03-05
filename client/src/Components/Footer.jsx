@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import "lazysizes";
 
 function Footer() {
   return (
@@ -8,7 +9,12 @@ function Footer() {
         <Social>
           <div>
             <a href="/" className="logo">
-              <img src="/images/logo.svg" alt="Logo" loading="lazy" />
+              <img
+                className="lazyload"
+                data-src="/images/logo.svg"
+                src="/images/logo.svg"
+                alt="Logo"
+              />
             </a>
 
             <p>Collection of interesting and funny programming memes.</p>
@@ -111,9 +117,10 @@ function Footer() {
       <Masthead>
         <a href="https://www.buymeacoffee.com/evavic44" className="bmc-button">
           <img
-            src="https://r6fp86mr.tinifycdn.com/images/bmc-button.png"
+            className="lazyload"
+            data-src="/images/bmc-button.png"
+            src="/images/bmc-button.png"
             alt="buymeacoffee"
-            loading="lazy"
           />
         </a>
 
