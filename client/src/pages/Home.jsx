@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import MemeCard from "../Components/MemeCard";
 import InfiniteScroll from "react-infinite-scroller";
 import axios from "axios";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function Home() {
   const [memes, setMemes] = useState([]);
@@ -53,11 +54,6 @@ export default function Home() {
         <Content>
           <Form action="">
             <Input
-              // variants={fadeTop}
-              // initial="hidden"
-              // animate="visible"
-              // transition={{ duration: 0.6 }}
-              // //
               type="search"
               name="Search"
               id="Search"
