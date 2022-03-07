@@ -21,7 +21,12 @@ import templateThirteen from "../assets/images/memeTemplate/templateThirteen.png
 export default function Create() {
   const imageContainer = useRef();
   const [memeTemplateView, setMemeTemplate] = useState("");
-  const selectedText = useRef();
+  const [selectedText, setSelectedText] = useState("");
+  const [currentText, setCurrentText] = useState("");
+
+  // useEffect(() => {
+
+  // }, [selectedText]);
 
   function dragMoveListener(event) {
     var target = event.target;
@@ -39,12 +44,12 @@ export default function Create() {
 
   const downloadMeme = () => {
     html2canvas(imageContainer.current).then(function (canvas) {
-      canvas.toBlob((blob) => saveAs(blob, "rocketmeme.png"));
+      canvas.toBlob((blob) => saveAs(blob, `rocketmeme-${Date.now()}.png`));
     });
   };
 
   const useTemplate = (e) => {
-    if(!e.target.src) return;
+    if (!e.target.src) return;
     setMemeTemplate(e.target.src);
   };
 
@@ -109,7 +114,7 @@ export default function Create() {
     const random_id = "meme-" + uuid();
     newText.setAttribute("id", random_id);
     newText.classList.add("meme_text");
-    newText.innerText = "Make your funny statements here";
+    newText.innerText = "Enter text here...";
     newText.contentEditable = true;
     imageContainer.current.append(newText);
     newText.focus();
@@ -118,7 +123,11 @@ export default function Create() {
     interact(`#${random_id}`)
       .on("tap", (e) => {
         // set state of to manipulate the element from the toolkit
-        selectedText.current = random_id;
+        setSelectedText(random_id);
+        setCurrentText(e.target.innerText);
+      })
+      .on("keypress", (e) => {
+        setCurrentText(e.target.innerText);
       })
       .draggable({
         // enable inertial throwing
@@ -146,19 +155,34 @@ export default function Create() {
   };
 
   // Reset selections
+  /**
+   * @deprecated This feature is no longer in use
+   */
   const removeSelections = () => {
-    selectedText.current = "";
-    console.log("Removed selections");
-  }
+    setSelectedText("");
+  };
 
   // Text functions
   const textFunctions = {
-    toggleBold: function() {
-      // if(!selectedText) return;
-      console.log(selectedText);
+    toggleBold: function () {
+      if (!selectedText) return;
+      document.querySelector(`#${selectedText}`).classList.toggle("bold");
     },
-    toggleItalics: function() {},
-    toggleUnderline: function() {}
+    toggleItalics: function () {
+      if (!selectedText) return;
+      // document.querySelector(`#${selectedText}`).classList.toggle("italics");
+      document.querySelector(`#${selectedText}`);
+
+      document.execCommand("underline");
+    },
+    toggleUnderline: function () {
+      if (!selectedText) return;
+      document.querySelector(`#${selectedText}`).classList.toggle("underline");
+    },
+    changeText: function (e) {
+      setCurrentText(e.target.value);
+      document.getElementById(selectedText).innerText = e.target.value;
+    },
   };
 
   return (
@@ -169,9 +193,9 @@ export default function Create() {
 
           <div className="categoryOptions">
             <select className="category" name="category" id="category">
-              <option value="Latest">Latest</option>
-              <option value="Trending">Trending</option>
-              <option value="Downloads">Downloads</option>
+              <option defaultValue="Latest">Latest</option>
+              <option defaultValue="Trending">Trending</option>
+              <option defaultValue="Downloads">Downloads</option>
             </select>
           </div>
         </div>
@@ -250,10 +274,14 @@ export default function Create() {
       </HomeCategory>
 
       {/*  */}
-      <Flex onBlur={removeSelections}>
+      <Flex>
         {/* Editing View */}
         <div className="editContainer">
-          <EditView ref={imageContainer} className="editorView" style={{backgroundImage: `url(${memeTemplateView})`}}></EditView>
+          <EditView
+            ref={imageContainer}
+            className="editorView"
+            style={{ backgroundImage: `url(${memeTemplateView})` }}
+          ></EditView>
           <Actions>
             <ActionButton className="btn btn-light">
               Post <i className="fas fa-share-from-square"></i>
@@ -275,7 +303,11 @@ export default function Create() {
             </ActionButton>
           </Actions>
           <div className="text">
-            <textarea type="text" placeholder="Type your text here" />
+            <textarea
+              type="text"
+              onChange={textFunctions.changeText}
+              value={currentText}
+            />
           </div>
 
           {/* Font Size */}
@@ -284,20 +316,32 @@ export default function Create() {
             <div className="styling">
               <p>Font Style:</p>
               <div>
-                <button className="bold" onClick={textFunctions.toggleBold}>B</button>
-                <button className="italic" onClick={textFunctions.toggleItalics}>I</button>
-                <button className="underline" onClick={textFunctions.toggleUnderline}>U</button>
+                <button className="bold" onClick={textFunctions.toggleBold}>
+                  B
+                </button>
+                <button
+                  className="italic"
+                  onClick={textFunctions.toggleItalics}
+                >
+                  I
+                </button>
+                <button
+                  className="underline"
+                  onClick={textFunctions.toggleUnderline}
+                >
+                  U
+                </button>
               </div>
             </div>
 
             <div>
               <p>Font size:</p>
-              <input type="text" placeholder="10" maxLength={3} />
+              <input type="text" defaultValue={16} maxLength={3} />
             </div>
 
             <div>
               <p>Font color:</p>
-              <input type="color" value="#000000"></input>
+              <input type="color" defaultValue="#000000"></input>
             </div>
           </div>
           <div className="formatting">
@@ -328,7 +372,7 @@ export default function Create() {
             <div>
               <p>Stroke color:</p>
               <div className="inputStroke">
-                <input type="color" value="#ffcf4b" />
+                <input type="color" defaultValue="#ffcf4b" />
               </div>
             </div>
 
@@ -493,11 +537,24 @@ const EditView = styled.div`
     outline: none;
     padding: 5px;
     border: 1px solid transparent;
+    font-weight: bolder;
+    font-size: 26px;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+    color: #fff;
 
     :focus {
       border: 1px solid grey;
     }
     
+    .bold {
+      font-weight: bold;
+    }
+
+    .italic {}
+
+    .underline {
+      text-decoration: underline;
+    }
 `;
 
 const FileButtons = styled.div``;
