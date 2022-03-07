@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import interact from "interactjs";
 import styled from "styled-components";
 import html2canvas from "html2canvas";
@@ -20,6 +20,8 @@ import templateThirteen from "../assets/images/memeTemplate/templateThirteen.png
 
 export default function Create() {
   const imageContainer = useRef();
+  const [memeTemplateView, setMemeTemplate] = useState("");
+  const selectedText = useRef();
 
   function dragMoveListener(event) {
     var target = event.target;
@@ -39,6 +41,11 @@ export default function Create() {
     html2canvas(imageContainer.current).then(function (canvas) {
       canvas.toBlob((blob) => saveAs(blob, "rocketmeme.png"));
     });
+  };
+
+  const useTemplate = (e) => {
+    if(!e.target.src) return;
+    setMemeTemplate(e.target.src);
   };
 
   const AddImageToCanvas = (e) => {
@@ -111,6 +118,7 @@ export default function Create() {
     interact(`#${random_id}`)
       .on("tap", (e) => {
         // set state of to manipulate the element from the toolkit
+        selectedText.current = random_id;
       })
       .draggable({
         // enable inertial throwing
@@ -137,11 +145,27 @@ export default function Create() {
       });
   };
 
+  // Reset selections
+  const removeSelections = () => {
+    selectedText.current = "";
+    console.log("Removed selections");
+  }
+
+  // Text functions
+  const textFunctions = {
+    toggleBold: function() {
+      // if(!selectedText) return;
+      console.log(selectedText);
+    },
+    toggleItalics: function() {},
+    toggleUnderline: function() {}
+  };
+
   return (
     <Container>
       <HomeCategory>
         <div className="categoryHeader">
-          <h2>Browse Memes</h2>
+          <h2>Meme Templates</h2>
 
           <div className="categoryOptions">
             <select className="category" name="category" id="category">
@@ -154,71 +178,71 @@ export default function Create() {
 
         {/* Meme Templates */}
         <div className="memeTemplates">
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={templateSeven} alt="" />
             <h3 className="tag">X X Everywhere</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={templateNine} alt="" />
             <h3 className="tag">Success Kid</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={templateEleven} alt="" />
             <h3 className="tag">Distracted Boyfriend</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={templateFour} alt="" />
             <h3 className="tag">Disaster Girl</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={templateFive} alt="" />
             <h3 className="tag">Sad Pablo Escobar</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={templateSix} alt="" />
             <h3 className="tag">Sad Girlfriend</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={templateThirteen} alt="" />
             <h3 className="tag">Drake Hotline Bling</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={templateEight} alt="" />
             <h3 className="tag">Think about it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={templateTwo} alt="" />
             <h3 className="tag">Left exit twelve off ramp</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={templateTen} alt="" />
             <h3 className="tag">Laughing Leo</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={templateThree} alt="" />
             <h3 className="tag">I am once again asking</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={templateTwelve} alt="" />
             <h3 className="tag">Two buttons</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={templateThree} alt="" />
             <h3 className="tag">I am once again asking</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={templateTen} alt="" />
             <h3 className="tag">Laughing Leo</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={templateOne} alt="" />
             <h3 className="tag">Drake Hotline Bling</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={templateTwelve} alt="" />
             <h3 className="tag">Two Buttons</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={templateEight} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
@@ -226,10 +250,10 @@ export default function Create() {
       </HomeCategory>
 
       {/*  */}
-      <Flex>
+      <Flex onBlur={removeSelections}>
         {/* Editing View */}
         <div className="editContainer">
-          <EditView ref={imageContainer}></EditView>
+          <EditView ref={imageContainer} className="editorView" style={{backgroundImage: `url(${memeTemplateView})`}}></EditView>
           <Actions>
             <ActionButton className="btn btn-light">
               Post <i className="fas fa-share-from-square"></i>
@@ -260,9 +284,9 @@ export default function Create() {
             <div className="styling">
               <p>Font Style:</p>
               <div>
-                <button className="bold">B</button>
-                <button className="italic">I</button>
-                <button className="underline">U</button>
+                <button className="bold" onClick={textFunctions.toggleBold}>B</button>
+                <button className="italic" onClick={textFunctions.toggleItalics}>I</button>
+                <button className="underline" onClick={textFunctions.toggleUnderline}>U</button>
               </div>
             </div>
 
@@ -456,6 +480,10 @@ const EditView = styled.div`
   height: 350px;
   padding: 10px;
   border: var(--border-light);
+  /* background-size: cover; */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 
   > * {
     position: absolute;
@@ -469,7 +497,7 @@ const EditView = styled.div`
     :focus {
       border: 1px solid grey;
     }
-  }
+    
 `;
 
 const FileButtons = styled.div``;
