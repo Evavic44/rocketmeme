@@ -4,19 +4,63 @@ import styled from "styled-components";
 import html2canvas from "html2canvas";
 import { v4 as uuid } from "uuid";
 import { saveAs } from "file-saver";
-import templateOne from "../assets/images/memeTemplate/templateOne.png";
-import templateTwo from "../assets/images/memeTemplate/templateTwo.png";
-import templateThree from "../assets/images/memeTemplate/templateThree.png";
-import templateFour from "../assets/images/memeTemplate/templateFour.png";
-import templateFive from "../assets/images/memeTemplate/templateFive.png";
-import templateSix from "../assets/images/memeTemplate/templateSix.png";
-import templateSeven from "../assets/images/memeTemplate/templateSeven.png";
-import templateEight from "../assets/images/memeTemplate/templateEight.png";
-import templateNine from "../assets/images/memeTemplate/templateNine.png";
-import templateTen from "../assets/images/memeTemplate/templateTen.png";
-import templateEleven from "../assets/images/memeTemplate/templateEleven.png";
-import templateTwelve from "../assets/images/memeTemplate/templateTwelve.png";
-import templateThirteen from "../assets/images/memeTemplate/templateThirteen.png";
+import temp1 from "../assets/images/memeTemplate/temp1.png";
+import temp2 from "../assets/images/memeTemplate/temp2.png";
+import temp3 from "../assets/images/memeTemplate/temp3.png";
+import temp4 from "../assets/images/memeTemplate/temp4.png";
+import temp5 from "../assets/images/memeTemplate/temp5.png";
+import temp6 from "../assets/images/memeTemplate/temp6.png";
+import temp7 from "../assets/images/memeTemplate/temp7.png";
+import temp8 from "../assets/images/memeTemplate/temp8.png";
+import temp9 from "../assets/images/memeTemplate/temp9.png";
+import temp10 from "../assets/images/memeTemplate/temp10.png";
+import temp11 from "../assets/images/memeTemplate/temp11.png";
+import temp12 from "../assets/images/memeTemplate/temp12.png";
+import temp13 from "../assets/images/memeTemplate/temp13.png";
+import temp14 from "../assets/images/memeTemplate/temp14.png";
+import temp15 from "../assets/images/memeTemplate/temp15.png";
+import temp16 from "../assets/images/memeTemplate/temp16.png";
+import temp17 from "../assets/images/memeTemplate/temp17.png";
+import temp18 from "../assets/images/memeTemplate/temp18.png";
+import temp19 from "../assets/images/memeTemplate/temp19.png";
+import temp20 from "../assets/images/memeTemplate/temp20.png";
+import temp21 from "../assets/images/memeTemplate/temp21.png";
+import temp22 from "../assets/images/memeTemplate/temp22.png";
+import temp23 from "../assets/images/memeTemplate/temp23.png";
+import temp24 from "../assets/images/memeTemplate/temp24.png";
+import temp25 from "../assets/images/memeTemplate/temp25.png";
+import temp26 from "../assets/images/memeTemplate/temp26.png";
+import temp27 from "../assets/images/memeTemplate/temp27.png";
+import temp28 from "../assets/images/memeTemplate/temp28.png";
+import temp29 from "../assets/images/memeTemplate/temp29.png";
+import temp30 from "../assets/images/memeTemplate/temp30.png";
+import temp31 from "../assets/images/memeTemplate/temp31.png";
+import temp32 from "../assets/images/memeTemplate/temp32.png";
+import temp33 from "../assets/images/memeTemplate/temp33.png";
+import temp34 from "../assets/images/memeTemplate/temp34.png";
+import temp35 from "../assets/images/memeTemplate/temp35.png";
+import temp36 from "../assets/images/memeTemplate/temp36.png";
+import temp37 from "../assets/images/memeTemplate/temp37.png";
+import temp38 from "../assets/images/memeTemplate/temp38.png";
+import temp39 from "../assets/images/memeTemplate/temp39.png";
+import temp40 from "../assets/images/memeTemplate/temp40.png";
+import temp41 from "../assets/images/memeTemplate/temp41.png";
+import temp42 from "../assets/images/memeTemplate/temp42.png";
+import temp43 from "../assets/images/memeTemplate/temp43.png";
+import temp44 from "../assets/images/memeTemplate/temp44.png";
+import temp45 from "../assets/images/memeTemplate/temp45.png";
+import temp46 from "../assets/images/memeTemplate/temp46.png";
+import temp47 from "../assets/images/memeTemplate/temp47.png";
+import temp48 from "../assets/images/memeTemplate/temp48.png";
+import temp49 from "../assets/images/memeTemplate/temp49.png";
+import temp50 from "../assets/images/memeTemplate/temp50.png";
+import temp51 from "../assets/images/memeTemplate/temp51.png";
+import temp52 from "../assets/images/memeTemplate/temp52.png";
+import temp53 from "../assets/images/memeTemplate/temp53.png";
+import temp54 from "../assets/images/memeTemplate/temp54.png";
+import temp55 from "../assets/images/memeTemplate/temp55.png";
+import temp56 from "../assets/images/memeTemplate/temp56.png";
+import temp57 from "../assets/images/memeTemplate/temp57.png";
 
 export default function Create() {
   const imageContainer = useRef();
@@ -190,7 +234,6 @@ export default function Create() {
       <HomeCategory>
         <div className="categoryHeader">
           <h2>Meme Templates</h2>
-
           <div className="categoryOptions">
             <select className="category" name="category" id="category">
               <option defaultValue="Latest">Latest</option>
@@ -203,71 +246,231 @@ export default function Create() {
         {/* Meme Templates */}
         <div className="memeTemplates">
           <div className="card" onClick={useTemplate}>
-            <img src={templateSeven} alt="" />
+            <img src={temp1} alt="" />
             <h3 className="tag">X X Everywhere</h3>
           </div>
           <div className="card" onClick={useTemplate}>
-            <img src={templateNine} alt="" />
+            <img src={temp2} alt="" />
             <h3 className="tag">Success Kid</h3>
           </div>
           <div className="card" onClick={useTemplate}>
-            <img src={templateEleven} alt="" />
+            <img src={temp3} alt="" />
             <h3 className="tag">Distracted Boyfriend</h3>
           </div>
           <div className="card" onClick={useTemplate}>
-            <img src={templateFour} alt="" />
+            <img src={temp4} alt="" />
             <h3 className="tag">Disaster Girl</h3>
           </div>
           <div className="card" onClick={useTemplate}>
-            <img src={templateFive} alt="" />
+            <img src={temp5} alt="" />
             <h3 className="tag">Sad Pablo Escobar</h3>
           </div>
           <div className="card" onClick={useTemplate}>
-            <img src={templateSix} alt="" />
+            <img src={temp6} alt="" />
             <h3 className="tag">Sad Girlfriend</h3>
           </div>
           <div className="card" onClick={useTemplate}>
-            <img src={templateThirteen} alt="" />
+            <img src={temp7} alt="" />
             <h3 className="tag">Drake Hotline Bling</h3>
           </div>
           <div className="card" onClick={useTemplate}>
-            <img src={templateEight} alt="" />
+            <img src={temp8} alt="" />
             <h3 className="tag">Think about it</h3>
           </div>
           <div className="card" onClick={useTemplate}>
-            <img src={templateTwo} alt="" />
+            <img src={temp9} alt="" />
             <h3 className="tag">Left exit twelve off ramp</h3>
           </div>
           <div className="card" onClick={useTemplate}>
-            <img src={templateTen} alt="" />
+            <img src={temp10} alt="" />
             <h3 className="tag">Laughing Leo</h3>
           </div>
           <div className="card" onClick={useTemplate}>
-            <img src={templateThree} alt="" />
+            <img src={temp11} alt="" />
             <h3 className="tag">I am once again asking</h3>
           </div>
           <div className="card" onClick={useTemplate}>
-            <img src={templateTwelve} alt="" />
+            <img src={temp12} alt="" />
             <h3 className="tag">Two buttons</h3>
           </div>
           <div className="card" onClick={useTemplate}>
-            <img src={templateThree} alt="" />
+            <img src={temp13} alt="" />
             <h3 className="tag">I am once again asking</h3>
           </div>
           <div className="card" onClick={useTemplate}>
-            <img src={templateTen} alt="" />
+            <img src={temp14} alt="" />
             <h3 className="tag">Laughing Leo</h3>
           </div>
           <div className="card" onClick={useTemplate}>
-            <img src={templateOne} alt="" />
+            <img src={temp15} alt="" />
             <h3 className="tag">Drake Hotline Bling</h3>
           </div>
           <div className="card" onClick={useTemplate}>
-            <img src={templateTwelve} alt="" />
+            <img src={temp16} alt="" />
             <h3 className="tag">Two Buttons</h3>
           </div>
           <div className="card" onClick={useTemplate}>
-            <img src={templateEight} alt="" />
+            <img src={temp17} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp18} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp19} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp20} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp21} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp22} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp23} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp24} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp25} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp26} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp27} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp28} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp29} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp30} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp31} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp32} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp33} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp34} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp35} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp36} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp37} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp38} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp39} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp40} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp41} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp42} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp43} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp44} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp45} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp46} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp47} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp48} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp49} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp50} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp51} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp52} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp53} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp54} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp55} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp56} alt="" />
+            <h3 className="tag">Think About it</h3>
+          </div>
+          <div className="card" onClick={useTemplate}>
+            <img src={temp57} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
         </div>
@@ -545,16 +748,18 @@ const EditView = styled.div`
     :focus {
       border: 1px solid grey;
     }
-    
+
     .bold {
       font-weight: bold;
     }
 
-    .italic {}
+    .italic {
+    }
 
     .underline {
       text-decoration: underline;
     }
+  }
 `;
 
 const FileButtons = styled.div``;
