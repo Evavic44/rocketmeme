@@ -724,13 +724,16 @@ const ActionButton = styled.button`
 const EditView = styled.div`
   min-width: 300px;
   flex-grow: 1;
-  height: 350px;
+  min-height: 500px;
   padding: 10px;
   border: var(--border-light);
-  /* background-size: cover; */
-  background-size: contain;
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top center;
+
+  @media (max-width: 900px) {
+    background-size: contain;
+  }
 
   > * {
     position: absolute;
@@ -742,11 +745,11 @@ const EditView = styled.div`
     border: 1px solid transparent;
     font-weight: bolder;
     font-size: 26px;
-    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
     color: #fff;
 
     :focus {
-      border: 1px solid grey;
+      border: var(--border-dark);
     }
 
     .bold {
