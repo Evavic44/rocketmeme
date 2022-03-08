@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import interact from "interactjs";
 import styled from "styled-components";
 import html2canvas from "html2canvas";
@@ -64,6 +64,13 @@ import temp57 from "../assets/images/memeTemplate/temp57.png";
 
 export default function Create() {
   const imageContainer = useRef();
+  const [memeTemplateView, setMemeTemplate] = useState("");
+  const [selectedText, setSelectedText] = useState("");
+  const [currentText, setCurrentText] = useState("");
+
+  // useEffect(() => {
+
+  // }, [selectedText]);
 
   function dragMoveListener(event) {
     var target = event.target;
@@ -81,8 +88,13 @@ export default function Create() {
 
   const downloadMeme = () => {
     html2canvas(imageContainer.current).then(function (canvas) {
-      canvas.toBlob((blob) => saveAs(blob, "rocketmeme.png"));
+      canvas.toBlob((blob) => saveAs(blob, `rocketmeme-${Date.now()}.png`));
     });
+  };
+
+  const useTemplate = (e) => {
+    if (!e.target.src) return;
+    setMemeTemplate(e.target.src);
   };
 
   const AddImageToCanvas = (e) => {
@@ -146,7 +158,7 @@ export default function Create() {
     const random_id = "meme-" + uuid();
     newText.setAttribute("id", random_id);
     newText.classList.add("meme_text");
-    newText.innerText = "Make your funny statements here";
+    newText.innerText = "Enter text here...";
     newText.contentEditable = true;
     imageContainer.current.append(newText);
     newText.focus();
@@ -155,6 +167,11 @@ export default function Create() {
     interact(`#${random_id}`)
       .on("tap", (e) => {
         // set state of to manipulate the element from the toolkit
+        setSelectedText(random_id);
+        setCurrentText(e.target.innerText);
+      })
+      .on("keypress", (e) => {
+        setCurrentText(e.target.innerText);
       })
       .draggable({
         // enable inertial throwing
@@ -181,252 +198,278 @@ export default function Create() {
       });
   };
 
+  // Reset selections
+  /**
+   * @deprecated This feature is no longer in use
+   */
+  const removeSelections = () => {
+    setSelectedText("");
+  };
+
+  // Text functions
+  const textFunctions = {
+    toggleBold: function () {
+      if (!selectedText) return;
+      document.querySelector(`#${selectedText}`).classList.toggle("bold");
+    },
+    toggleItalics: function () {
+      if (!selectedText) return;
+      // document.querySelector(`#${selectedText}`).classList.toggle("italics");
+      document.querySelector(`#${selectedText}`);
+
+      document.execCommand("underline");
+    },
+    toggleUnderline: function () {
+      if (!selectedText) return;
+      document.querySelector(`#${selectedText}`).classList.toggle("underline");
+    },
+    changeText: function (e) {
+      setCurrentText(e.target.value);
+      document.getElementById(selectedText).innerText = e.target.value;
+    },
+  };
+
   return (
     <Container>
       <HomeCategory>
         <div className="categoryHeader">
-          <h2>Browse Memes</h2>
-
+          <h2>Meme Templates</h2>
           <div className="categoryOptions">
             <select className="category" name="category" id="category">
-              <option value="Latest">Latest</option>
-              <option value="Trending">Trending</option>
-              <option value="Downloads">Downloads</option>
+              <option defaultValue="Latest">Latest</option>
+              <option defaultValue="Trending">Trending</option>
+              <option defaultValue="Downloads">Downloads</option>
             </select>
           </div>
         </div>
 
         {/* Meme Templates */}
         <div className="memeTemplates">
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp1} alt="" />
             <h3 className="tag">X X Everywhere</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp2} alt="" />
             <h3 className="tag">Success Kid</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp3} alt="" />
             <h3 className="tag">Distracted Boyfriend</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp4} alt="" />
             <h3 className="tag">Disaster Girl</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp5} alt="" />
             <h3 className="tag">Sad Pablo Escobar</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp6} alt="" />
             <h3 className="tag">Sad Girlfriend</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp7} alt="" />
             <h3 className="tag">Drake Hotline Bling</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp8} alt="" />
             <h3 className="tag">Think about it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp9} alt="" />
             <h3 className="tag">Left exit twelve off ramp</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp10} alt="" />
             <h3 className="tag">Laughing Leo</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp11} alt="" />
             <h3 className="tag">I am once again asking</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp12} alt="" />
             <h3 className="tag">Two buttons</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp13} alt="" />
             <h3 className="tag">I am once again asking</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp14} alt="" />
             <h3 className="tag">Laughing Leo</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp15} alt="" />
             <h3 className="tag">Drake Hotline Bling</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp16} alt="" />
             <h3 className="tag">Two Buttons</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp17} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp18} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
-            <img src={temp18} alt="" />
-            <h3 className="tag">Think About it</h3>
-          </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp19} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp20} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp21} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp22} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp23} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp24} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp25} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp26} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp27} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp28} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp29} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp30} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp31} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp32} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp33} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp34} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp35} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp36} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp37} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp38} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp39} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp40} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp41} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp42} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp43} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp44} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp45} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp46} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp47} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp48} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp49} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp50} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp51} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp52} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp53} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp54} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp55} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp56} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
-          <div className="card">
+          <div className="card" onClick={useTemplate}>
             <img src={temp57} alt="" />
             <h3 className="tag">Think About it</h3>
           </div>
@@ -437,7 +480,11 @@ export default function Create() {
       <Flex>
         {/* Editing View */}
         <div className="editContainer">
-          <EditView ref={imageContainer}></EditView>
+          <EditView
+            ref={imageContainer}
+            className="editorView"
+            style={{ backgroundImage: `url(${memeTemplateView})` }}
+          ></EditView>
           <Actions>
             <ActionButton className="btn btn-light">
               Post <i className="fas fa-share-from-square"></i>
@@ -459,7 +506,11 @@ export default function Create() {
             </ActionButton>
           </Actions>
           <div className="text">
-            <textarea type="text" placeholder="Type your text here" />
+            <textarea
+              type="text"
+              onChange={textFunctions.changeText}
+              value={currentText}
+            />
           </div>
 
           {/* Font Size */}
@@ -468,20 +519,32 @@ export default function Create() {
             <div className="styling">
               <p>Font Style:</p>
               <div>
-                <button className="bold">B</button>
-                <button className="italic">I</button>
-                <button className="underline">U</button>
+                <button className="bold" onClick={textFunctions.toggleBold}>
+                  B
+                </button>
+                <button
+                  className="italic"
+                  onClick={textFunctions.toggleItalics}
+                >
+                  I
+                </button>
+                <button
+                  className="underline"
+                  onClick={textFunctions.toggleUnderline}
+                >
+                  U
+                </button>
               </div>
             </div>
 
             <div>
               <p>Font size:</p>
-              <input type="text" placeholder="10" maxLength={3} />
+              <input type="text" defaultValue={16} maxLength={3} />
             </div>
 
             <div>
               <p>Font color:</p>
-              <input type="color" value="#000000"></input>
+              <input type="color" defaultValue="#000000"></input>
             </div>
           </div>
           <div className="formatting">
@@ -512,7 +575,7 @@ export default function Create() {
             <div>
               <p>Stroke color:</p>
               <div className="inputStroke">
-                <input type="color" value="#ffcf4b" />
+                <input type="color" defaultValue="#ffcf4b" />
               </div>
             </div>
 
@@ -664,6 +727,10 @@ const EditView = styled.div`
   height: 350px;
   padding: 10px;
   border: var(--border-light);
+  /* background-size: cover; */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 
   > * {
     position: absolute;
@@ -673,9 +740,24 @@ const EditView = styled.div`
     outline: none;
     padding: 5px;
     border: 1px solid transparent;
+    font-weight: bolder;
+    font-size: 26px;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+    color: #fff;
 
     :focus {
       border: 1px solid grey;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .italic {
+    }
+
+    .underline {
+      text-decoration: underline;
     }
   }
 `;
