@@ -7,17 +7,15 @@ const MemeCardStyle = styled.div`
     border-radius: 3px;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    border: var(--border-light);
+    border: var(--border-medium);
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
   }
 
   .gallery-image {
-    height: 100%;
-    width: 100%;
+    height: calc(auto + contain);
+    padding-bottom: 75% / 43;
     object-fit: cover;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
     cursor: pointer;
 
     &:hover {

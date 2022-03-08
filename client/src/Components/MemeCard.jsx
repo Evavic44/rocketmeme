@@ -24,7 +24,10 @@ function MemeCard({
           effect="blur"
           src={link}
           alt="Meme"
+          width="100%"
+          height="400"
           scrollPosition={scrollPosition}
+          placeholderSrc={"/images/canvas.png"}
         />
 
         <div className="gallery-tag">
