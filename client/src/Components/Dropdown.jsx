@@ -37,9 +37,9 @@ const DropDownContainer = styled.div`
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 72px;
+    top: 68px;
     width: 22em;
-    right: 310px;
+    right: 280px;
     z-index: 100;
     background-color: var(--bg-light);
     padding: 1.1rem 1.3em;
@@ -56,7 +56,7 @@ const DropDownContainer = styled.div`
     width: 0;
     height: 0;
     bottom: 100%;
-    right: 68px;
+    right: 30%;
     border: 0.8rem solid transparent;
     border-bottom-color: #fff;
     filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 10, 0.2));
