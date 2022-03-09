@@ -67,7 +67,7 @@ import temp57 from "../assets/images/memeTemplate/temp57.png";
 export default function Create() {
   const imageContainer = useRef();
   const [memeTemplateView, setMemeTemplate] = useState("");
-  const [selectedText, setSelectedText] = useState("");
+  const [selectedText, setSelectedText] = useState(""); // Id of generated element
   const [currentText, setCurrentText] = useState("");
 
   // useEffect(() => {
@@ -98,6 +98,12 @@ export default function Create() {
     if (!e.target.src) return;
     setMemeTemplate(e.target.src);
   };
+
+  const deleteSelected = e => {
+    if(selectedText) {
+      document.querySelector(`#${selectedText}`).remove();
+    }
+  }
 
   const AddImageToCanvas = (e) => {
     const newImage = document.createElement("img");
@@ -159,6 +165,9 @@ export default function Create() {
     const newText = document.createElement("div");
     const random_id = "meme-" + uuid();
     newText.setAttribute("id", random_id);
+    newText.toggleAttribute("data-text-underlined");
+    newText.toggleAttribute("data-text-bold");
+    newText.toggleAttribute("data-text-italics");
     newText.classList.add("meme_text");
     newText.innerText = "Enter text here...";
     newText.contentEditable = true;
@@ -211,24 +220,67 @@ export default function Create() {
   // Text functions
   const textFunctions = {
     toggleBold: function () {
+      // document.querySelector(`#${selectedText}`).classList.toggle("bold");
+      // document.querySelector(`#${selectedText}`).toggleAttribute("data-text-bold");
+      // document.querySelector(`#${selectedText}`).style.fontWeight = "bolder";
+
       if (!selectedText) return;
-      document.querySelector(`#${selectedText}`).classList.toggle("bold");
+      const textElem = document.querySelector(`#${selectedText}`);
+      if(!textElem) return setSelectedText("");
+      textElem.toggleAttribute("data-text-bold");
+      if(textElem.hasAttribute("data-text-bold")) {
+        textElem.style.fontWeight = "bolder";
+        return;
+      }
+      textElem.style.fontWeight = "normal";
     },
     toggleItalics: function () {
       if (!selectedText) return;
-      // document.querySelector(`#${selectedText}`).classList.toggle("italics");
-      document.querySelector(`#${selectedText}`);
-
-      document.execCommand("underline");
+      const textElem = document.querySelector(`#${selectedText}`);
+      if(!textElem) return setSelectedText("");
+      textElem.toggleAttribute("data-text-italic");
+      if(textElem.hasAttribute("data-text-italic")) {
+        textElem.style.fontStyle = "italic";
+        return;
+      }
+      textElem.style.fontStyle = "normal";
     },
     toggleUnderline: function () {
       if (!selectedText) return;
-      document.querySelector(`#${selectedText}`).classList.toggle("underline");
+      const textElem = document.querySelector(`#${selectedText}`);
+      if(!textElem) return setSelectedText("");
+      textElem.toggleAttribute("data-text-underlined");
+      if(textElem.hasAttribute("data-text-underlined")) {
+        textElem.style.textDecoration = "underline";
+        return;
+      }
+      textElem.style.textDecoration = "none";
     },
     changeText: function (e) {
       setCurrentText(e.target.value);
-      document.getElementById(selectedText).innerText = e.target.value;
+      const textElem = document.getElementById(selectedText);
+      if(!textElem) return setSelectedText("");
+      textElem.innerText = e.target.value;
     },
+    changeTextSize: function(e) {
+      if (!selectedText) return;
+      const textElem = document.querySelector(`#${selectedText}`);
+      if(!textElem) return setSelectedText("");
+      textElem.style.fontSize = `${e.target.value}px`;
+    },
+    changeTextColor: function(e) {
+      if (!selectedText) return;
+      const textElem = document.querySelector(`#${selectedText}`);
+      if(!textElem) return setSelectedText("");
+      textElem.style.color = e.target.value;
+    },
+    justify: function(e) {
+      console.log(e.target.dataset["justification"]);
+      if (!selectedText) return;
+      const textElem = document.querySelector(`#${selectedText}`);
+      if(!textElem) return setSelectedText("");
+      textElem.style.textAlign = e.target.dataset["justification"];
+    }
   };
 
   return (
@@ -769,12 +821,12 @@ export default function Create() {
 
             <div>
               <p>Font size:</p>
-              <input type="text" defaultValue={16} maxLength={3} />
+              <input type="text" defaultValue={16} maxLength={3} onChange={textFunctions.changeTextSize} />
             </div>
 
             <div>
               <p>Font color:</p>
-              <input type="color" defaultValue="#000000"></input>
+              <input type="color" defaultValue="#ffffff" onChange={textFunctions.changeTextColor}></input>
             </div>
           </div>
           <div className="formatting">
@@ -782,13 +834,13 @@ export default function Create() {
             <div className="styling">
               <p>Text alignment:</p>
               <div>
-                <button className="leftAlign">
+                <button className="leftAlign" onClick={textFunctions.justify} data-justification="left">
                   <i className="fas fa-align-left"></i>
                 </button>
-                <button className="midAlign">
+                <button className="midAlign" onClick={textFunctions.justify} data-justification="center">
                   <i className="fas fa-align-center"></i>
                 </button>
-                <button className="rightAlign">
+                <button className="rightAlign" onClick={textFunctions.justify} data-justification="right">
                   <i className="fas fa-align-right"></i>
                 </button>
               </div>
@@ -798,14 +850,14 @@ export default function Create() {
             <div>
               <p>Stroke width:</p>
               <div className="inputStroke">
-                <input type="text" placeholder="3" />
+                <input type="text" defaultValue="0" />
               </div>
             </div>
 
             <div>
               <p>Stroke color:</p>
               <div className="inputStroke">
-                <input type="color" defaultValue="#ffcf4b" />
+                <input type="color" defaultValue="#000000" />
               </div>
             </div>
 
@@ -824,7 +876,7 @@ export default function Create() {
             </div>
           </div> */}
           <div>
-            <ActionButton className="btn delete">Reset</ActionButton>
+            <ActionButton className="btn delete" onClick={deleteSelected}>Reset</ActionButton>
           </div>
         </Controls>
       </Flex>
@@ -982,15 +1034,16 @@ const EditView = styled.div`
       border: var(--border-dark);
     }
 
-    .bold {
-      font-weight: bold;
+    .justify-center {
+      text-align: center;
     }
 
-    .italic {
+    .justify-left {
+      text-align: left;
     }
 
-    .underline {
-      text-decoration: underline;
+    .justify-right {
+      text-align: right;
     }
   }
 `;
