@@ -165,6 +165,9 @@ export default function Create() {
     const newText = document.createElement("div");
     const random_id = "meme-" + uuid();
     newText.setAttribute("id", random_id);
+    newText.toggleAttribute("data-text-underlined");
+    newText.toggleAttribute("data-text-bold");
+    newText.toggleAttribute("data-text-italics");
     newText.classList.add("meme_text");
     newText.innerText = "Enter text here...";
     newText.contentEditable = true;
@@ -217,19 +220,41 @@ export default function Create() {
   // Text functions
   const textFunctions = {
     toggleBold: function () {
+      // document.querySelector(`#${selectedText}`).classList.toggle("bold");
+      // document.querySelector(`#${selectedText}`).toggleAttribute("data-text-bold");
+      // document.querySelector(`#${selectedText}`).style.fontWeight = "bolder";
+
       if (!selectedText) return;
-      document.querySelector(`#${selectedText}`).classList.toggle("bold");
+      const textElem = document.querySelector(`#${selectedText}`);
+      if(!textElem) return setSelectedText("");
+      textElem.toggleAttribute("data-text-bold");
+      if(textElem.hasAttribute("data-text-bold")) {
+        textElem.style.fontWeight = "bolder";
+        return;
+      }
+      textElem.style.fontWeight = "normal";
     },
     toggleItalics: function () {
       if (!selectedText) return;
-      // document.querySelector(`#${selectedText}`).classList.toggle("italics");
-      document.querySelector(`#${selectedText}`);
-
-      document.execCommand("underline");
+      const textElem = document.querySelector(`#${selectedText}`);
+      if(!textElem) return setSelectedText("");
+      textElem.toggleAttribute("data-text-italic");
+      if(textElem.hasAttribute("data-text-italic")) {
+        textElem.style.fontStyle = "italic";
+        return;
+      }
+      textElem.style.fontStyle = "normal";
     },
     toggleUnderline: function () {
       if (!selectedText) return;
-      document.querySelector(`#${selectedText}`).classList.toggle("underline");
+      const textElem = document.querySelector(`#${selectedText}`);
+      if(!textElem) return setSelectedText("");
+      textElem.toggleAttribute("data-text-underline");
+      if(textElem.hasAttribute("data-text-underline")) {
+        textElem.style.textDecoration = "underline";
+        return;
+      }
+      textElem.style.textDecoration = "none";
     },
     changeText: function (e) {
       setCurrentText(e.target.value);
@@ -977,6 +1002,24 @@ const EditView = styled.div`
     position: absolute;
   }
 
+  [data-text-bold] {
+      * {
+        font-weight: bold;
+      }
+    }
+
+    [data-text-italic] {
+      * {
+        font-style: italic;
+      }
+    }
+
+    [data-text-underlined] {
+      * {
+        text-decoration: underline;
+      }
+    }
+
   [contenteditable] {
     outline: none;
     padding: 5px;
@@ -990,15 +1033,16 @@ const EditView = styled.div`
       border: var(--border-dark);
     }
 
-    .bold {
-      font-weight: bold;
+    .justify-center {
+      text-align: center;
     }
 
-    .italic {
+    .justify-left {
+      text-align: left;
     }
 
-    .underline {
-      text-decoration: underline;
+    .justify-right {
+      text-align: right;
     }
   }
 `;
