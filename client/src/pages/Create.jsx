@@ -249,8 +249,8 @@ export default function Create() {
       if (!selectedText) return;
       const textElem = document.querySelector(`#${selectedText}`);
       if(!textElem) return setSelectedText("");
-      textElem.toggleAttribute("data-text-underline");
-      if(textElem.hasAttribute("data-text-underline")) {
+      textElem.toggleAttribute("data-text-underlined");
+      if(textElem.hasAttribute("data-text-underlined")) {
         textElem.style.textDecoration = "underline";
         return;
       }
@@ -273,6 +273,13 @@ export default function Create() {
       const textElem = document.querySelector(`#${selectedText}`);
       if(!textElem) return setSelectedText("");
       textElem.style.color = e.target.value;
+    },
+    justify: function(e) {
+      console.log(e.target.dataset["justification"]);
+      if (!selectedText) return;
+      const textElem = document.querySelector(`#${selectedText}`);
+      if(!textElem) return setSelectedText("");
+      textElem.style.textAlign = e.target.dataset["justification"];
     }
   };
 
@@ -819,7 +826,7 @@ export default function Create() {
 
             <div>
               <p>Font color:</p>
-              <input type="color" defaultValue="#000000" onChange={textFunctions.changeTextColor}></input>
+              <input type="color" defaultValue="#ffffff" onChange={textFunctions.changeTextColor}></input>
             </div>
           </div>
           <div className="formatting">
@@ -827,13 +834,13 @@ export default function Create() {
             <div className="styling">
               <p>Text alignment:</p>
               <div>
-                <button className="leftAlign">
+                <button className="leftAlign" onClick={textFunctions.justify} data-justification="left">
                   <i className="fas fa-align-left"></i>
                 </button>
-                <button className="midAlign">
+                <button className="midAlign" onClick={textFunctions.justify} data-justification="center">
                   <i className="fas fa-align-center"></i>
                 </button>
-                <button className="rightAlign">
+                <button className="rightAlign" onClick={textFunctions.justify} data-justification="right">
                   <i className="fas fa-align-right"></i>
                 </button>
               </div>
@@ -843,14 +850,14 @@ export default function Create() {
             <div>
               <p>Stroke width:</p>
               <div className="inputStroke">
-                <input type="text" placeholder="3" />
+                <input type="text" defaultValue="0" />
               </div>
             </div>
 
             <div>
               <p>Stroke color:</p>
               <div className="inputStroke">
-                <input type="color" defaultValue="#ffcf4b" />
+                <input type="color" defaultValue="#000000" />
               </div>
             </div>
 
@@ -1013,24 +1020,6 @@ const EditView = styled.div`
   > * {
     position: absolute;
   }
-
-  [data-text-bold] {
-      * {
-        font-weight: bold;
-      }
-    }
-
-    [data-text-italic] {
-      * {
-        font-style: italic;
-      }
-    }
-
-    [data-text-underlined] {
-      * {
-        text-decoration: underline;
-      }
-    }
 
   [contenteditable] {
     outline: none;
