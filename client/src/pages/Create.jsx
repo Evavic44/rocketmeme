@@ -67,7 +67,7 @@ import temp57 from "../assets/images/memeTemplate/temp57.png";
 export default function Create() {
   const imageContainer = useRef();
   const [memeTemplateView, setMemeTemplate] = useState("");
-  const [selectedText, setSelectedText] = useState("");
+  const [selectedText, setSelectedText] = useState(""); // Id of generated element
   const [currentText, setCurrentText] = useState("");
 
   // useEffect(() => {
@@ -98,6 +98,12 @@ export default function Create() {
     if (!e.target.src) return;
     setMemeTemplate(e.target.src);
   };
+
+  const deleteSelected = e => {
+    if(selectedText) {
+      document.querySelector(`#${selectedText}`).remove();
+    }
+  }
 
   const AddImageToCanvas = (e) => {
     const newImage = document.createElement("img");
@@ -227,7 +233,9 @@ export default function Create() {
     },
     changeText: function (e) {
       setCurrentText(e.target.value);
-      document.getElementById(selectedText).innerText = e.target.value;
+      const textElem = document.getElementById(selectedText);
+      if(!textElem) return setSelectedText("");
+      textElem.innerText = e.target.value;
     },
   };
 
@@ -824,7 +832,7 @@ export default function Create() {
             </div>
           </div> */}
           <div>
-            <ActionButton className="btn delete">Reset</ActionButton>
+            <ActionButton className="btn delete" onClick={deleteSelected}>Reset</ActionButton>
           </div>
         </Controls>
       </Flex>
