@@ -267,6 +267,12 @@ export default function Create() {
       const textElem = document.querySelector(`#${selectedText}`);
       if(!textElem) return setSelectedText("");
       textElem.style.fontSize = `${e.target.value}px`;
+    },
+    changeTextColor: function(e) {
+      if (!selectedText) return;
+      const textElem = document.querySelector(`#${selectedText}`);
+      if(!textElem) return setSelectedText("");
+      textElem.style.color = e.target.value;
     }
   };
 
@@ -813,7 +819,7 @@ export default function Create() {
 
             <div>
               <p>Font color:</p>
-              <input type="color" defaultValue="#000000"></input>
+              <input type="color" defaultValue="#000000" onChange={textFunctions.changeTextColor}></input>
             </div>
           </div>
           <div className="formatting">
