@@ -262,6 +262,12 @@ export default function Create() {
       if(!textElem) return setSelectedText("");
       textElem.innerText = e.target.value;
     },
+    changeTextSize: function(e) {
+      if (!selectedText) return;
+      const textElem = document.querySelector(`#${selectedText}`);
+      if(!textElem) return setSelectedText("");
+      textElem.style.fontSize = `${e.target.value}px`;
+    }
   };
 
   return (
@@ -802,7 +808,7 @@ export default function Create() {
 
             <div>
               <p>Font size:</p>
-              <input type="text" defaultValue={16} maxLength={3} />
+              <input type="text" defaultValue={16} maxLength={3} onChange={textFunctions.changeTextSize} />
             </div>
 
             <div>
