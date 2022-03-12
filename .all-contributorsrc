@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "SpiffGreen",
+      "name": "Spiff Jekey-Green",
+      "avatar_url": "https://avatars.githubusercontent.com/u/73044138?v=4",
+      "profile": "https://spiffgreen.pages.dev/",
+      "contributions": [
+        "bug",
+        "code",
+        "ideas",
+        "review"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "rocketmeme",
+  "projectOwner": "Evavic44",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

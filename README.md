@@ -1,4 +1,7 @@
 <div align="center">
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 <a href="https://rocketmeme.netlify.app"><img src="https://user-images.githubusercontent.com/62628408/156283195-028f807e-633f-479f-9244-4cdd795a3183.svg" width="80px"></a>
 </div>
 
@@ -185,3 +188,23 @@ Consider supporting us buy buying us a coffee or two. We appreciate every donati
 </div>
 
 If you like this project, kindly star ⭐ and share this project. It means the world to us.
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://spiffgreen.pages.dev/"><img src="https://avatars.githubusercontent.com/u/73044138?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Spiff Jekey-Green</b></sub></a><br /><a href="https://github.com/Evavic44/rocketmeme/issues?q=author%3ASpiffGreen" title="Bug reports">🐛</a> <a href="https://github.com/Evavic44/rocketmeme/commits?author=SpiffGreen" title="Code">💻</a> <a href="#ideas-SpiffGreen" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/Evavic44/rocketmeme/pulls?q=is%3Apr+reviewed-by%3ASpiffGreen" title="Reviewed Pull Requests">👀</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
