@@ -1,7 +1,4 @@
 <div align="center">
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 <a href="https://rocketmeme.netlify.app"><img src="https://user-images.githubusercontent.com/62628408/156283195-028f807e-633f-479f-9244-4cdd795a3183.svg" width="80px"></a>
 </div>
 
@@ -60,6 +57,10 @@
 <img src="https://forthebadge.com/images/badges/built-with-love.svg">
 <img src="https://forthebadge.com/images/badges/open-source.svg">
 </p>
+
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # 👀 Preview 
 Click this link to view <a href="https://rocketmeme.netlify.app">rocketmeme</a>
