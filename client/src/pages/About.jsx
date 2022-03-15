@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import ChatwootWidget from "../Components/Chatwoot.js";
 
 export default function About() {
   // Fade top
@@ -37,7 +38,7 @@ export default function About() {
 
       <Figure>
         <img
-          src="https://r6fp86mr.tinifycdn.com/images/memefy-editor.webp"
+          src="/images/memefy-editor.webp"
           alt="Illustration of how to use memefy editor"
         />
       </Figure>
@@ -144,6 +145,8 @@ export default function About() {
           </a>
         </div>
       </FooterCta>
+
+      <ChatwootWidget />
     </Container>
   );
 }
