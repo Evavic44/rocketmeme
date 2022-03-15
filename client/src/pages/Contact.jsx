@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import ChatwootWidget from "../Components/Chatwoot";
 
 function Contact() {
   // Fade top
@@ -28,6 +29,7 @@ function Contact() {
       </Header>
 
       <ContactCards></ContactCards>
+      <ChatwootWidget />
     </Container>
   );
 }
