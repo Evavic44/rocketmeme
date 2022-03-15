@@ -33,13 +33,15 @@ function Dropdown() {
 
 // Dropdown Menu
 const DropDownContainer = styled.div`
+  position: relative;
+
   .dropdown-menu {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 68px;
+    top: 18px;
+    right: -50px;
     width: 22em;
-    right: 280px;
     z-index: 100;
     background-color: var(--bg-light);
     padding: 1.1rem 1.3em;

@@ -166,7 +166,7 @@ const Nav = styled.div`
 
   /* Navbar links */
   .nav-links {
-    padding: 1rem;
+    padding: 1.2rem 1rem;
     transition: all 0.2s ease-out;
   }
 
@@ -230,16 +230,6 @@ const Nav = styled.div`
       opacity: 1;
       transition: all 0.2s cubic-bezier(0.2, 0.01, 0, 1);
       z-index: 55;
-    }
-
-    .nav-links {
-      display: block;
-      text-align: center;
-      width: 100%;
-    }
-
-    .nav-links:hover {
-      color: var(--primary-color);
     }
 
     .menu-icon {
