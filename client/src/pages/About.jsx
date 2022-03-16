@@ -2,8 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import ChatwootWidget from "../Components/Chatwoot.js";
+import {
+  LazyLoadImage,
+  trackWindowScroll,
+} from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
-export default function About() {
+export default function About({ images, scrollPosition }) {
   // Fade top
   const fadeTop = {
     hidden: { opacity: 0, y: -30 },
@@ -36,12 +41,15 @@ export default function About() {
         </motion.div>
       </Header>
 
-      <Figure>
-        <img
-          src="/images/memefy-editor.webp"
-          alt="Illustration of how to use memefy editor"
-        />
-      </Figure>
+      <LazyLoadImage
+        className="showcase-image"
+        effect="blur"
+        src="/images/memefy-editor.webp"
+        alt="Illustration of how to use memefy editor"
+        width="100%"
+        height="100%"
+        placeholderSrc={"/images/editor-canvas.png"}
+      ></LazyLoadImage>
 
       <Section id="features">
         <div className="heading">
@@ -110,21 +118,29 @@ export default function About() {
           </p>
         </div>
 
-        <Creators className="user-container">
+        <Creators>
           <div className="user">
-            <img
+            <LazyLoadImage
               src="https://avatars.githubusercontent.com/u/62628408?v=4"
               alt="User image"
-            />
+              className="user-image"
+              effect="blur"
+              scrollPosition={scrollPosition}
+              placeholderSrc={"/images/canvas-eke.jpg"}
+            ></LazyLoadImage>
             <h2>Founder, Frontend</h2>
             <h3>Victor Eke</h3>
           </div>
 
           <div className="user">
-            <img
+            <LazyLoadImage
               src="https://avatars.githubusercontent.com/u/73044138?v=4"
               alt="User image"
-            />
+              className="user-image"
+              effect="blur"
+              scrollPosition={scrollPosition}
+              placeholderSrc={"/images/canvas-spiff.jpg"}
+            ></LazyLoadImage>
 
             <h2>CTO, Backend</h2>
             <h3>Spiff Jekey Green</h3>
@@ -167,6 +183,11 @@ const Container = styled.main`
 
   i {
     transition: 0.3s ease-in-out;
+  }
+
+  .showcase-image {
+    margin: 7rem 0;
+    box-shadow: 2px 5px 50px rgba(0, 0, 0, 0.2);
   }
 `;
 
@@ -224,24 +245,7 @@ const Header = styled.header`
   }
 `;
 
-const Figure = styled.figure`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  img {
-    margin: 7rem 0;
-    box-shadow: 2px 5px 50px rgba(0, 0, 0, 0.2);
-    width: 1200px;
-
-    @media (max-width: 1000px) {
-      width: 100%;
-    }
-  }
-`;
-
 const Section = styled.section`
-  background: #fff;
   padding: 3rem 0;
 
   .heading {
@@ -268,9 +272,8 @@ const Section = styled.section`
   .card-container {
     display: grid;
     grid-template-columns: repeat(2, minmax(300px, 1fr));
-    grid-auto-rows: minmax(500px, max-content);
     grid-gap: 2rem;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 2rem auto 6rem;
 
     @media (max-width: 768px) {
@@ -283,42 +286,16 @@ const Section = styled.section`
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      padding: 1.5rem;
+      padding: 1.5rem 2rem;
       border-radius: 30px;
-
-      &:hover i {
-        transform: translateX(5%) translateY(-10px);
-      }
-
-      &:nth-child(1) {
-        background: var(--primary-color);
-      }
-      &:nth-child(2) {
-        background: var(--secondary-color);
-        color: #fff;
-        transform: translateY(100px);
-
-        @media (max-width: 768px) {
-          transform: translateY(0px);
-        }
-      }
-      &:nth-child(3) {
-        background: var(--bg-light);
-        border: var(--border-light);
-      }
-      &:nth-child(4) {
-        background: var(--primary-color);
-        transform: translateY(100px);
-        @media (max-width: 768px) {
-          transform: translateY(0px);
-        }
-      }
+      background: var(--bg-light);
+      border: var(--border-medium);
 
       i {
         color: inherit;
-        opacity: 0.4;
-        padding: 0.7rem 1rem;
-        font-size: 6rem;
+        opacity: 0.8;
+        padding: 1rem;
+        font-size: 3.5rem;
         border-radius: 5px;
       }
 
@@ -330,6 +307,46 @@ const Section = styled.section`
       p {
         font-size: 1.1rem;
         padding: 0.5rem 0;
+      }
+
+      &:hover i {
+        transform: translateX(5%) translateY(-10px);
+      }
+
+      &:nth-child(1) {
+        border: 1px solid var(--primary-color);
+
+        i {
+          color: var(--primary-color);
+        }
+      }
+
+      &:nth-child(2) {
+        transform: translateY(100px);
+        i {
+          color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+          transform: translateY(0px);
+        }
+      }
+
+      &:nth-child(3) {
+        i {
+          color: var(--secondary-color);
+        }
+      }
+
+      &:nth-child(4) {
+        border: 1px solid var(--primary-color);
+        transform: translateY(100px);
+        i {
+          color: var(--primary-color);
+        }
+        @media (max-width: 768px) {
+          transform: translateY(0px);
+        }
       }
     }
   }
@@ -351,12 +368,14 @@ const Creators = styled.div`
   .user {
     padding: 1rem;
 
-    img {
+    .user-image {
       width: 300px;
+      height: 300px;
       border-radius: 10%;
 
       @media (max-width: 768px) {
         width: 100%;
+        height: 100%;
       }
     }
 
