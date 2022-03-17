@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import {
   LazyLoadImage,
   trackWindowScroll,
@@ -72,24 +73,21 @@ function Footer({ scrollPosition }) {
         <FooterLink>
           <div className="footer-categories">
             <h3>Categories</h3>
-            <a href="/">JavaScript</a>
-            <a href="/">Programming</a>
-            <a href="/">Stackoverflow</a>
-            <a href="/">NFT</a>
+            <Link to="/categories">JavaScript</Link>
+            <Link to="/categories">Programming</Link>
+            <Link to="/categories">Stackoverflow</Link>
+            <Link to="/categories">NFT</Link>
           </div>
 
           <div className="footer-resources">
             <h3>Resources</h3>
-            <a href="https://github.com/Evavic44/memefy/blob/main/LICENSE">
+            <a href="https://github.com/Evavic44/rocketmeme/blob/main/LICENSE">
               License
             </a>
-            <a href="https://github.com/Evavic44/memefy/blob/main/CODE_OF_CONDUCT.md">
+            <a href="https://github.com/Evavic44/rocketmeme/blob/main/CODE_OF_CONDUCT.md">
               Code of Conduct
             </a>
-            <a href="https://github.com/Evavic44/memefy/blob/main/CONTRIBUTING.md">
-              FAQ
-            </a>
-            <a href="https://github.com/Evavic44/memefy/blob/main/README.md">
+            <a href="https://github.com/Evavic44/rocketmeme/blob/main/README.md">
               Docs
             </a>
           </div>
@@ -108,13 +106,9 @@ function Footer({ scrollPosition }) {
 
           <div className="footer-contribute">
             <h3>Contribute</h3>
-            <a href="/">Upload</a>
-            <a href="https://github.com/Evavic44/memefy/network/contributors">
-              Join Us
-            </a>
-            <a href="https://github.com/Evavic44/memefy/network/contributors">
-              Developers
-            </a>
+            <Link to="/categories">Upload</Link>
+            <a href="https://github.com/Evavic44/rocketmeme">Join Us</a>
+            <a href="https://github.com/Evavic44/rocketmeme">Developers</a>
           </div>
         </FooterLink>
       </Content>

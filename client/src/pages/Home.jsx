@@ -81,7 +81,7 @@ export default function Home() {
           >
             The Internet's most awesome free meme marketplace and editor for
             creating and downloading memes
-            <Image src="/images/cool_dog.gif" alt="dodge dog"></Image>
+            <Image src="/images/cool_dog.gif" alt="nodding dodge dog"></Image>
           </motion.p>
         </Content>
       </ContentContainer>
@@ -304,7 +304,7 @@ const Input = styled.input`
   width: 92%;
   font-size: 0.9rem;
   border-width: 0;
-  border: var(--border-light);
+  border: var(--border-mid);
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   outline: none;
@@ -313,6 +313,10 @@ const Input = styled.input`
   -webkit-appearance: none;
   padding-left: 20px;
   padding-right: 20px;
+
+  &:focus {
+    border: var(--border-medium);
+  }
 
   /* 4k screens */
   @media (min-width: 1920px) {

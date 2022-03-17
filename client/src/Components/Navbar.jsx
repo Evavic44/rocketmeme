@@ -45,6 +45,9 @@ function Navbar() {
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
+                <span className="hide" aria-label="none">
+                  🔥{" "}
+                </span>
                 Categories
               </NavLink>
             </li>
@@ -58,7 +61,11 @@ function Navbar() {
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                About <i className="fas fa-angle-down" />
+                <span className="hide" aria-label="none">
+                  ⚙️{" "}
+                </span>
+                About{" "}
+                <i className="fas fa-angle-down" aria-label="Dropdown Button" />
               </NavLink>
               {dropdown && <Dropdown />}
             </li>
@@ -69,6 +76,9 @@ function Navbar() {
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
+                <span className="hide" aria-label="none">
+                  📱{" "}
+                </span>
                 Contact
               </NavLink>
             </li>
@@ -162,6 +172,10 @@ const Nav = styled.div`
   .nav-menu {
     display: flex;
     align-items: center;
+
+    .hide {
+      display: none;
+    }
   }
 
   /* Navbar links */
@@ -204,10 +218,15 @@ const Nav = styled.div`
       opacity: 1;
       transition: 0.2s cubic-bezier(0.98, 0.01, 0, 0.96);
       box-shadow: var(--shadow-primary);
+      border: var(--border-mid);
       border-radius: 3px;
-
+      padding: 0.5rem 0;
       @media (max-width: 500px) {
         min-width: 90vw;
+      }
+
+      .hide {
+        display: inherit;
       }
     }
 
@@ -232,6 +251,15 @@ const Nav = styled.div`
       z-index: 55;
     }
 
+    .nav-item {
+      font-size: 0.9rem;
+      margin: 1.5rem 1rem 0;
+
+      &:nth-child(3) {
+        margin-bottom: 0.5rem;
+      }
+    }
+
     .menu-icon {
       display: block;
       cursor: pointer;
@@ -240,7 +268,7 @@ const Nav = styled.div`
 
     .nav-links-mobile {
       display: block;
-      margin: 1rem auto 2rem;
+      margin: 1rem auto 1.5rem;
       border-radius: 3px;
       width: 80%;
       text-align: center;

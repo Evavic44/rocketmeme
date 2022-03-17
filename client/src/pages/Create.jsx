@@ -99,11 +99,11 @@ export default function Create() {
     setMemeTemplate(e.target.src);
   };
 
-  const deleteSelected = e => {
-    if(selectedText) {
+  const deleteSelected = (e) => {
+    if (selectedText) {
       document.querySelector(`#${selectedText}`).remove();
     }
-  }
+  };
 
   const AddImageToCanvas = (e) => {
     const newImage = document.createElement("img");
@@ -226,9 +226,9 @@ export default function Create() {
 
       if (!selectedText) return;
       const textElem = document.querySelector(`#${selectedText}`);
-      if(!textElem) return setSelectedText("");
+      if (!textElem) return setSelectedText("");
       textElem.toggleAttribute("data-text-bold");
-      if(textElem.hasAttribute("data-text-bold")) {
+      if (textElem.hasAttribute("data-text-bold")) {
         textElem.style.fontWeight = "bolder";
         return;
       }
@@ -237,9 +237,9 @@ export default function Create() {
     toggleItalics: function () {
       if (!selectedText) return;
       const textElem = document.querySelector(`#${selectedText}`);
-      if(!textElem) return setSelectedText("");
+      if (!textElem) return setSelectedText("");
       textElem.toggleAttribute("data-text-italic");
-      if(textElem.hasAttribute("data-text-italic")) {
+      if (textElem.hasAttribute("data-text-italic")) {
         textElem.style.fontStyle = "italic";
         return;
       }
@@ -248,9 +248,9 @@ export default function Create() {
     toggleUnderline: function () {
       if (!selectedText) return;
       const textElem = document.querySelector(`#${selectedText}`);
-      if(!textElem) return setSelectedText("");
+      if (!textElem) return setSelectedText("");
       textElem.toggleAttribute("data-text-underlined");
-      if(textElem.hasAttribute("data-text-underlined")) {
+      if (textElem.hasAttribute("data-text-underlined")) {
         textElem.style.textDecoration = "underline";
         return;
       }
@@ -259,28 +259,28 @@ export default function Create() {
     changeText: function (e) {
       setCurrentText(e.target.value);
       const textElem = document.getElementById(selectedText);
-      if(!textElem) return setSelectedText("");
+      if (!textElem) return setSelectedText("");
       textElem.innerText = e.target.value;
     },
-    changeTextSize: function(e) {
+    changeTextSize: function (e) {
       if (!selectedText) return;
       const textElem = document.querySelector(`#${selectedText}`);
-      if(!textElem) return setSelectedText("");
+      if (!textElem) return setSelectedText("");
       textElem.style.fontSize = `${e.target.value}px`;
     },
-    changeTextColor: function(e) {
+    changeTextColor: function (e) {
       if (!selectedText) return;
       const textElem = document.querySelector(`#${selectedText}`);
-      if(!textElem) return setSelectedText("");
+      if (!textElem) return setSelectedText("");
       textElem.style.color = e.target.value;
     },
-    justify: function(e) {
+    justify: function (e) {
       console.log(e.target.dataset["justification"]);
       if (!selectedText) return;
       const textElem = document.querySelector(`#${selectedText}`);
-      if(!textElem) return setSelectedText("");
+      if (!textElem) return setSelectedText("");
       textElem.style.textAlign = e.target.dataset["justification"];
-    }
+    },
   };
 
   return (
@@ -821,12 +821,21 @@ export default function Create() {
 
             <div>
               <p>Font size:</p>
-              <input type="text" defaultValue={16} maxLength={3} onChange={textFunctions.changeTextSize} />
+              <input
+                type="text"
+                defaultValue={16}
+                maxLength={3}
+                onChange={textFunctions.changeTextSize}
+              />
             </div>
 
             <div>
               <p>Font color:</p>
-              <input type="color" defaultValue="#ffffff" onChange={textFunctions.changeTextColor}></input>
+              <input
+                type="color"
+                defaultValue="#ffffff"
+                onChange={textFunctions.changeTextColor}
+              ></input>
             </div>
           </div>
           <div className="formatting">
@@ -834,13 +843,25 @@ export default function Create() {
             <div className="styling">
               <p>Text alignment:</p>
               <div>
-                <button className="leftAlign" onClick={textFunctions.justify} data-justification="left">
+                <button
+                  className="leftAlign"
+                  onClick={textFunctions.justify}
+                  data-justification="left"
+                >
                   <i className="fas fa-align-left"></i>
                 </button>
-                <button className="midAlign" onClick={textFunctions.justify} data-justification="center">
+                <button
+                  className="midAlign"
+                  onClick={textFunctions.justify}
+                  data-justification="center"
+                >
                   <i className="fas fa-align-center"></i>
                 </button>
-                <button className="rightAlign" onClick={textFunctions.justify} data-justification="right">
+                <button
+                  className="rightAlign"
+                  onClick={textFunctions.justify}
+                  data-justification="right"
+                >
                   <i className="fas fa-align-right"></i>
                 </button>
               </div>
@@ -876,7 +897,9 @@ export default function Create() {
             </div>
           </div> */}
           <div>
-            <ActionButton className="btn delete" onClick={deleteSelected}>Reset</ActionButton>
+            <ActionButton className="btn delete" onClick={deleteSelected}>
+              Delete
+            </ActionButton>
           </div>
         </Controls>
       </Flex>
