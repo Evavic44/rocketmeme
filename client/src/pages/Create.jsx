@@ -94,6 +94,7 @@ import AddIconForm from "../Components/AddIconForm";
 
 export default function Create() {
   const imageContainer = useRef();
+  const offScreenImage = useRef();
   const [memeTemplateView, setMemeTemplate] = useState("");
   const [selectedText, setSelectedText] = useState(""); // Id of generated element
   const [currentText, setCurrentText] = useState("");
@@ -125,6 +126,16 @@ export default function Create() {
 
   const useTemplate = (e) => {
     if (!e.target.src) return;
+    // const { width, height } = getComputedStyle(offScreenImage.current);
+    const { width: ContainerWidth, } = getComputedStyle(imageContainer.current);
+    offScreenImage.current.src = e.target.src;
+    const width = offScreenImage.current.width;
+    const height = offScreenImage.current.height;
+    const ratio = (width / height);
+    console.log('Widdth: ', ContainerWidth);
+    const newHeight = parseFloat(ContainerWidth) / ratio;
+    imageContainer.current.style.height = newHeight + "px";
+    console.log(newHeight);
     setMemeTemplate(e.target.src);
   };
 
@@ -838,6 +849,7 @@ export default function Create() {
       <Flex>
         {/* Editing View */}
         <div className="editContainer">
+          <img src="." alt="off-screen" hidden ref={offScreenImage} />
           <EditView
             ref={imageContainer}
             className="editorView"
@@ -1105,7 +1117,11 @@ const ActionButton = styled.button`
 const EditView = styled.div`
   /* min-width: 300px; */
   flex-grow: 1;
-  min-height: 500px;
+  /* min-height: 500px;
+  
+  
+  
+  */
   padding: 10px;
   border: var(--border-light);
   background-size: 100%;
