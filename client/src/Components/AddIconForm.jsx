@@ -14,7 +14,7 @@ import meme7 from "../assets/images/iconTemplates/pepe4.webp";
 function AddIconForm(props) {
   return (
     <IconForm>
-        <AddImageBtn onClick={props.addFile}>
+        <AddImageBtn className='btn btn-primary' onClick={props.addFile}>
             Upload Image
         </AddImageBtn>
         <p className="title">You can also choose from our library of icons</p>
@@ -40,7 +40,8 @@ function AddIconForm(props) {
 
 const IconForm = styled.div`
     padding-bottom: 0.5rem;
-
+    text-align: center;
+    
     .title {
         margin: 1rem 0;
     }
@@ -53,20 +54,26 @@ const IconForm = styled.div`
         grid-template-columns: repeat(auto-fit, minmax(80px, auto));
         gap: 10px;
 
+        @media(max-width: 500px) {
+            grid-template-columns: repeat(auto-fit, minmax(40px, auto));
+            gap: 12px;
+        }
+
         img {
             width: 55px;
             height: 55px;
             cursor: pointer;
+
+            @media(max-width: 500px) {
+                width: 40px;
+                height: 40px;
+            }
         }
     }
 `;
 
 const AddImageBtn = styled.button`
-    background: #ffcf4d;
-    padding: 10px;
-    border-radius: 3px;
-    border: none;
-    outline: none;
+    width: 70%;
 `;
 
 export default AddIconForm;

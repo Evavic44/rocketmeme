@@ -1103,7 +1103,7 @@ const ActionButton = styled.button`
 `;
 
 const EditView = styled.div`
-  min-width: 300px;
+  /* min-width: 300px; */
   flex-grow: 1;
   min-height: 500px;
   padding: 10px;
