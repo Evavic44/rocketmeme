@@ -4,6 +4,8 @@ import styled from "styled-components";
 import html2canvas from "html2canvas";
 import { v4 as uuid } from "uuid";
 import { saveAs } from "file-saver";
+import { useDispatch } from "react-redux";
+import { closeModal, showModal, } from "../redux/actions/modalAction";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import temp1 from "../assets/images/memeTemplate/temp1.png";
@@ -63,12 +65,39 @@ import temp54 from "../assets/images/memeTemplate/temp54.png";
 import temp55 from "../assets/images/memeTemplate/temp55.png";
 import temp56 from "../assets/images/memeTemplate/temp56.png";
 import temp57 from "../assets/images/memeTemplate/temp57.png";
+import AddIconForm from "../Components/AddIconForm";
+
+/**
+ * Select file(s).
+ * @param {String} contentType The content type of files you wish to select. For instance, use "image/*" to select all types of images.
+ * @param {Boolean} multiple Indicates if the user can select multiple files.
+ * @returns {Promise<File|File[]>} A promise of a file or array of files in case the multiple parameter is true.
+ */
+ function selectFile(contentType, multiple = false){
+  return new Promise(resolve => {
+      let input = document.createElement('input');
+      input.type = 'file';
+      input.multiple = multiple;
+      input.accept = contentType;
+
+      input.onchange = () => {
+          let files = Array.from(input.files);
+          if (multiple)
+              resolve(files);
+          else
+              resolve(files[0]);
+      };
+
+      input.click();
+  });
+}
 
 export default function Create() {
   const imageContainer = useRef();
   const [memeTemplateView, setMemeTemplate] = useState("");
   const [selectedText, setSelectedText] = useState(""); // Id of generated element
   const [currentText, setCurrentText] = useState("");
+  const dispatch = useDispatch();
 
   // useEffect(() => {
 
@@ -105,15 +134,30 @@ export default function Create() {
     }
   };
 
-  const AddImageToCanvas = (e) => {
-    const newImage = document.createElement("img");
-    newImage.src = templateFive;
-    newImage.setAttribute("alt", ".");
-    const random_id = "meme-" + uuid();
-    newImage.setAttribute("id", random_id);
-    imageContainer.current.append(newImage);
+  const addFile = async () => {
+    try {
+      const selectedFile = await selectFile("png, jpg");
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(selectedFile);
 
-    interact(`#${random_id}`)
+      fileReader.onload = function(oEvnt) {
+        const newImage = document.createElement("img");
+        newImage.src = oEvnt.target.result;
+        newImage.setAttribute("alt", ".");
+        const random_id = "meme-" + uuid();
+        newImage.setAttribute("id", random_id);
+        imageContainer.current.append(newImage);
+
+        interactIcon(random_id);
+        dispatch(closeModal());
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  function interactIcon(id) {
+    interact(`#${id}`)
       .on("tap", (e) => {
         // set state of to manipulate the element from the toolkit
       })
@@ -159,6 +203,23 @@ export default function Create() {
           },
         },
       });
+  }
+
+  const AddImageToCanvas = e => {
+    dispatch(showModal(<AddIconForm addFile={addFile} addIcon={AddIconToCanvas} />));
+  }
+
+  const AddIconToCanvas = (e) => {
+    const newImage = document.createElement("img");
+    // newImage.src = templateFive;
+    newImage.src = e.target.src;
+    newImage.setAttribute("alt", ".");
+    const random_id = "meme-" + uuid();
+    newImage.setAttribute("id", random_id);
+    imageContainer.current.append(newImage);
+    dispatch(closeModal());
+
+    interactIcon(random_id);
   };
 
   const AddTextToCanvas = (e) => {
@@ -183,6 +244,25 @@ export default function Create() {
       })
       .on("keypress", (e) => {
         setCurrentText(e.target.innerText);
+      })
+      .resizable({
+        edges: { top: true, left: true, bottom: true, right: true },
+        listeners: {
+          move: function (event) {
+            let { x, y } = event.target.dataset;
+
+            x = (parseFloat(x) || 0) + event.deltaRect.left;
+            y = (parseFloat(y) || 0) + event.deltaRect.top;
+
+            Object.assign(event.target.style, {
+              width: `${event.rect.width}px`,
+              height: `${event.rect.height}px`,
+              transform: `translate(${x}px, ${y}px)`,
+            });
+
+            Object.assign(event.target.dataset, { x, y });
+          },
+        },
       })
       .draggable({
         // enable inertial throwing
@@ -220,10 +300,6 @@ export default function Create() {
   // Text functions
   const textFunctions = {
     toggleBold: function () {
-      // document.querySelector(`#${selectedText}`).classList.toggle("bold");
-      // document.querySelector(`#${selectedText}`).toggleAttribute("data-text-bold");
-      // document.querySelector(`#${selectedText}`).style.fontWeight = "bolder";
-
       if (!selectedText) return;
       const textElem = document.querySelector(`#${selectedText}`);
       if (!textElem) return setSelectedText("");
