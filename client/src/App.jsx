@@ -22,16 +22,21 @@ import Nft from "./pages/CategoryPages/Nft";
 import Computer from "./pages/CategoryPages/Computer";
 import Monitor from "./pages/CategoryPages/Monitor";
 import Comrade from "./pages/CategoryPages/Comrade";
-
+import Modal from "./Components/Modal";
 // theme
 import appTheme from "./Components/Theme";
 
+// redux setup
+import { useSelector } from "react-redux";
+
 function App() {
+  const modalData = useSelector(data => data.modal);
   return (
     <ThemeProvider theme={appTheme}>
       <div className="App">
         <Router>
           <Navbar />
+          {modalData.showing ? <Modal /> : null}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="about" element={<About />} />
