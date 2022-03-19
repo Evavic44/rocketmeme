@@ -5,7 +5,7 @@ import html2canvas from "html2canvas";
 import { v4 as uuid } from "uuid";
 import { saveAs } from "file-saver";
 import { useDispatch } from "react-redux";
-import { closeModal, showModal, } from "../redux/actions/modalAction";
+import { closeModal, showModal } from "../redux/actions/modalAction";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import temp1 from "../assets/images/memeTemplate/temp1.png";
@@ -73,22 +73,20 @@ import AddIconForm from "../Components/AddIconForm";
  * @param {Boolean} multiple Indicates if the user can select multiple files.
  * @returns {Promise<File|File[]>} A promise of a file or array of files in case the multiple parameter is true.
  */
- function selectFile(contentType, multiple = false){
-  return new Promise(resolve => {
-      let input = document.createElement('input');
-      input.type = 'file';
-      input.multiple = multiple;
-      input.accept = contentType;
+function selectFile(contentType, multiple = false) {
+  return new Promise((resolve) => {
+    let input = document.createElement("input");
+    input.type = "file";
+    input.multiple = multiple;
+    input.accept = contentType;
 
-      input.onchange = () => {
-          let files = Array.from(input.files);
-          if (multiple)
-              resolve(files);
-          else
-              resolve(files[0]);
-      };
+    input.onchange = () => {
+      let files = Array.from(input.files);
+      if (multiple) resolve(files);
+      else resolve(files[0]);
+    };
 
-      input.click();
+    input.click();
   });
 }
 
@@ -127,12 +125,12 @@ export default function Create() {
   const useTemplate = (e) => {
     if (!e.target.src) return;
     // const { width, height } = getComputedStyle(offScreenImage.current);
-    const { width: ContainerWidth, } = getComputedStyle(imageContainer.current);
+    const { width: ContainerWidth } = getComputedStyle(imageContainer.current);
     offScreenImage.current.src = e.target.src;
     const width = offScreenImage.current.width;
     const height = offScreenImage.current.height;
-    const ratio = (width / height);
-    console.log('Widdth: ', ContainerWidth);
+    const ratio = width / height;
+    console.log("Widdth: ", ContainerWidth);
     const newHeight = parseFloat(ContainerWidth) / ratio;
     imageContainer.current.style.height = newHeight + "px";
     console.log(newHeight);
@@ -151,7 +149,7 @@ export default function Create() {
       const fileReader = new FileReader();
       fileReader.readAsDataURL(selectedFile);
 
-      fileReader.onload = function(oEvnt) {
+      fileReader.onload = function (oEvnt) {
         const newImage = document.createElement("img");
         newImage.src = oEvnt.target.result;
         newImage.setAttribute("alt", ".");
@@ -161,11 +159,11 @@ export default function Create() {
 
         interactIcon(random_id);
         dispatch(closeModal());
-      }
+      };
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   function interactIcon(id) {
     interact(`#${id}`)
@@ -216,9 +214,11 @@ export default function Create() {
       });
   }
 
-  const AddImageToCanvas = e => {
-    dispatch(showModal(<AddIconForm addFile={addFile} addIcon={AddIconToCanvas} />));
-  }
+  const AddImageToCanvas = (e) => {
+    dispatch(
+      showModal(<AddIconForm addFile={addFile} addIcon={AddIconToCanvas} />)
+    );
+  };
 
   const AddIconToCanvas = (e) => {
     const newImage = document.createElement("img");
