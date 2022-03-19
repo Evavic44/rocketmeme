@@ -283,20 +283,11 @@ const Form = styled.form`
   button {
     background: var(--secondary-color);
     color: #fff;
-    /* width: 8%; */
     transition: 0.3s ease-in-out;
     overflow: hidden;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     padding: 0 1.5rem;
-  }
-
-  /* Make form width stretch the whole container */
-
-  @media (max-width: 500px) {
-    button {
-      /* width: 12%; */
-    }
   }
 `;
 
@@ -306,8 +297,6 @@ const Input = styled.input`
   font-size: 0.9rem;
   border-width: 0;
   border: var(--border-mid);
-  /* border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px; */
   outline: none;
   transition: 0.1s ease-in-out;
   appearance: none;
@@ -322,12 +311,7 @@ const Input = styled.input`
   /* 4k screens */
   @media (min-width: 1920px) {
     font-size: 1.2rem;
-    /* width: 100%; */
     padding: 1.1rem 1rem;
-  }
-
-  @media (max-width: 500px) {
-    /* width: 88%; */
   }
 `;
 

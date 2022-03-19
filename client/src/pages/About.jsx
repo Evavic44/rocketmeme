@@ -124,6 +124,8 @@ export default function About({ images, scrollPosition }) {
               src="https://avatars.githubusercontent.com/u/62628408?v=4"
               alt="User image"
               className="user-image"
+              width="250px"
+              height="250px"
               effect="blur"
               scrollPosition={scrollPosition}
               placeholderSrc={"/images/canvas-eke.jpg"}
@@ -137,12 +139,14 @@ export default function About({ images, scrollPosition }) {
               src="https://avatars.githubusercontent.com/u/73044138?v=4"
               alt="User image"
               className="user-image"
+              width="250px"
+              height="250px"
               effect="blur"
               scrollPosition={scrollPosition}
               placeholderSrc={"/images/canvas-spiff.jpg"}
             ></LazyLoadImage>
 
-            <h2>CTO, Backend</h2>
+            <h2>Co-Founder, Backend</h2>
             <h3>Spiff Jekey Green</h3>
           </div>
         </Creators>
@@ -207,6 +211,10 @@ const Header = styled.header`
       font-size: 1.3rem;
       font-weight: 400;
       color: var(--primary-color);
+
+      @media (max-width: 320px) {
+        font-size: 1rem;
+      }
     }
 
     h2 {
@@ -219,6 +227,9 @@ const Header = styled.header`
       @media (max-width: 768px) {
         font-size: 2rem;
       }
+      @media (max-width: 320px) {
+        font-size: 1.4rem;
+      }
     }
 
     p {
@@ -226,6 +237,14 @@ const Header = styled.header`
       font-weight: 400;
       max-width: 600px;
       margin-bottom: 1rem;
+
+      @media (max-width: 320px) {
+        font-size: 0.8rem;
+      }
+    }
+
+    .btn {
+      font-size: 0.85rem;
     }
 
     img {
@@ -369,15 +388,7 @@ const Creators = styled.div`
     padding: 1rem;
 
     .user-image {
-      width: 300px;
-      height: 300px;
       border-radius: 10%;
-
-      @media (max-width: 768px) {
-        width: 100%;
-        height: 100%;
-        padding: 150px;
-      }
     }
 
     h2 {
