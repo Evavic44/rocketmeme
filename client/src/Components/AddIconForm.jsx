@@ -24,227 +24,227 @@ import meme17 from "../assets/images/iconTemplates/red-cap.png";
 import meme18 from "../assets/images/iconTemplates/shades.png";
 
 function AddIconForm(props) {
-  return (
-    <IconForm>
-      <AddImageBtn className="btn btn-primary" onClick={props.addFile}>
-        Upload Image
-      </AddImageBtn>
-      <p className="title">You can also choose from our library of icons</p>
-      <div className="gallery">
-        <LazyLoadImage
-          className="upload-image"
-          src={meme1}
-          alt="icon"
-          onClick={props.addIcon}
-          width="40px"
-          height="40px"
-          effect="blur"
-          placeholderSrc={"/images/icon-canvas.png"}
-        />
-        <LazyLoadImage
-          className="upload-image"
-          src={meme2}
-          alt="icon"
-          onClick={props.addIcon}
-          width="40px"
-          height="40px"
-          effect="blur"
-          placeholderSrc={"/images/icon-canvas.png"}
-        />
-        <LazyLoadImage
-          className="upload-image"
-          src={meme3}
-          alt="icon"
-          onClick={props.addIcon}
-          width="40px"
-          height="40px"
-          effect="blur"
-          placeholderSrc={"/images/icon-canvas.png"}
-        />
-        <LazyLoadImage
-          className="upload-image"
-          src={meme4}
-          alt="icon"
-          onClick={props.addIcon}
-          width="40px"
-          height="40px"
-          effect="blur"
-          placeholderSrc={"/images/icon-canvas.png"}
-        />
-        <LazyLoadImage
-          className="upload-image"
-          src={meme5}
-          alt="icon"
-          onClick={props.addIcon}
-          width="40px"
-          height="40px"
-          effect="blur"
-          placeholderSrc={"/images/icon-canvas.png"}
-        />
-        <LazyLoadImage
-          className="upload-image"
-          src={meme6}
-          alt="icon"
-          onClick={props.addIcon}
-          width="40px"
-          height="40px"
-          effect="blur"
-          placeholderSrc={"/images/icon-canvas.png"}
-        />
-        <LazyLoadImage
-          className="upload-image"
-          src={meme7}
-          alt="icon"
-          onClick={props.addIcon}
-          width="40px"
-          height="40px"
-          effect="blur"
-          placeholderSrc={"/images/icon-canvas.png"}
-        />
-        <LazyLoadImage
-          className="upload-image"
-          src={meme8}
-          alt="icon"
-          onClick={props.addIcon}
-          width="40px"
-          height="40px"
-          effect="blur"
-          placeholderSrc={"/images/icon-canvas.png"}
-        />
-        <LazyLoadImage
-          className="upload-image"
-          src={meme9}
-          alt="icon"
-          onClick={props.addIcon}
-          width="40px"
-          height="40px"
-          effect="blur"
-          placeholderSrc={"/images/icon-canvas.png"}
-        />
-        <LazyLoadImage
-          className="upload-image"
-          src={meme10}
-          alt="icon"
-          onClick={props.addIcon}
-          width="40px"
-          height="40px"
-          effect="blur"
-          placeholderSrc={"/images/icon-canvas.png"}
-        />
-        <LazyLoadImage
-          className="upload-image"
-          src={meme11}
-          alt="icon"
-          onClick={props.addIcon}
-          width="40px"
-          height="40px"
-          effect="blur"
-          placeholderSrc={"/images/icon-canvas.png"}
-        />
-        <LazyLoadImage
-          className="upload-image"
-          src={meme12}
-          alt="icon"
-          onClick={props.addIcon}
-          width="40px"
-          height="40px"
-          effect="blur"
-          placeholderSrc={"/images/icon-canvas.png"}
-        />
-        <LazyLoadImage
-          className="upload-image"
-          src={meme13}
-          alt="icon"
-          onClick={props.addIcon}
-          width="40px"
-          height="40px"
-          effect="blur"
-          placeholderSrc={"/images/icon-canvas.png"}
-        />
-        <LazyLoadImage
-          className="upload-image"
-          src={meme14}
-          alt="icon"
-          onClick={props.addIcon}
-          width="40px"
-          height="40px"
-          effect="blur"
-          placeholderSrc={"/images/icon-canvas.png"}
-        />
-        <LazyLoadImage
-          className="upload-image"
-          src={meme15}
-          alt="icon"
-          onClick={props.addIcon}
-          width="40px"
-          height="40px"
-          effect="blur"
-          placeholderSrc={"/images/icon-canvas.png"}
-        />
-        <LazyLoadImage
-          className="upload-image"
-          src={meme16}
-          alt="icon"
-          onClick={props.addIcon}
-          width="40px"
-          height="40px"
-          effect="blur"
-          placeholderSrc={"/images/icon-canvas.png"}
-        />
-        <LazyLoadImage
-          className="upload-image"
-          src={meme17}
-          alt="icon"
-          onClick={props.addIcon}
-          width="40px"
-          height="40px"
-          effect="blur"
-          placeholderSrc={"/images/icon-canvas.png"}
-        />
-        <LazyLoadImage
-          className="upload-image"
-          src={meme18}
-          alt="icon"
-          onClick={props.addIcon}
-          width="40px"
-          height="40px"
-          effect="blur"
-          placeholderSrc={"/images/icon-canvas.png"}
-        />
-      </div>
-    </IconForm>
-  );
+	return (
+		<IconForm>
+			<AddImageBtn className="btn btn-primary" onClick={props.addFile}>
+				Upload Image
+			</AddImageBtn>
+			<p className="title">You can also choose from our library of icons</p>
+			<div className="gallery">
+				<LazyLoadImage
+					className="upload-image"
+					src={meme1}
+					alt="icon"
+					onClick={props.addIcon}
+					width="40px"
+					height="40px"
+					effect="blur"
+					placeholderSrc={"/images/icon-canvas.png"}
+				/>
+				<LazyLoadImage
+					className="upload-image"
+					src={meme2}
+					alt="icon"
+					onClick={props.addIcon}
+					width="40px"
+					height="40px"
+					effect="blur"
+					placeholderSrc={"/images/icon-canvas.png"}
+				/>
+				<LazyLoadImage
+					className="upload-image"
+					src={meme3}
+					alt="icon"
+					onClick={props.addIcon}
+					width="40px"
+					height="40px"
+					effect="blur"
+					placeholderSrc={"/images/icon-canvas.png"}
+				/>
+				<LazyLoadImage
+					className="upload-image"
+					src={meme4}
+					alt="icon"
+					onClick={props.addIcon}
+					width="40px"
+					height="40px"
+					effect="blur"
+					placeholderSrc={"/images/icon-canvas.png"}
+				/>
+				<LazyLoadImage
+					className="upload-image"
+					src={meme5}
+					alt="icon"
+					onClick={props.addIcon}
+					width="40px"
+					height="40px"
+					effect="blur"
+					placeholderSrc={"/images/icon-canvas.png"}
+				/>
+				<LazyLoadImage
+					className="upload-image"
+					src={meme6}
+					alt="icon"
+					onClick={props.addIcon}
+					width="40px"
+					height="40px"
+					effect="blur"
+					placeholderSrc={"/images/icon-canvas.png"}
+				/>
+				<LazyLoadImage
+					className="upload-image"
+					src={meme7}
+					alt="icon"
+					onClick={props.addIcon}
+					width="40px"
+					height="40px"
+					effect="blur"
+					placeholderSrc={"/images/icon-canvas.png"}
+				/>
+				<LazyLoadImage
+					className="upload-image"
+					src={meme8}
+					alt="icon"
+					onClick={props.addIcon}
+					width="40px"
+					height="40px"
+					effect="blur"
+					placeholderSrc={"/images/icon-canvas.png"}
+				/>
+				<LazyLoadImage
+					className="upload-image"
+					src={meme9}
+					alt="icon"
+					onClick={props.addIcon}
+					width="40px"
+					height="40px"
+					effect="blur"
+					placeholderSrc={"/images/icon-canvas.png"}
+				/>
+				<LazyLoadImage
+					className="upload-image"
+					src={meme10}
+					alt="icon"
+					onClick={props.addIcon}
+					width="40px"
+					height="40px"
+					effect="blur"
+					placeholderSrc={"/images/icon-canvas.png"}
+				/>
+				<LazyLoadImage
+					className="upload-image"
+					src={meme11}
+					alt="icon"
+					onClick={props.addIcon}
+					width="40px"
+					height="40px"
+					effect="blur"
+					placeholderSrc={"/images/icon-canvas.png"}
+				/>
+				<LazyLoadImage
+					className="upload-image"
+					src={meme12}
+					alt="icon"
+					onClick={props.addIcon}
+					width="40px"
+					height="40px"
+					effect="blur"
+					placeholderSrc={"/images/icon-canvas.png"}
+				/>
+				<LazyLoadImage
+					className="upload-image"
+					src={meme13}
+					alt="icon"
+					onClick={props.addIcon}
+					width="40px"
+					height="40px"
+					effect="blur"
+					placeholderSrc={"/images/icon-canvas.png"}
+				/>
+				<LazyLoadImage
+					className="upload-image"
+					src={meme14}
+					alt="icon"
+					onClick={props.addIcon}
+					width="40px"
+					height="40px"
+					effect="blur"
+					placeholderSrc={"/images/icon-canvas.png"}
+				/>
+				<LazyLoadImage
+					className="upload-image"
+					src={meme15}
+					alt="icon"
+					onClick={props.addIcon}
+					width="40px"
+					height="40px"
+					effect="blur"
+					placeholderSrc={"/images/icon-canvas.png"}
+				/>
+				<LazyLoadImage
+					className="upload-image"
+					src={meme16}
+					alt="icon"
+					onClick={props.addIcon}
+					width="40px"
+					height="40px"
+					effect="blur"
+					placeholderSrc={"/images/icon-canvas.png"}
+				/>
+				<LazyLoadImage
+					className="upload-image"
+					src={meme17}
+					alt="icon"
+					onClick={props.addIcon}
+					width="40px"
+					height="40px"
+					effect="blur"
+					placeholderSrc={"/images/icon-canvas.png"}
+				/>
+				<LazyLoadImage
+					className="upload-image"
+					src={meme18}
+					alt="icon"
+					onClick={props.addIcon}
+					width="40px"
+					height="40px"
+					effect="blur"
+					placeholderSrc={"/images/icon-canvas.png"}
+				/>
+			</div>
+		</IconForm>
+	);
 }
 
 const IconForm = styled.div`
-  padding-bottom: 0.5rem;
-  text-align: center;
+	padding-bottom: 0.5rem;
+	text-align: center;
 
-  .title {
-    margin: 1rem 0;
-  }
+	.title {
+		margin: 1rem 0;
+	}
 
-  .gallery {
-    overflow-y: scroll;
-    max-height: 350px;
-    padding: 10px 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(60px, auto));
-    gap: 10px;
+	.gallery {
+		overflow-y: scroll;
+		max-height: 350px;
+		padding: 10px 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(60px, auto));
+		gap: 10px;
 
-    @media (max-width: 500px) {
-      grid-template-columns: repeat(auto-fit, minmax(40px, auto));
-      gap: 12px;
-    }
+		@media (max-width: 500px) {
+			grid-template-columns: repeat(auto-fit, minmax(40px, auto));
+			gap: 12px;
+		}
 
-    .upload-image {
-      cursor: pointer;
-    }
-  }
+		.upload-image {
+			cursor: pointer;
+		}
+	}
 `;
 
 const AddImageBtn = styled.button`
-  width: 70%;
+	width: 70%;
 `;
 
 export default AddIconForm;
