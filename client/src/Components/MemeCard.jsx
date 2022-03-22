@@ -39,21 +39,21 @@ function MemeCard({
             </Link>
             <div className="tag-buttons">
               <div className="tag-icons">
-                <Link to="/">
+                <button>
                   <i className="fas fa-heart"></i>
-                </Link>
+                </button>
                 <p>200k</p>
               </div>
               <div className="tag-icons">
-                <Link to="/">
+                <button>
                   <i className="fas fa-eye"></i>
-                </Link>
+                </button>
                 <p>120</p>
               </div>
               <div className="tag-icons">
-                <Link to="/">
+                <button>
                   <i className="fas fa-circle-down"></i>
-                </Link>
+                </button>
                 <p>55.5k</p>
               </div>
             </div>

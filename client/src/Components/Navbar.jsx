@@ -64,8 +64,7 @@ function Navbar() {
                 <span className="hide" aria-label="none">
                   ⚙️{" "}
                 </span>
-                About{" "}
-                <i className="fas fa-angle-down" aria-label="Dropdown Button" />
+                About <i className="fas fa-angle-down" />
               </NavLink>
               {dropdown && <Dropdown />}
             </li>
