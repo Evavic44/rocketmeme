@@ -114,12 +114,15 @@ function Footer({ scrollPosition }) {
 			</Content>
 
 			<Masthead>
-				<a href="https://www.buymeacoffee.com/evavic44" className="bmc-button">
+				<a
+					href="https://www.buymeacoffee.com/evavic44"
+					aria-label="Buymeacoffee button"
+				>
 					<LazyLoadImage
 						className="gallery-image"
 						effect="blur"
 						src="/images/bmc-button.png"
-						alt="buymeacoffee"
+						alt="buymeacoffee button"
 						scrollPosition={scrollPosition}
 					/>
 				</a>

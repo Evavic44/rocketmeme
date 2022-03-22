@@ -39,20 +39,20 @@ function MemeCard({
 						</Link>
 						<div className="tag-buttons">
 							<div className="tag-icons">
-								<button>
-									<i className="fas fa-heart"></i>
+								<button aria-label="Like button">
+									<i className="fas fa-heart" aria-hidden="true"></i>
 								</button>
 								<p>200k</p>
 							</div>
 							<div className="tag-icons">
-								<button>
-									<i className="fas fa-eye"></i>
+								<button aria-label="Views icon">
+									<i className="fas fa-eye" aria-hidden="true"></i>
 								</button>
 								<p>120</p>
 							</div>
 							<div className="tag-icons">
-								<button>
-									<i className="fas fa-circle-down"></i>
+								<button aria-label="Download button">
+									<i className="fas fa-circle-down" aria-hidden="true"></i>
 								</button>
 								<p>55.5k</p>
 							</div>
