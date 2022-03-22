@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import ChatwootWidget from "../Components/Chatwoot";
+import Comments from "../Components/Comments";
 
 function Contact() {
 	// Fade top
@@ -25,10 +26,16 @@ function Contact() {
 					<a href="mailto:evavic44@gmail.com">
 						Contact Team <i className="fas fa-arrow-right"></i>
 					</a>
+					<p>
+						Or sign into your GitHub account and leave a review in the box
+						below.
+					</p>
 				</motion.div>
 			</Header>
 
-			<ContactCards></ContactCards>
+			<ContactCards>
+				<Comments />
+			</ContactCards>
 			<ChatwootWidget />
 		</Container>
 	);
@@ -88,6 +95,11 @@ const Header = styled.div`
 					transform: translateX(5px);
 				}
 			}
+		}
+
+		p {
+			max-width: 450px;
+			margin: 0.7rem 0;
 		}
 	}
 `;
