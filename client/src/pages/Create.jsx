@@ -94,7 +94,7 @@ function selectFile(contentType, multiple = false) {
 export default function Create() {
 	const imageContainer = useRef();
 	const offScreenImage = useRef();
-	const [memeTemplateView, setMemeTemplate] = useState("");
+	const [memeTemplateView, setMemeTemplate] = useState(temp1);
 	const [selectedText, setSelectedText] = useState(""); // Id of generated element
 	const [currentText, setCurrentText] = useState("");
 	const dispatch = useDispatch();
@@ -854,7 +854,7 @@ export default function Create() {
 					<EditView
 						ref={imageContainer}
 						className="editorView"
-						style={{ backgroundImage: `url(${memeTemplateView})` }}
+						style={{ backgroundImage: `url(${memeTemplateView})`, height: "290px"}}
 					></EditView>
 					<Actions>
 						<ActionButton className="btn btn-light">
