@@ -56,35 +56,20 @@ const MemeCardStyle = styled.div`
 				margin: 0 0.4rem;
 				font-size: 0.8rem;
 
-<<<<<<< HEAD
-        button {
-          margin-right: 0.3rem;
-          transition: 0.1s ease-in-out;
-          color: #9e9ea7;
-
-          &:focus,
-          &:hover,
-          &:visited {
-            color: var(--primary-color);
-          }
-        }
-      }
-    }
-  }
-=======
-				a {
+				button {
 					margin-right: 0.3rem;
 					transition: 0.1s ease-in-out;
 					color: #9e9ea7;
 
-					&:hover {
+					&:focus,
+					&:hover,
+					&:visited {
 						color: var(--primary-color);
 					}
 				}
 			}
 		}
 	}
->>>>>>> origin
 `;
 
 export default MemeCardStyle;

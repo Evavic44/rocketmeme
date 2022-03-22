@@ -81,7 +81,7 @@ export default function Home() {
 					>
 						The Internet's most awesome free meme marketplace and editor for
 						creating and downloading memes
-						<Image src="/images/cool_dog.gif" alt="nodding dodge dog"></Image>
+						{/* <Image src="/images/cool_dog.gif" alt="nodding dodge dog"></Image> */}
 					</motion.p>
 				</Content>
 			</ContentContainer>
