@@ -33,58 +33,27 @@ function MemeCard({
 				<div className="gallery-tag">
 					<p className="tag-title">Copy from Stackoverflow</p>
 
-<<<<<<< HEAD
-          <div className="tag-content">
-            <Link to="/categories" className="tag-category">
-              Stackoverflow
-            </Link>
-            <div className="tag-buttons">
-              <div className="tag-icons">
-                <button>
-                  <i className="fas fa-heart"></i>
-                </button>
-                <p>200k</p>
-              </div>
-              <div className="tag-icons">
-                <button>
-                  <i className="fas fa-eye"></i>
-                </button>
-                <p>120</p>
-              </div>
-              <div className="tag-icons">
-                <button>
-                  <i className="fas fa-circle-down"></i>
-                </button>
-                <p>55.5k</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </MemeCardStyle>
-  );
-=======
 					<div className="tag-content">
 						<Link to="/categories" className="tag-category">
 							Stackoverflow
 						</Link>
 						<div className="tag-buttons">
 							<div className="tag-icons">
-								<Link to="/">
+								<button>
 									<i className="fas fa-heart"></i>
-								</Link>
+								</button>
 								<p>200k</p>
 							</div>
 							<div className="tag-icons">
-								<Link to="/">
+								<button>
 									<i className="fas fa-eye"></i>
-								</Link>
+								</button>
 								<p>120</p>
 							</div>
 							<div className="tag-icons">
-								<Link to="/">
+								<button>
 									<i className="fas fa-circle-down"></i>
-								</Link>
+								</button>
 								<p>55.5k</p>
 							</div>
 						</div>
@@ -93,7 +62,6 @@ function MemeCard({
 			</div>
 		</MemeCardStyle>
 	);
->>>>>>> origin
 }
 
 export default MemeCard;
