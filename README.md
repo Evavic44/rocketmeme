@@ -132,9 +132,10 @@ npm run serve
 This is a preview of your build
 
 ## 🎨 Styling
-
 Styling is done using **styled-components** and **css3**
 
+![Style Guide](https://user-images.githubusercontent.com/62628408/159381509-13ebf539-5382-451d-9b20-4ac53626e6cf.png)
+A preview of the style guide.
 ## 🤝🏾 Contribution
 
 Are you contributing to this project, please ensure all pull requests and contributions comply with our <a href="https://github.com/Evavic44/rocketmeme/blob/main/CONTRIBUTING.md">guidelines</a>. Before making any changes, ensure you have raised an issue here, unless it is a minimal change.
