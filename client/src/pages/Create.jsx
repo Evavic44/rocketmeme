@@ -5,6 +5,7 @@ import html2canvas from "html2canvas";
 import { v4 as uuid } from "uuid";
 import { saveAs } from "file-saver";
 import { useDispatch } from "react-redux";
+import CoffeeWidget from "../Components/CoffeeWidget";
 import { closeModal, showModal } from "../redux/actions/modalAction";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -992,6 +993,9 @@ export default function Create() {
 				</Controls>
 			</Flex>
 			<FileButtons></FileButtons>
+
+			{/* Buymeacoffee Widget */}
+			<CoffeeWidget />
 		</Container>
 	);
 }

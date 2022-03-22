@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import CoffeeWidget from "../Components/CoffeeWidget";
 
 export default function Error() {
 	return (
@@ -29,6 +30,8 @@ export default function Error() {
 					/>
 				</section>
 			</div>
+
+			<CoffeeWidget />
 		</Container>
 	);
 }

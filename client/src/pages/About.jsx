@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import ChatwootWidget from "../Components/Chatwoot.js";
 import {
 	LazyLoadImage,
 	trackWindowScroll,
 } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import CoffeeWidget from "../Components/CoffeeWidget";
 
 export default function About({ images, scrollPosition }) {
 	// Fade top
@@ -166,7 +166,8 @@ export default function About({ images, scrollPosition }) {
 				</div>
 			</FooterCta>
 
-			<ChatwootWidget />
+			{/* Buymeacoffee Widget */}
+			<CoffeeWidget />
 		</Container>
 	);
 }

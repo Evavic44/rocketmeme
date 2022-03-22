@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import ChatwootWidget from "../Components/Chatwoot";
 import Comments from "../Components/Comments";
+import CoffeeWidget from "../Components/CoffeeWidget.jsx";
 
 function Contact() {
 	// Fade top
@@ -36,7 +36,9 @@ function Contact() {
 			<ContactCards>
 				<Comments />
 			</ContactCards>
-			<ChatwootWidget />
+
+			{/* Buymeacoffee Widget */}
+			<CoffeeWidget />
 		</Container>
 	);
 }
@@ -104,4 +106,6 @@ const Header = styled.div`
 	}
 `;
 
-const ContactCards = styled.div``;
+const ContactCards = styled.div`
+	margin: 1rem;
+`;

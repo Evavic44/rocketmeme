@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
-import ChatwootWidget from "../Components/Chatwoot";
 
 const clientID =
 	"578412719010-kunrheea50ajh6vi4ruhncf1ps8keebu.apps.googleusercontent.com";
@@ -78,8 +77,6 @@ export default function Login() {
 					</NavLink>
 				</p>
 			</header>
-
-			<ChatwootWidget />
 		</Container>
 	);
 }

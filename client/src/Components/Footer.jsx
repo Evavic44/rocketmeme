@@ -114,19 +114,6 @@ function Footer({ scrollPosition }) {
 			</Content>
 
 			<Masthead>
-				<a
-					href="https://www.buymeacoffee.com/evavic44"
-					aria-label="Buymeacoffee button"
-				>
-					<LazyLoadImage
-						className="gallery-image"
-						effect="blur"
-						src="/images/bmc-button.png"
-						alt="buymeacoffee button"
-						scrollPosition={scrollPosition}
-					/>
-				</a>
-
 				<small>
 					Built with <i className="fas fa-heart highlight"></i> by{" "}
 					<a href="https://github.com/Evavic44">Eke</a> and{" "}
