@@ -1,5 +1,5 @@
 {
-  "name": "memefy",
+  "name": "rocketmeme",
   "version": "0.0.0",
   "description": "A collection of interesting and funny programming memes to help lighten up your mood ",
   "main": "src/index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Evavic44/memefy.git"
+    "url": "git+https://github.com/Evavic44/rocketmeme.git"
   },
   "keywords": [
     "memes",
@@ -24,9 +24,9 @@
   "author": "Eke Victor, Spiff Jekey-Green",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Evavic44/memefy/issues"
+    "url": "https://github.com/Evavic44/rocketmeme/issues"
   },
-  "homepage": "https://github.com/Evavic44/memefy#readme",
+  "homepage": "https://github.com/Evavic44/rocketmeme#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
