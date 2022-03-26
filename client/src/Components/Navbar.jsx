@@ -32,7 +32,13 @@ function Navbar() {
 			<Container className="navbar">
 				{/* Logo */}
 				<a href="/" className="logo" onClick={closeMobileMenu}>
-					<img src="/images/logo.svg" alt="logo" loading="eager" />{" "}
+					<img
+						src="/images/logo.svg"
+						alt="logo"
+						width="40px"
+						height="40px"
+						loading="eager"
+					/>{" "}
 					<span className="hidden">Rocket</span>
 				</a>
 

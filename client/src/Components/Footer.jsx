@@ -17,6 +17,8 @@ function Footer({ scrollPosition }) {
 							<LazyLoadImage
 								className="gallery-image"
 								effect="blur"
+								width="40px"
+								height="40px"
 								src="/images/logo.svg"
 								alt="Logo"
 								scrollPosition={scrollPosition}
