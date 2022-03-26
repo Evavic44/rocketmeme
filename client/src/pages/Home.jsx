@@ -174,9 +174,9 @@ export default function Home() {
 							</div>
 						}
 					>
-						{allMemes.length != 0
+						{/* {allMemes.length != 0
 							? allMemes.map((i, idx) => <MemeCard link={i.url} key={idx} />)
-							: null}
+							: null} */}
 					</InfiniteScroll>
 					{/* <MemeCard link="/images/memes/image-one.jpg" />
           <MemeCard link="/images/memes/image-two.jpg" />

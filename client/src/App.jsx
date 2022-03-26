@@ -27,6 +27,15 @@ import appTheme from "./Components/Theme";
 
 // redux setup
 import { useSelector } from "react-redux";
+import {
+	ClerkProvider,
+	SignedIn,
+	SignedOut,
+	RedirectToSignIn,
+} from "@clerk/clerk-react";
+import HasuraTest from "./HasuraTest";
+
+const frontendApi = import.meta.env.VITE_CLERK_API_FRONTEND_KEY;
 
 function App() {
 	const modalData = useSelector((data) => data.modal);
@@ -34,32 +43,43 @@ function App() {
 		<ThemeProvider theme={appTheme}>
 			<div className="App">
 				<Router>
-					<Navbar />
-					{modalData.showing ? <Modal /> : null}
-					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="about" element={<About />} />
-						<Route path="home" element={<Home />} />
-						<Route path="categories" element={<Categories />}>
-							<Route path="bugs" element={<Bugs />} />
-							<Route path="stackoverflow" element={<Stackoverflow />} />
-							<Route path="javascript" element={<Javascript />} />
-							<Route path="coding" element={<Coding />} />
-							<Route path="css" element={<Css />} />
-							<Route path="developer" element={<Developer />} />
-							<Route path="git" element={<Git />} />
-							<Route path="nft" element={<Nft />} />
-							<Route path="computer" element={<Computer />} />
-							<Route path="monitor" element={<Monitor />} />
-							<Route path="comrade" element={<Comrade />} />
-						</Route>
-						<Route path="login" element={<Login />} />
-						<Route path="contact" element={<Contact />} />
-						<Route path="create" element={<Create />} />
-						<Route path="success" element={<Success />} />
-						<Route path="*" element={<Error />} />
-					</Routes>
-					<Footer />
+					<ClerkProvider
+						frontendApi={frontendApi}
+						navigate={(to) => navigator(to)}
+					>
+						<SignedIn>
+							<Navbar />
+							{modalData.showing ? <Modal /> : null}
+							<Routes>
+								<Route path="/" element={<Home />} />
+								<Route path="about" element={<About />} />
+								<Route path="home" element={<Home />} />
+								<Route path="categories" element={<Categories />}>
+									<Route path="bugs" element={<Bugs />} />
+									<Route path="stackoverflow" element={<Stackoverflow />} />
+									<Route path="javascript" element={<Javascript />} />
+									<Route path="coding" element={<Coding />} />
+									<Route path="css" element={<Css />} />
+									<Route path="developer" element={<Developer />} />
+									<Route path="git" element={<Git />} />
+									<Route path="nft" element={<Nft />} />
+									<Route path="computer" element={<Computer />} />
+									<Route path="monitor" element={<Monitor />} />
+									<Route path="comrade" element={<Comrade />} />
+								</Route>
+								<Route path="login" element={<Login />} />
+								<Route path="contact" element={<Contact />} />
+								<Route path="create" element={<Create />} />
+								<Route path="success" element={<Success />} />
+								<Route path="*" element={<Error />} />
+							</Routes>
+							<HasuraTest />
+							<Footer />
+						</SignedIn>
+						<SignedOut>
+							<RedirectToSignIn />
+						</SignedOut>
+					</ClerkProvider>
 				</Router>
 			</div>
 		</ThemeProvider>
