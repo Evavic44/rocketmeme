@@ -30,7 +30,7 @@ function MemeCard({
 					placeholderSrc={"/images/canvas.png"}
 				/>
 
-				<div className="gallery-tag">
+				{/* <div className="gallery-tag">
 					<p className="tag-title">Copy from Stackoverflow</p>
 
 					<div className="tag-content">
@@ -58,7 +58,7 @@ function MemeCard({
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		</MemeCardStyle>
 	);

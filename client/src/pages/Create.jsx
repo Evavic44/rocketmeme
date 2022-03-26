@@ -9,6 +9,7 @@ import CoffeeWidget from "../Components/CoffeeWidget";
 import { closeModal, showModal } from "../redux/actions/modalAction";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import AddIconForm from "../Components/AddIconForm";
 import temp1 from "../assets/images/memeTemplate/temp1.png";
 import temp2 from "../assets/images/memeTemplate/temp2.png";
 import temp3 from "../assets/images/memeTemplate/temp3.png";
@@ -66,7 +67,16 @@ import temp54 from "../assets/images/memeTemplate/temp54.png";
 import temp55 from "../assets/images/memeTemplate/temp55.png";
 import temp56 from "../assets/images/memeTemplate/temp56.png";
 import temp57 from "../assets/images/memeTemplate/temp57.png";
-import AddIconForm from "../Components/AddIconForm";
+import temp58 from "../assets/images/memeTemplate/temp58.png";
+import temp59 from "../assets/images/memeTemplate/temp59.png";
+import temp60 from "../assets/images/memeTemplate/temp60.png";
+import temp61 from "../assets/images/memeTemplate/temp61.png";
+import temp62 from "../assets/images/memeTemplate/temp62.png";
+import temp63 from "../assets/images/memeTemplate/temp63.png";
+import temp64 from "../assets/images/memeTemplate/temp64.png";
+import temp65 from "../assets/images/memeTemplate/temp65.png";
+import temp66 from "../assets/images/memeTemplate/temp66.png";
+import temp67 from "../assets/images/memeTemplate/temp67.png";
 
 /**
  * Select file(s).
@@ -843,6 +853,86 @@ export default function Create() {
 						/>
 						<h3 className="tag">Think About it</h3>
 					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp58}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp59}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp60}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp61}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp62}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp63}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp64}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp65}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp66}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp67}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
 				</div>
 			</HomeCategory>
 
@@ -854,11 +944,14 @@ export default function Create() {
 					<EditView
 						ref={imageContainer}
 						className="editorView"
-						style={{ backgroundImage: `url(${memeTemplateView})`, height: "290px"}}
+						style={{
+							backgroundImage: `url(${memeTemplateView})`,
+							height: "290px",
+						}}
 					></EditView>
 					<Actions>
 						<ActionButton className="btn btn-light">
-							Post <i className="fas fa-share-from-square"></i>
+							Upload <i className="fas fa-share-from-square"></i>
 						</ActionButton>
 						<ActionButton className="btn btn-secondary" onClick={downloadMeme}>
 							Download <i className="fas fa-cloud-arrow-down"></i>
