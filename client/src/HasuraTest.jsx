@@ -21,7 +21,7 @@ const HasuraTest = () => {
 		console.log("Bearer " + hasuraToken);
 		// getTemplates();
 	};
-	getMemes();
+	// getMemes();
 
 	if (loading) return <p>Loading Meme Templates...</p>;
 	if (error) return `Error: ${error}`;
