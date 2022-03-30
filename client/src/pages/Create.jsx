@@ -12,7 +12,10 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import AddIconForm from "../Components/AddIconForm";
 import temp1 from "../assets/images/memeTemplate/temp1.png";
 
-import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+// import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import ApolloClient from "apollo-boost";
+import { InMemoryCache } from "apollo-cache-inmemory";
+import gql from "graphql-tag";
 
 const client = new ApolloClient({
 	uri: import.meta.env.VITE_GRAPHQL_CLIENT,
