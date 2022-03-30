@@ -23,18 +23,50 @@ const getCategoriesQuery = gql`
 				thumb_nail
 			}
 		}
+
+		count: memes_aggregate(offset: 0) {
+			aggregate {
+				count
+			}
+		}
+	}
+`;
+
+const getPaginatedMemes = gql`
+	query getPaginatedMemes {
+		memes_aggregate(limit: 10, offset: 0) {
+			nodes {
+				id
+				downloads
+				likes
+				views
+				image_link
+				category
+				title
+			}
+		}
 	}
 `;
 
 export default function Home() {
-	const [memes, setMemes] = useState([]);
 	const [allMemes, setAllMemes] = useState([]);
 	const [categories, setCategories] = useState([]);
-	const slice = useRef();
+	const [count, setCount] = useState();
 
-	// fetch and set memes for home page view
+	const loadMemes = () => {
+		client
+			.query({
+				query: getPaginatedMemes,
+			})
+			.then((result) => {
+				const memes = result.data.memes_aggregate.nodes;
+				setAllMemes(memes);
+				setCount((prev) => prev - 10);
+			});
+	};
+
+	// fetch and set meme catehories
 	useEffect(() => {
-		// fetchMemes();
 		(async () => {
 			client
 				.query({
@@ -42,6 +74,7 @@ export default function Home() {
 				})
 				.then((result) => {
 					setCategories(result.data.meme_categories_aggregate.nodes);
+					setCount(result.data.count.aggregate.count);
 				});
 		})();
 	}, []);
@@ -123,31 +156,26 @@ export default function Home() {
 					{/*Put the scroll bar always on the bottom*/}
 					<InfiniteScroll
 						pageStart={0}
-						loadMore={() => {
-							// if(slice <= 100) {
-							// };
-							// setMemes(prev => prev.concat(allMemes));
-						}}
-						hasMore={true || false}
+						loadMore={loadMemes}
+						hasMore={count - 10 >= 0}
 						loader={
 							<div className="loader" key={0}>
 								Loading ...
 							</div>
 						}
 					>
-						{/* {allMemes.length != 0
-							? allMemes.map((i, idx) => <MemeCard link={i.url} key={idx} />)
-							: null} */}
+						{allMemes.map((i) => (
+							<MemeCard
+								link={i.image_link}
+								key={i.id}
+								downloads={i.downloads}
+								likes={i.likes}
+								views={i.views}
+								category={i.category}
+								title={i.title}
+							/>
+						))}
 					</InfiniteScroll>
-					{/* <MemeCard link="/images/memes/image-one.jpg" />
-          <MemeCard link="/images/memes/image-two.jpg" />
-          <MemeCard link="/images/memes/image-three.jpg" />
-          <MemeCard link="/images/memes/image-five.jpg" />
-          <MemeCard link="/images/memes/image-four.jpg" />
-          <MemeCard link="/images/memes/image-six.jpg" />
-          <MemeCard link="/images/memes/image-seven.jpg" />
-          <MemeCard link="/images/memes/image-eight.jpg" />
-          <MemeCard link="/images/memes/image-nine.jpg" /> */}
 				</div>
 			</GridGallery>
 		</Container>

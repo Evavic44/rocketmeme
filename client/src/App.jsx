@@ -33,7 +33,6 @@ import {
 	SignedOut,
 	RedirectToSignIn,
 } from "@clerk/clerk-react";
-import HasuraTest from "./HasuraTest";
 
 const frontendApi = import.meta.env.VITE_CLERK_API_FRONTEND_KEY;
 
@@ -73,7 +72,6 @@ function App() {
 								<Route path="success" element={<Success />} />
 								<Route path="*" element={<Error />} />
 							</Routes>
-							<HasuraTest />
 							<Footer />
 						</SignedIn>
 						<SignedOut>
