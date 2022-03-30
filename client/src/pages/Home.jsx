@@ -6,41 +6,45 @@ import MemeCard from "../Components/MemeCard";
 import InfiniteScroll from "react-infinite-scroller";
 import axios from "axios";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+
+const client = new ApolloClient({
+	uri: import.meta.env.VITE_GRAPHQL_CLIENT,
+	cache: new InMemoryCache(),
+});
+
+const getCategoriesQuery = gql`
+	query getPaginatedMemeCategories {
+		meme_categories_aggregate(limit: 10, offset: 0) {
+			nodes {
+				id
+				category_title
+				no_of_memes
+				thumb_nail
+			}
+		}
+	}
+`;
 
 export default function Home() {
 	const [memes, setMemes] = useState([]);
 	const [allMemes, setAllMemes] = useState([]);
+	const [categories, setCategories] = useState([]);
 	const slice = useRef();
 
 	// fetch and set memes for home page view
 	useEffect(() => {
 		// fetchMemes();
 		(async () => {
-			try {
-				const res = await axios.get("https://api.imgflip.com/get_memes");
-				// console.log(res);
-				if (res.data.success) {
-					setAllMemes(res.data.data.memes);
-					slice.current = 0;
-				}
-			} catch (err) {
-				console.error(err);
-			}
+			client
+				.query({
+					query: getCategoriesQuery,
+				})
+				.then((result) => {
+					setCategories(result.data.meme_categories_aggregate.nodes);
+				});
 		})();
 	}, []);
-
-	// useEffect(() => {
-	//   // update memes
-	//   if(allMemes.length > 0) {
-	//     setMemes(allMemes.slice(slice, 10));
-	//     slice.current += 10;
-	//     console.log(memes, slice);
-	//   }
-	// }, [allMemes]);
-
-	// useEffect(() => {
-	//   if(memes.length > 0) slice.current += 10;
-	// }, [memes]);
 
 	// Fade top
 	const fadeTop = {
@@ -99,61 +103,18 @@ export default function Home() {
 					</div>
 				</div>
 				<div className="homeCategory">
-					<NavLink to="/categories" className="card">
-						<figure className="title-one img-hover"></figure>
-						<div className="tag">
-							<h3>Technology</h3>
-							<p>1100 posts</p>
-						</div>
-					</NavLink>
-
-					<NavLink to="/categories" className="card">
-						<figure className="title-two img-hover"></figure>
-						<div className="tag">
-							<h3>Comrade</h3>
-							<p>200 posts</p>
-						</div>
-					</NavLink>
-
-					<NavLink to="/categories" className="card">
-						<figure className="title-three img-hover"></figure>
-						<div className="tag">
-							<h3>Pepe</h3>
-							<p>930 posts</p>
-						</div>
-					</NavLink>
-
-					<NavLink to="/categories" className="card">
-						<figure className="title-four img-hover"></figure>
-						<div className="tag">
-							<h3>JavaScript</h3>
-							<p>99 posts</p>
-						</div>
-					</NavLink>
-
-					<NavLink to="/categories" className="card">
-						<figure className="title-five img-hover"></figure>
-						<div className="tag">
-							<h3>NFT</h3>
-							<p>181 posts</p>
-						</div>
-					</NavLink>
-
-					<NavLink to="/categories" className="card">
-						<figure className="title-six img-hover"></figure>
-						<div className="tag">
-							<h3>Stackoveflow</h3>
-							<p>181 posts</p>
-						</div>
-					</NavLink>
-
-					<NavLink to="/categories" className="card">
-						<figure className="title-seven img-hover"></figure>
-						<div className="tag">
-							<h3>Coding</h3>
-							<p>6200 posts</p>
-						</div>
-					</NavLink>
+					{categories.map((i) => (
+						<NavLink to="/categories" className="card">
+							<figure
+								className="title-one img-hover"
+								style={{ backgroundImage: `url(${i.thumb_nail})` }}
+							></figure>
+							<div className="tag">
+								<h3>{i.category_title}</h3>
+								<p>{i.no_of_memes} posts</p>
+							</div>
+						</NavLink>
+					))}
 				</div>
 			</HomeCategory>
 
