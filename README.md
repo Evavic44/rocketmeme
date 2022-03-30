@@ -8,7 +8,7 @@
 </div>
 
 <p align="center">
-<img src="https://img.shields.io/github/repo-size/evavic44/rocketmeme?color=green&label=project%20size">
+<img src="https://img.shields.io/github/repo-size/evavic44/rocketmeme?color=green&label=Repo%20size">
 <a href="https://reactjs.org/">
     <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB">
 </a>
@@ -26,10 +26,6 @@
     
 <a href="https://github.com/evavic44/rocketmeme/labels/enhancement"> 
 <img src="https://img.shields.io/github/labels/evavic44/rocketmeme/enhancement">
-</a>
-    
-<a href="https://github.com/prettier/prettier-vscode">
-<img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
 </a> 
     
 <a href="https://analytics.google.com/analytics/web/?utm_campaign=2021q1-onboarding-ga&utm_source=google-growth&utm_medium=email&utm_content=gold-welcome-0#/p303972922/reports/dashboard?params=_u..nav%3Dmaui&r=lifecycle-engagement-overview&ruid=lifecycle-engagement-overview,life-cycle,engagement&collectionId=life-cycle">
@@ -66,9 +62,9 @@
 
 # 👀 Preview
 
-Click this link to view <a href="https://rocketmeme.netlify.app">rocketmeme</a>
+Click this link to view <a href="https://rocketmeme.com">rocketmeme</a>
 
-<a href="https://rocketmeme.netlify.app">
+<a href="https://rocketmeme.com">
 <img src="https://user-images.githubusercontent.com/62628408/156625869-36fc5d11-ed4b-45bb-85d8-4d601c19505e.png" alt="Rocketmeme Preview">
 </a>
 
