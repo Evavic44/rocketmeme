@@ -60,7 +60,7 @@ export default function Home() {
 			})
 			.then((result) => {
 				const memes = result.data.memes_aggregate.nodes;
-				setAllMemes(memes);
+				setAllMemes((prev) => prev.concat(memes));
 				setCount((prev) => prev - 10);
 			});
 	};
