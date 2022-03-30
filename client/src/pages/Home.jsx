@@ -1,46 +1,116 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import MemeCard from "../Components/MemeCard";
 import InfiniteScroll from "react-infinite-scroller";
-import axios from "axios";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-export default function Home() {
-	const [memes, setMemes] = useState([]);
-	const [allMemes, setAllMemes] = useState([]);
-	const slice = useRef();
+import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 
-	// fetch and set memes for home page view
-	useEffect(() => {
-		// fetchMemes();
-		(async () => {
-			try {
-				const res = await axios.get("https://api.imgflip.com/get_memes");
-				// console.log(res);
-				if (res.data.success) {
-					setAllMemes(res.data.data.memes);
-					slice.current = 0;
-				}
-			} catch (err) {
-				console.error(err);
+const client = new ApolloClient({
+	uri: import.meta.env.VITE_GRAPHQL_CLIENT,
+	cache: new InMemoryCache(),
+});
+
+const getCategoriesQuery = gql`
+	query getPaginatedMemeCategories {
+		meme_categories_aggregate(limit: 10, offset: 0) {
+			nodes {
+				id
+				category_title
+				no_of_memes
+				thumb_nail
 			}
+		}
+
+		count: memes_aggregate(offset: 0) {
+			aggregate {
+				count
+			}
+		}
+	}
+`;
+
+const getPaginatedMemes = gql`
+	query getPaginatedMemes($limit: Int, $offset: Int) {
+		memes_aggregate(limit: $limit, offset: $offset) {
+			nodes {
+				id
+				downloads
+				likes
+				views
+				image_link
+				category
+				title
+			}
+		}
+	}
+`;
+
+const getPaginatedMemeSearch = gql`
+	query getPaginatedMemeSearch($searchTerm: String!) {
+		memes(limit: 10, offset: 0, where: { title: { _ilike: $searchTerm } }) {
+			id
+			downloads
+			likes
+			views
+			image_link
+			category
+			title
+		}
+	}
+`;
+
+export default function Home() {
+	const [allMemes, setAllMemes] = useState([]);
+	const [categories, setCategories] = useState([]);
+	const [count, setCount] = useState();
+	const [offset, setOffset] = useState(0);
+	const [isInputEmpty, setInputEmpty] = useState(true);
+
+	const loadMemes = () => {
+		client
+			.query({
+				query: getPaginatedMemes,
+				variables: { limit: 10, offset: offset },
+			})
+			.then((result) => {
+				const memes = result.data.memes_aggregate.nodes;
+				setAllMemes((prev) => prev.concat(memes));
+				setCount((prev) => prev - 10);
+				setOffset((prev) => prev + 10);
+			});
+	};
+
+	const loadSearch = (e) => {
+		e.preventDefault();
+		const searchTerm = e.target.search.value;
+		client
+			.query({
+				query: getPaginatedMemeSearch,
+				variables: { searchTerm: `%${searchTerm}%` },
+			})
+			.then((result) => {
+				const memes = result.data.memes;
+				setAllMemes(memes);
+				setInputEmpty(false);
+			});
+	};
+
+	// fetch and set meme catehories
+	useEffect(() => {
+		(async () => {
+			client
+				.query({
+					query: getCategoriesQuery,
+				})
+				.then((result) => {
+					setCategories(result.data.meme_categories_aggregate.nodes);
+					setCount(result.data.count.aggregate.count);
+				});
 		})();
 	}, []);
-
-	// useEffect(() => {
-	//   // update memes
-	//   if(allMemes.length > 0) {
-	//     setMemes(allMemes.slice(slice, 10));
-	//     slice.current += 10;
-	//     console.log(memes, slice);
-	//   }
-	// }, [allMemes]);
-
-	// useEffect(() => {
-	//   if(memes.length > 0) slice.current += 10;
-	// }, [memes]);
 
 	// Fade top
 	const fadeTop = {
@@ -52,10 +122,10 @@ export default function Home() {
 		<Container className="hero">
 			<ContentContainer>
 				<Content>
-					<Form action="">
+					<Form onSubmit={loadSearch}>
 						<Input
 							type="search"
-							name="Search"
+							name="search"
 							id="Search"
 							autocomplete="off"
 							placeholder="Search for free latest memes"
@@ -99,96 +169,70 @@ export default function Home() {
 					</div>
 				</div>
 				<div className="homeCategory">
-					<NavLink to="/categories" className="card">
-						<figure className="title-one img-hover"></figure>
-						<div className="tag">
-							<h3>Technology</h3>
-							<p>1100 posts</p>
-						</div>
-					</NavLink>
-
-					<NavLink to="/categories" className="card">
-						<figure className="title-two img-hover"></figure>
-						<div className="tag">
-							<h3>Comrade</h3>
-							<p>200 posts</p>
-						</div>
-					</NavLink>
-
-					<NavLink to="/categories" className="card">
-						<figure className="title-three img-hover"></figure>
-						<div className="tag">
-							<h3>Pepe</h3>
-							<p>930 posts</p>
-						</div>
-					</NavLink>
-
-					<NavLink to="/categories" className="card">
-						<figure className="title-four img-hover"></figure>
-						<div className="tag">
-							<h3>JavaScript</h3>
-							<p>99 posts</p>
-						</div>
-					</NavLink>
-
-					<NavLink to="/categories" className="card">
-						<figure className="title-five img-hover"></figure>
-						<div className="tag">
-							<h3>NFT</h3>
-							<p>181 posts</p>
-						</div>
-					</NavLink>
-
-					<NavLink to="/categories" className="card">
-						<figure className="title-six img-hover"></figure>
-						<div className="tag">
-							<h3>Stackoveflow</h3>
-							<p>181 posts</p>
-						</div>
-					</NavLink>
-
-					<NavLink to="/categories" className="card">
-						<figure className="title-seven img-hover"></figure>
-						<div className="tag">
-							<h3>Coding</h3>
-							<p>6200 posts</p>
-						</div>
-					</NavLink>
+					{categories.map((i) => (
+						<NavLink to="/categories" className="card" key={i.id}>
+							<figure
+								className="img-hover"
+								style={{
+									backgroundImage: `url(${i.thumb_nail})`,
+									backgroundColor: "grey",
+								}}
+							></figure>
+							<div className="tag">
+								<h3>{i.category_title}</h3>
+								<p>{i.no_of_memes} posts</p>
+							</div>
+						</NavLink>
+					))}
 				</div>
 			</HomeCategory>
 
-			<GridGallery>
-				<div className="gallery-container">
-					{/*Put the scroll bar always on the bottom*/}
-					<InfiniteScroll
-						pageStart={0}
-						loadMore={() => {
-							// if(slice <= 100) {
-							// };
-							// setMemes(prev => prev.concat(allMemes));
-						}}
-						hasMore={true || false}
-						loader={
-							<div className="loader" key={0}>
-								Loading ...
-							</div>
-						}
-					>
-						{allMemes.length != 0
-							? allMemes.map((i, idx) => <MemeCard link={i.url} key={idx} />)
-							: null}
-					</InfiniteScroll>
-					{/* <MemeCard link="/images/memes/image-one.jpg" />
-          <MemeCard link="/images/memes/image-two.jpg" />
-          <MemeCard link="/images/memes/image-three.jpg" />
-          <MemeCard link="/images/memes/image-five.jpg" />
-          <MemeCard link="/images/memes/image-four.jpg" />
-          <MemeCard link="/images/memes/image-six.jpg" />
-          <MemeCard link="/images/memes/image-seven.jpg" />
-          <MemeCard link="/images/memes/image-eight.jpg" />
-          <MemeCard link="/images/memes/image-nine.jpg" /> */}
-				</div>
-			</GridGallery>
+			{isInputEmpty ? (
+				<GridGallery>
+					<div className="gallery-container">
+						{/*Put the scroll bar always on the bottom*/}
+						<InfiniteScroll
+							pageStart={0}
+							loadMore={loadMemes}
+							hasMore={count - 10 >= 0}
+							loader={
+								<div className="loader" key={0}>
+									Loading ...
+								</div>
+							}
+						>
+							{allMemes.map((i) => (
+								<MemeCard
+									link={i.image_link}
+									key={i.id}
+									downloads={i.downloads}
+									likes={i.likes}
+									views={i.views}
+									category={i.category}
+									title={i.title}
+								/>
+							))}
+						</InfiniteScroll>
+					</div>
+				</GridGallery>
+			) : (
+				<GridGallery>
+					<div className="gallery-container">
+						{/*Put the scroll bar always on the bottom*/}
+						{allMemes.map((i) => (
+							<MemeCard
+								link={i.image_link}
+								key={i.id}
+								downloads={i.downloads}
+								likes={i.likes}
+								views={i.views}
+								category={i.category}
+								title={i.title}
+							/>
+						))}
+					</div>
+				</GridGallery>
+			)}
 		</Container>
 	);
 }
@@ -378,35 +422,6 @@ const HomeCategory = styled.section`
 				background-size: cover;
 				background-repeat: no-repeat;
 				background-position: center center;
-			}
-
-			.title-one {
-				background-color: purple;
-				background-image: url(/images/imageCategory/category-one.webp);
-			}
-			.title-two {
-				background-color: orangered;
-				background-image: url(/images/imageCategory/category-two.webp);
-			}
-			.title-three {
-				background-color: #ffcf4b;
-				background-image: url(/images/imageCategory/category-three.webp);
-			}
-			.title-four {
-				background-color: purple;
-				background-image: url(/images/imageCategory/category-one.webp);
-			}
-			.title-five {
-				background-color: orangered;
-				background-image: url(/images/imageCategory/category-two.webp);
-			}
-			.title-six {
-				background-color: #ffcf4b;
-				background-image: url(/images/imageCategory/category-three.webp);
-			}
-			.title-seven {
-				background-color: purple;
-				background-image: url(/images/imageCategory/category-one.webp);
 			}
 		}
 	}

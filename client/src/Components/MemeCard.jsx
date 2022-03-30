@@ -14,6 +14,8 @@ function MemeCard({
 	downloads,
 	likes,
 	views,
+	category,
+	title,
 	id,
 }) {
 	return (
@@ -30,35 +32,35 @@ function MemeCard({
 					placeholderSrc={"/images/canvas.png"}
 				/>
 
-				{/* <div className="gallery-tag">
-					<p className="tag-title">Copy from Stackoverflow</p>
+				<div className="gallery-tag">
+					<p className="tag-title">{title}</p>
 
 					<div className="tag-content">
 						<Link to="/categories" className="tag-category">
-							Stackoverflow
+							{category}
 						</Link>
 						<div className="tag-buttons">
 							<div className="tag-icons">
 								<button aria-label="Like button">
 									<i className="fas fa-heart" aria-hidden="true"></i>
 								</button>
-								<p>200k</p>
+								<p>{likes}</p>
 							</div>
 							<div className="tag-icons">
 								<button aria-label="Views icon">
 									<i className="fas fa-eye" aria-hidden="true"></i>
 								</button>
-								<p>120</p>
+								<p>{views}</p>
 							</div>
 							<div className="tag-icons">
 								<button aria-label="Download button">
 									<i className="fas fa-circle-down" aria-hidden="true"></i>
 								</button>
-								<p>55.5k</p>
+								<p>{downloads}</p>
 							</div>
 						</div>
 					</div>
-				</div> */}
+				</div>
 			</div>
 		</MemeCardStyle>
 	);
