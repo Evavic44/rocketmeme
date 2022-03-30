@@ -6,7 +6,10 @@ import MemeCard from "../Components/MemeCard";
 import InfiniteScroll from "react-infinite-scroller";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+// import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import ApolloClient from "apollo-boost";
+import { InMemoryCache } from "apollo-cache-inmemory";
+import gql from "graphql-tag";
 
 const client = new ApolloClient({
 	uri: import.meta.env.VITE_GRAPHQL_CLIENT,
