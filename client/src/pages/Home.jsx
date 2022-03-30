@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import MemeCard from "../Components/MemeCard";
 import InfiniteScroll from "react-infinite-scroller";
-import axios from "axios";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 
 const client = new ApolloClient({
@@ -33,8 +33,8 @@ const getCategoriesQuery = gql`
 `;
 
 const getPaginatedMemes = gql`
-	query getPaginatedMemes {
-		memes_aggregate(limit: 10, offset: 0) {
+	query getPaginatedMemes($limit: Int, $offset: Int) {
+		memes_aggregate(limit: $limit, offset: $offset) {
 			nodes {
 				id
 				downloads
@@ -48,20 +48,53 @@ const getPaginatedMemes = gql`
 	}
 `;
 
+const getPaginatedMemeSearch = gql`
+	query getPaginatedMemeSearch($searchTerm: String!) {
+		memes(limit: 10, offset: 0, where: { title: { _ilike: $searchTerm } }) {
+			id
+			downloads
+			likes
+			views
+			image_link
+			category
+			title
+		}
+	}
+`;
+
 export default function Home() {
 	const [allMemes, setAllMemes] = useState([]);
 	const [categories, setCategories] = useState([]);
 	const [count, setCount] = useState();
+	const [offset, setOffset] = useState(0);
+	const [isInputEmpty, setInputEmpty] = useState(true);
 
 	const loadMemes = () => {
 		client
 			.query({
 				query: getPaginatedMemes,
+				variables: { limit: 10, offset: offset },
 			})
 			.then((result) => {
 				const memes = result.data.memes_aggregate.nodes;
 				setAllMemes((prev) => prev.concat(memes));
 				setCount((prev) => prev - 10);
+				setOffset((prev) => prev + 10);
+			});
+	};
+
+	const loadSearch = (e) => {
+		e.preventDefault();
+		const searchTerm = e.target.search.value;
+		client
+			.query({
+				query: getPaginatedMemeSearch,
+				variables: { searchTerm: `%${searchTerm}%` },
+			})
+			.then((result) => {
+				const memes = result.data.memes;
+				setAllMemes(memes);
+				setInputEmpty(false);
 			});
 	};
 
@@ -89,10 +122,10 @@ export default function Home() {
 		<Container className="hero">
 			<ContentContainer>
 				<Content>
-					<Form action="">
+					<Form onSubmit={loadSearch}>
 						<Input
 							type="search"
-							name="Search"
+							name="search"
 							id="Search"
 							autocomplete="off"
 							placeholder="Search for free latest memes"
@@ -137,10 +170,13 @@ export default function Home() {
 				</div>
 				<div className="homeCategory">
 					{categories.map((i) => (
-						<NavLink to="/categories" className="card">
+						<NavLink to="/categories" className="card" key={i.id}>
 							<figure
-								className="title-one img-hover"
-								style={{ backgroundImage: `url(${i.thumb_nail})` }}
+								className="img-hover"
+								style={{
+									backgroundImage: `url(${i.thumb_nail})`,
+									backgroundColor: "grey",
+								}}
 							></figure>
 							<div className="tag">
 								<h3>{i.category_title}</h3>
@@ -151,19 +187,38 @@ export default function Home() {
 				</div>
 			</HomeCategory>
 
-			<GridGallery>
-				<div className="gallery-container">
-					{/*Put the scroll bar always on the bottom*/}
-					<InfiniteScroll
-						pageStart={0}
-						loadMore={loadMemes}
-						hasMore={count - 10 >= 0}
-						loader={
-							<div className="loader" key={0}>
-								Loading ...
-							</div>
-						}
-					>
+			{isInputEmpty ? (
+				<GridGallery>
+					<div className="gallery-container">
+						{/*Put the scroll bar always on the bottom*/}
+						<InfiniteScroll
+							pageStart={0}
+							loadMore={loadMemes}
+							hasMore={count - 10 >= 0}
+							loader={
+								<div className="loader" key={0}>
+									Loading ...
+								</div>
+							}
+						>
+							{allMemes.map((i) => (
+								<MemeCard
+									link={i.image_link}
+									key={i.id}
+									downloads={i.downloads}
+									likes={i.likes}
+									views={i.views}
+									category={i.category}
+									title={i.title}
+								/>
+							))}
+						</InfiniteScroll>
+					</div>
+				</GridGallery>
+			) : (
+				<GridGallery>
+					<div className="gallery-container">
+						{/*Put the scroll bar always on the bottom*/}
 						{allMemes.map((i) => (
 							<MemeCard
 								link={i.image_link}
@@ -175,9 +230,9 @@ export default function Home() {
 								title={i.title}
 							/>
 						))}
-					</InfiniteScroll>
-				</div>
-			</GridGallery>
+					</div>
+				</GridGallery>
+			)}
 		</Container>
 	);
 }
@@ -367,35 +422,6 @@ const HomeCategory = styled.section`
 				background-size: cover;
 				background-repeat: no-repeat;
 				background-position: center center;
-			}
-
-			.title-one {
-				background-color: purple;
-				background-image: url(/images/imageCategory/category-one.webp);
-			}
-			.title-two {
-				background-color: orangered;
-				background-image: url(/images/imageCategory/category-two.webp);
-			}
-			.title-three {
-				background-color: #ffcf4b;
-				background-image: url(/images/imageCategory/category-three.webp);
-			}
-			.title-four {
-				background-color: purple;
-				background-image: url(/images/imageCategory/category-one.webp);
-			}
-			.title-five {
-				background-color: orangered;
-				background-image: url(/images/imageCategory/category-two.webp);
-			}
-			.title-six {
-				background-color: #ffcf4b;
-				background-image: url(/images/imageCategory/category-three.webp);
-			}
-			.title-seven {
-				background-color: purple;
-				background-image: url(/images/imageCategory/category-one.webp);
 			}
 		}
 	}
