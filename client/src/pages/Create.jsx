@@ -102,10 +102,8 @@ export default function Create() {
 		const width = offScreenImage.current.width;
 		const height = offScreenImage.current.height;
 		const ratio = width / height;
-		console.log("Widdth: ", ContainerWidth);
 		const newHeight = parseFloat(ContainerWidth) / ratio;
 		imageContainer.current.style.height = newHeight + "px";
-		console.log(newHeight);
 		setMemeTemplate(e.target.src);
 	};
 
