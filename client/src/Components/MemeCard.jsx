@@ -27,7 +27,7 @@ function MemeCard({
 					src={link}
 					alt="Meme"
 					width="100%"
-					height="400"
+					height="100%"
 					scrollPosition={scrollPosition}
 					placeholderSrc={"/images/canvas.png"}
 				/>

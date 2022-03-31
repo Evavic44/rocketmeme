@@ -53,7 +53,7 @@ const getPaginatedMemes = gql`
 
 const getPaginatedMemeSearch = gql`
 	query getPaginatedMemeSearch($searchTerm: String!) {
-		memes(limit: 10, offset: 0, where: { title: { _ilike: $searchTerm } }) {
+		memes(limit: 10, offset: 0, where: { category: { _ilike: $searchTerm } }) {
 			id
 			downloads
 			likes
@@ -143,7 +143,7 @@ export default function Home() {
 						animate="visible"
 						transition={{ duration: 0.6 }}
 					>
-						Suggested: pepe, javascript, coding, web3, stackoverflow
+						Suggested: javascript, nft, stackoverflow
 					</motion.h2>
 
 					<motion.p
