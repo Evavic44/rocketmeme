@@ -97,12 +97,11 @@ export default function About({ images, scrollPosition }) {
 					</div>
 
 					<div className="card">
-						<i className="fas fa-share-nodes"></i>
+						<i className="fas fa-code"></i>
 						<div>
-							<h3>Easy to Share</h3>
+							<h3>Meme API</h3>
 							<p>
-								Share your created memes on your favourite social platforms,
-								Twitter, Facebook, Discord, ETC.
+								Use our powerful meme API to fetch latest memes and templates.
 							</p>
 						</div>
 					</div>

@@ -20,8 +20,8 @@ export const MenuItems = [
 		cName: "dropdown-link",
 	},
 	{
-		title: "👣 Contributing Guidelines",
-		path: "https://github.com/Evavic44/rocketmeme/blob/main/CONTRIBUTING.md",
+		title: "⚡ Rocketmeme API",
+		path: "https://github.com/Evavic44/rocketmemes-api",
 		cName: "dropdown-link",
 	},
 ];

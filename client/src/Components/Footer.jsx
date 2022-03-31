@@ -107,10 +107,9 @@ function Footer({ scrollPosition }) {
 					</div>
 
 					<div className="footer-contribute">
-						<h3>Contribute</h3>
-						<Link to="/categories">Upload</Link>
-						<a href="https://github.com/Evavic44/rocketmeme">Join Us</a>
-						<a href="https://github.com/Evavic44/rocketmeme">Developers</a>
+						<h3>Developer</h3>
+						<a href="https://github.com/Evavic44/rocketmeme">Docs</a>
+						<a href="https://github.com/Evavic44/rocketmemes-api">API</a>
 					</div>
 				</FooterLink>
 			</Content>
