@@ -160,7 +160,7 @@ export default function Home() {
 			</ContentContainer>
 
 			<HomeCategory>
-				<div className="categoryHeader">
+				{/* <div className="categoryHeader">
 					<h2>Browse Categories</h2>
 
 					<div className="categoryOptions">
@@ -170,7 +170,7 @@ export default function Home() {
 							<option value="Downloads">Downloads</option>
 						</select>
 					</div>
-				</div>
+				</div> */}
 				<div className="homeCategory">
 					{categories.map((i) => (
 						<NavLink to="/categories" className="card" key={i.id}>

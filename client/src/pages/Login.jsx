@@ -8,7 +8,7 @@ const clientID =
 
 export default function Login() {
 	const onFailure = (res) => {
-		alert("Failed login");
+		alert("");
 	};
 
 	const onSuccess = async (res) => {
