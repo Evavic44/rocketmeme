@@ -143,7 +143,7 @@ export default function Home() {
 						animate="visible"
 						transition={{ duration: 0.6 }}
 					>
-						Suggested: pepe, javascript, coding, web3, stackoverflow
+						Suggested: javascript, nft, stackoverflow
 					</motion.h2>
 
 					<motion.p
