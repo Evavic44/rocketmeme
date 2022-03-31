@@ -11,6 +11,40 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import AddIconForm from "../Components/AddIconForm";
 import temp1 from "../assets/images/memeTemplate/temp1.png";
+import temp2 from "../assets/images/memeTemplate/temp2.png";
+import temp3 from "../assets/images/memeTemplate/temp3.png";
+import temp4 from "../assets/images/memeTemplate/temp4.png";
+import temp5 from "../assets/images/memeTemplate/temp5.png";
+import temp6 from "../assets/images/memeTemplate/temp6.png";
+import temp7 from "../assets/images/memeTemplate/temp7.png";
+import temp8 from "../assets/images/memeTemplate/temp8.png";
+import temp9 from "../assets/images/memeTemplate/temp9.png";
+import temp10 from "../assets/images/memeTemplate/temp10.png";
+import temp11 from "../assets/images/memeTemplate/temp11.png";
+import temp12 from "../assets/images/memeTemplate/temp12.png";
+import temp13 from "../assets/images/memeTemplate/temp13.png";
+import temp14 from "../assets/images/memeTemplate/temp14.png";
+import temp15 from "../assets/images/memeTemplate/temp15.png";
+import temp16 from "../assets/images/memeTemplate/temp16.png";
+import temp17 from "../assets/images/memeTemplate/temp17.png";
+import temp18 from "../assets/images/memeTemplate/temp18.png";
+import temp19 from "../assets/images/memeTemplate/temp19.png";
+import temp20 from "../assets/images/memeTemplate/temp20.png";
+import temp21 from "../assets/images/memeTemplate/temp21.png";
+import temp22 from "../assets/images/memeTemplate/temp22.png";
+import temp23 from "../assets/images/memeTemplate/temp23.png";
+import temp24 from "../assets/images/memeTemplate/temp24.png";
+import temp25 from "../assets/images/memeTemplate/temp25.png";
+import temp26 from "../assets/images/memeTemplate/temp26.png";
+import temp27 from "../assets/images/memeTemplate/temp27.png";
+import temp28 from "../assets/images/memeTemplate/temp28.png";
+import temp29 from "../assets/images/memeTemplate/temp29.png";
+import temp30 from "../assets/images/memeTemplate/temp30.png";
+import temp31 from "../assets/images/memeTemplate/temp31.png";
+import temp32 from "../assets/images/memeTemplate/temp32.png";
+import temp33 from "../assets/images/memeTemplate/temp33.png";
+import temp34 from "../assets/images/memeTemplate/temp34.png";
+import temp35 from "../assets/images/memeTemplate/temp35.png";
 
 // import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import ApolloClient from "apollo-boost";
@@ -64,15 +98,15 @@ export default function Create() {
 	const [memeTemplates, setMemeTemplates] = useState([]);
 	const dispatch = useDispatch();
 
-	useEffect(() => {
-		client
-			.query({
-				query: getMemeTemplatesQuery,
-			})
-			.then((result) => {
-				setMemeTemplates(result.data.meme_templates);
-			});
-	}, []);
+	// useEffect(() => {
+	// 	client
+	// 		.query({
+	// 			query: getMemeTemplatesQuery,
+	// 		})
+	// 		.then((result) => {
+	// 			setMemeTemplates(result.data.meme_templates);
+	// 		});
+	// }, []);
 
 	function dragMoveListener(event) {
 		var target = event.target;
@@ -356,7 +390,7 @@ export default function Create() {
 
 				{/* Meme Templates */}
 				<div className="memeTemplates">
-					{memeTemplates.map((i) => (
+					{/* {memeTemplates.map((i) => (
 						<div className="card" key={i.id} onClick={useTemplate}>
 							<LazyLoadImage
 								src={i.image_link}
@@ -365,7 +399,287 @@ export default function Create() {
 							/>
 							<h3 className="tag">{i.title}</h3>
 						</div>
-					))}
+					))} */}
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp1}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">X X Everywhere</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp2}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Success Kid</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp3}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Distracted Boyfriend</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp4}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Disaster Girl</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp5}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Sad Pablo Escobar</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp6}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Sad Girlfriend</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp7}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Drake Hotline Bling</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp8}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think about it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp9}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Left exit twelve off ramp</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp10}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Laughing Leo</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp11}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">I am once again asking</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp12}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Two buttons</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp13}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">I am once again asking</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp14}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Laughing Leo</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp15}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Drake Hotline Bling</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp16}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Two Buttons</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp17}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp18}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp19}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp20}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp21}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp22}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp23}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp24}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp25}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp26}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp27}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp28}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp29}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp30}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp31}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp32}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp33}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp34}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
+					<div className="card" onClick={useTemplate}>
+						<LazyLoadImage
+							src={temp35}
+							alt="Rocketmeme Template"
+							effect="blur"
+						/>
+						<h3 className="tag">Think About it</h3>
+					</div>
 				</div>
 			</HomeCategory>
 
