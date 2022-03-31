@@ -47,7 +47,7 @@ function App() {
 						navigate={(to) => navigator(to)}
 					>
 						<SignedIn>
-							<Navbar />
+						<Navbar />
 							{modalData.showing ? <Modal /> : null}
 							<Routes>
 								<Route path="/" element={<Home />} />
@@ -75,7 +75,33 @@ function App() {
 							<Footer />
 						</SignedIn>
 						<SignedOut>
-							<RedirectToSignIn />
+							{/* <RedirectToSignIn /> */}
+							<Navbar />
+							{modalData.showing ? <Modal /> : null}
+							<Routes>
+								<Route path="/" element={<Home />} />
+								<Route path="about" element={<About />} />
+								<Route path="home" element={<Home />} />
+								<Route path="categories" element={<Categories />}>
+									<Route path="bugs" element={<Bugs />} />
+									<Route path="stackoverflow" element={<Stackoverflow />} />
+									<Route path="javascript" element={<Javascript />} />
+									<Route path="coding" element={<Coding />} />
+									<Route path="css" element={<Css />} />
+									<Route path="developer" element={<Developer />} />
+									<Route path="git" element={<Git />} />
+									<Route path="nft" element={<Nft />} />
+									<Route path="computer" element={<Computer />} />
+									<Route path="monitor" element={<Monitor />} />
+									<Route path="comrade" element={<Comrade />} />
+								</Route>
+								<Route path="login" element={<Login />} />
+								<Route path="contact" element={<Contact />} />
+								<Route path="create" element={<Create />} />
+								<Route path="success" element={<Success />} />
+								<Route path="*" element={<Error />} />
+							</Routes>
+							<Footer />
 						</SignedOut>
 					</ClerkProvider>
 				</Router>
