@@ -137,25 +137,25 @@ export default function Home() {
 							<i className="icon fas fa-search"></i>
 						</button>
 					</Form>
-					<motion.h2
-						variants={fadeTop}
-						initial="hidden"
-						animate="visible"
-						transition={{ duration: 0.6 }}
+					<h2
+					// variants={fadeTop}
+					// initial="hidden"
+					// animate="visible"
+					// transition={{ duration: 0.6 }}
 					>
 						Suggested: javascript, nft, stackoverflow
-					</motion.h2>
+					</h2>
 
-					<motion.p
-						variants={fadeTop}
-						initial="hidden"
-						animate="visible"
-						transition={{ duration: 0.6 }}
+					<p
+					// variants={fadeTop}
+					// initial="hidden"
+					// animate="visible"
+					// transition={{ duration: 0.6 }}
 					>
 						The Internet's most awesome free meme marketplace and editor for
 						creating and downloading memes
 						{/* <Image src="/images/cool_dog.gif" alt="nodding dodge dog"></Image> */}
-					</motion.p>
+					</p>
 				</Content>
 			</ContentContainer>
 
