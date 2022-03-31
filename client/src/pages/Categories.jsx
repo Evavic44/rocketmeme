@@ -19,9 +19,8 @@ export default function Categories() {
 
 						<h2>COMING SOON!</h2>
 						<p>
-							This feature is still in production. Updates will be made as soon
-							as possible. In the meantime click the button below to create a
-							meme.
+							This feature is still in production, but in the meantime you can
+							click the button below to start creating a meme.
 						</p>
 					</div>
 

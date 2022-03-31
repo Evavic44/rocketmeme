@@ -44,10 +44,10 @@ export default function About({ images, scrollPosition }) {
 			<LazyLoadImage
 				className="showcase-image"
 				effect="blur"
-				src="/images/memefy-editor.webp"
-				alt="Illustration of how to use memefy editor"
+				src="https://ik.imagekit.io/eke/Others/rocketmeme-editor_0QJSYGfIX.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1648726474107"
 				width="100%"
 				height="100%"
+				alt="Illustration of how to use memefy editor"
 				placeholderSrc={"/images/editor-canvas.png"}
 			></LazyLoadImage>
 
