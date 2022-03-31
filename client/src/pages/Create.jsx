@@ -282,32 +282,29 @@ export default function Create() {
 						// -------
 					},
 				},
-			})
-			// .resizable({
-			// 	edges: { top: true, left: true, bottom: true, right: true },
-			// 	listeners: {
-			// 		move: function (event) {
-			// 			let { x, y } = event.target.dataset;
+			});
+		// .resizable({
+		// 	edges: { top: true, left: true, bottom: true, right: true },
+		// 	listeners: {
+		// 		move: function (event) {
+		// 			let { x, y } = event.target.dataset;
 
-			// 			x = (parseFloat(x) || 0) + event.deltaRect.left;
-			// 			y = (parseFloat(y) || 0) + event.deltaRect.top;
+		// 			x = (parseFloat(x) || 0) + event.deltaRect.left;
+		// 			y = (parseFloat(y) || 0) + event.deltaRect.top;
 
-			// 			Object.assign(event.target.style, {
-			// 				width: `${event.rect.width}px`,
-			// 				height: `${event.rect.height}px`,
-			// 				transform: `translate(${x}px, ${y}px)`,
-			// 			});
+		// 			Object.assign(event.target.style, {
+		// 				width: `${event.rect.width}px`,
+		// 				height: `${event.rect.height}px`,
+		// 				transform: `translate(${x}px, ${y}px)`,
+		// 			});
 
-			// 			Object.assign(event.target.dataset, { x, y });
-			// 		},
-			// 	},
-			// })
+		// 			Object.assign(event.target.dataset, { x, y });
+		// 		},
+		// 	},
+		// })
 	};
 
 	// Reset selections
-	/**
-	 * @deprecated This feature is no longer in use
-	 */
 	const removeSelections = () => {
 		setSelectedText("");
 	};
@@ -406,7 +403,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">X X Everywhere</h3>
+						<h3 className="tag">X, X Everywhere</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -430,7 +427,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Disaster Girl</h3>
+						<h3 className="tag">Two Buttons</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -438,7 +435,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Sad Pablo Escobar</h3>
+						<h3 className="tag">Finding Neverland</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -446,7 +443,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Sad Girlfriend</h3>
+						<h3 className="tag">Woman Yelling At Cat</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -454,7 +451,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Drake Hotline Bling</h3>
+						<h3 className="tag">Leonardo Dicaprio Cheers</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -462,7 +459,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Think about it</h3>
+						<h3 className="tag">Charlie Conspiracy</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -470,7 +467,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Left exit twelve off ramp</h3>
+						<h3 className="tag">I am once again asking</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -478,7 +475,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Laughing Leo</h3>
+						<h3 className="tag">Drake Hotline Bling</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -486,7 +483,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">I am once again asking</h3>
+						<h3 className="tag">Futurama Fry</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -494,7 +491,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Two buttons</h3>
+						<h3 className="tag">Monkey Puppet</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -502,7 +499,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">I am once again asking</h3>
+						<h3 className="tag">Bike Fall</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -510,7 +507,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Laughing Leo</h3>
+						<h3 className="tag">Guy Holding Sign</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -518,7 +515,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Drake Hotline Bling</h3>
+						<h3 className="tag">Clown Applying Makeup</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -526,7 +523,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Two Buttons</h3>
+						<h3 className="tag">One Does Not Simply</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -534,7 +531,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Think About it</h3>
+						<h3 className="tag">They're The Same Picture</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -542,7 +539,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Think About it</h3>
+						<h3 className="tag">Hide the Pain Harold</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -550,7 +547,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Think About it</h3>
+						<h3 className="tag">Left Exit 12 Off Ramp</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -558,7 +555,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Think About it</h3>
+						<h3 className="tag">Always Has Been</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -566,7 +563,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Think About it</h3>
+						<h3 className="tag">Epic Handshake</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -574,7 +571,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Think About it</h3>
+						<h3 className="tag">Sad Pablo Escobar</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -582,7 +579,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Think About it</h3>
+						<h3 className="tag">Disaster Girl</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -590,7 +587,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Think About it</h3>
+						<h3 className="tag">Here?</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -606,7 +603,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Think About it</h3>
+						<h3 className="tag">Slap Button</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -614,7 +611,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Think About it</h3>
+						<h3 className="tag">Panik Calm Panik</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -622,7 +619,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Think About it</h3>
+						<h3 className="tag">Is this a Pigeon</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -630,7 +627,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Think About it</h3>
+						<h3 className="tag">The Scroll Of Truth</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -638,7 +635,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Think About it</h3>
+						<h3 className="tag">Who shot Hannibal</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -646,7 +643,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Think About it</h3>
+						<h3 className="tag">Evil Kermit</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -654,7 +651,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Think About it</h3>
+						<h3 className="tag">Unesttled Tom</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -662,7 +659,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Think About it</h3>
+						<h3 className="tag">Ight Imma Head Out</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -670,7 +667,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Think About it</h3>
+						<h3 className="tag">I Should Buy A Boat Cat</h3>
 					</div>
 					<div className="card" onClick={useTemplate}>
 						<LazyLoadImage
@@ -678,7 +675,7 @@ export default function Create() {
 							alt="Rocketmeme Template"
 							effect="blur"
 						/>
-						<h3 className="tag">Think About it</h3>
+						<h3 className="tag">Change My Mind</h3>
 					</div>
 				</div>
 			</HomeCategory>
@@ -810,21 +807,7 @@ export default function Create() {
 								<input type="color" defaultValue="#000000" />
 							</div>
 						</div>
-
-						{/* Background Color */}
-						{/* <div>
-              <p>BG Color:</p>
-              <div className="bgColor">
-                <input type="color" />
-              </div>
-            </div> */}
 					</div>
-					{/* <div className="formatting">
-            <div className="range">
-              <p>Opacity:</p>
-              <input type="range" />
-            </div>
-          </div> */}
 					<div>
 						<ActionButton className="btn delete" onClick={deleteSelected}>
 							Delete
@@ -833,8 +816,6 @@ export default function Create() {
 				</Controls>
 			</Flex>
 			<FileButtons></FileButtons>
-
-			{/* Buymeacoffee Widget */}
 			<CoffeeWidget />
 		</Container>
 	);
@@ -901,10 +882,11 @@ const HomeCategory = styled.section`
 			}
 
 			.tag {
-				padding: 0.5rem;
+				padding: 0.5rem 0.1rem;
 				color: var(--text-priamry);
 				font-weight: 500;
 				font-size: 0.7rem;
+				letter-spacing: -0.5px;
 			}
 		}
 	}
@@ -959,13 +941,7 @@ const ActionButton = styled.button`
 `;
 
 const EditView = styled.div`
-	/* min-width: 300px; */
 	flex-grow: 1;
-	/* min-height: 500px;
-  
-  
-  
-  */
 	padding: 10px;
 	border: var(--border-light);
 	background-size: 100%;

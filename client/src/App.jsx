@@ -47,7 +47,7 @@ function App() {
 						navigate={(to) => navigator(to)}
 					>
 						<SignedIn>
-						<Navbar />
+							<Navbar />
 							{modalData.showing ? <Modal /> : null}
 							<Routes>
 								<Route path="/" element={<Home />} />
