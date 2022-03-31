@@ -53,7 +53,7 @@ const getPaginatedMemes = gql`
 
 const getPaginatedMemeSearch = gql`
 	query getPaginatedMemeSearch($searchTerm: String!) {
-		memes(limit: 10, offset: 0, where: { title: { _ilike: $searchTerm } }) {
+		memes(limit: 10, offset: 0, where: { category: { _ilike: $searchTerm } }) {
 			id
 			downloads
 			likes
