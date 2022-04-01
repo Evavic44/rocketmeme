@@ -1,14 +1,13 @@
 <div align="center">
-<a href="https://rocketmeme.netlify.app"><img src="https://user-images.githubusercontent.com/62628408/156283195-028f807e-633f-479f-9244-4cdd795a3183.svg" width="80px"></a>
+<a href="https://rocketmeme.netlify.app"><img src="https://user-images.githubusercontent.com/62628408/156283195-028f807e-633f-479f-9244-4cdd795a3183.svg" width="80px"></a>  
 </div>
 
 <div align="center">
 <h1>Rocketmeme</h1>
-<p>A multipurpose meme marketplace and editor for creating and downloading memes. View meme collection, browse different meme categories, like share and save memes.</p>
+<p>A multipurpose meme marketplace and editor for creating and downloading memes. View meme collection, browse different meme categories, like share and save memes.</p> 
 </div>
 
 <p align="center">
-<img src="https://img.shields.io/github/repo-size/evavic44/rocketmeme?color=green&label=Repo%20size">
 <a href="https://reactjs.org/">
     <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB">
 </a>
@@ -46,7 +45,7 @@
 
 <a href="https://app.netlify.com/sites/rocketmeme/deploys">
     <img src="https://api.netlify.com/api/v1/badges/6a4fdf68-75a7-458f-87aa-36fbe5f31a7a/deploy-status">
-</a>
+</a>  
 </p>
 
 <p align="center">
@@ -54,11 +53,7 @@
 <img src="https://forthebadge.com/images/badges/open-source.svg">
 </p>
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+<a href="https://www.producthunt.com/posts/rocketmeme?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-rocketmeme" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=338739&theme=light" alt="Rocketmeme - Create&#0044;&#0032;share&#0032;&#0038;&#0032;download&#0032;memes&#0032;or&#0032;use&#0032;our&#0032;powerful&#0032;API | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 
 # 👀 Preview
 
@@ -252,6 +247,12 @@ Consider supporting us buy buying us a coffee or two. We appreciate every donati
 If you like this project, kindly star ⭐ and share this project. It means the world to us.
 
 ## Contributors ✨
+
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
