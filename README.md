@@ -127,6 +127,67 @@ npm run serve
 
 This is a preview of your build
 
+## Rocketmeme API
+
+```css
+/* API Endpoint */
+https://rocketmeme-user.hasura.app/v1/graphql
+```
+
+With Hasura, we were able to create a serverless API using Hasura cloud. The API exists for two types of requests: The meme template and the uploaded memes. If you're interested, you can start exploring the API docs to get an idea of everything possible with the rocketmeme API.💛  
+
+[API Docs](https://victor-eke.gitbook.io/rocketmeme-api/)
+
+```js
+async function fetchGraphQL(operationsDoc, operationName, variables) {
+  const result = await fetch(
+    "undefined",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        query: operationsDoc,
+        variables: variables,
+        operationName: operationName
+      })
+    }
+  );
+
+  return await result.json();
+}
+
+const operationsDoc = `
+  query MyQuery {
+    meme_templates(order_by: {id: asc, image_link: asc, title: asc}) {
+      id
+      image_link
+      title
+    }
+  }
+`;
+
+function fetchMyQuery() {
+  return fetchGraphQL(
+    operationsDoc,
+    "MyQuery",
+    {}
+  );
+}
+
+async function startFetchMyQuery() {
+  const { errors, data } = await fetchMyQuery();
+
+  if (errors) {
+    // handle those errors like a pro
+    console.error(errors);
+  }
+
+  // do something great with this precious data
+  console.log(data);
+}
+
+startFetchMyQuery();
+```
+
 ## 🎨 Styling
 Styling is done using **styled-components** and **css3**
 
