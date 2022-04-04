@@ -1,50 +1,60 @@
 import React, { useRef, useState, useEffect } from "react";
 import interact from "interactjs";
-import styled from "styled-components";
 import html2canvas from "html2canvas";
 import { v4 as uuid } from "uuid";
 import { saveAs } from "file-saver";
 import { useDispatch } from "react-redux";
-import CoffeeWidget from "../Components/CoffeeWidget";
-import { closeModal, showModal } from "../redux/actions/modalAction";
+import CoffeeWidget from "../../Components/CoffeeWidget";
+import { closeModal, showModal } from "../../redux/actions/modalAction";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import AddIconForm from "../Components/AddIconForm";
-import temp1 from "../assets/images/memeTemplate/temp1.png";
-import temp2 from "../assets/images/memeTemplate/temp2.png";
-import temp3 from "../assets/images/memeTemplate/temp3.png";
-import temp4 from "../assets/images/memeTemplate/temp4.png";
-import temp5 from "../assets/images/memeTemplate/temp5.png";
-import temp6 from "../assets/images/memeTemplate/temp6.png";
-import temp7 from "../assets/images/memeTemplate/temp7.png";
-import temp8 from "../assets/images/memeTemplate/temp8.png";
-import temp9 from "../assets/images/memeTemplate/temp9.png";
-import temp10 from "../assets/images/memeTemplate/temp10.png";
-import temp11 from "../assets/images/memeTemplate/temp11.png";
-import temp12 from "../assets/images/memeTemplate/temp12.png";
-import temp13 from "../assets/images/memeTemplate/temp13.png";
-import temp14 from "../assets/images/memeTemplate/temp14.png";
-import temp15 from "../assets/images/memeTemplate/temp15.png";
-import temp16 from "../assets/images/memeTemplate/temp16.png";
-import temp17 from "../assets/images/memeTemplate/temp17.png";
-import temp18 from "../assets/images/memeTemplate/temp18.png";
-import temp19 from "../assets/images/memeTemplate/temp19.png";
-import temp20 from "../assets/images/memeTemplate/temp20.png";
-import temp21 from "../assets/images/memeTemplate/temp21.png";
-import temp22 from "../assets/images/memeTemplate/temp22.png";
-import temp23 from "../assets/images/memeTemplate/temp23.png";
-import temp24 from "../assets/images/memeTemplate/temp24.png";
-import temp25 from "../assets/images/memeTemplate/temp25.png";
-import temp26 from "../assets/images/memeTemplate/temp26.png";
-import temp27 from "../assets/images/memeTemplate/temp27.png";
-import temp28 from "../assets/images/memeTemplate/temp28.png";
-import temp29 from "../assets/images/memeTemplate/temp29.png";
-import temp30 from "../assets/images/memeTemplate/temp30.png";
-import temp31 from "../assets/images/memeTemplate/temp31.png";
-import temp32 from "../assets/images/memeTemplate/temp32.png";
-import temp33 from "../assets/images/memeTemplate/temp33.png";
-import temp34 from "../assets/images/memeTemplate/temp34.png";
-import temp35 from "../assets/images/memeTemplate/temp35.png";
+import AddIconForm from "../../Components/AddIconForm";
+import temp1 from "../../assets/images/memeTemplate/temp1.png";
+import temp2 from "../../assets/images/memeTemplate/temp2.png";
+import temp3 from "../../assets/images/memeTemplate/temp3.png";
+import temp4 from "../../assets/images/memeTemplate/temp4.png";
+import temp5 from "../../assets/images/memeTemplate/temp5.png";
+import temp6 from "../../assets/images/memeTemplate/temp6.png";
+import temp7 from "../../assets/images/memeTemplate/temp7.png";
+import temp8 from "../../assets/images/memeTemplate/temp8.png";
+import temp9 from "../../assets/images/memeTemplate/temp9.png";
+import temp10 from "../../assets/images/memeTemplate/temp10.png";
+import temp11 from "../../assets/images/memeTemplate/temp11.png";
+import temp12 from "../../assets/images/memeTemplate/temp12.png";
+import temp13 from "../../assets/images/memeTemplate/temp13.png";
+import temp14 from "../../assets/images/memeTemplate/temp14.png";
+import temp15 from "../../assets/images/memeTemplate/temp15.png";
+import temp16 from "../../assets/images/memeTemplate/temp16.png";
+import temp17 from "../../assets/images/memeTemplate/temp17.png";
+import temp18 from "../../assets/images/memeTemplate/temp18.png";
+import temp19 from "../../assets/images/memeTemplate/temp19.png";
+import temp20 from "../../assets/images/memeTemplate/temp20.png";
+import temp21 from "../../assets/images/memeTemplate/temp21.png";
+import temp22 from "../../assets/images/memeTemplate/temp22.png";
+import temp23 from "../../assets/images/memeTemplate/temp23.png";
+import temp24 from "../../assets/images/memeTemplate/temp24.png";
+import temp25 from "../../assets/images/memeTemplate/temp25.png";
+import temp26 from "../../assets/images/memeTemplate/temp26.png";
+import temp27 from "../../assets/images/memeTemplate/temp27.png";
+import temp28 from "../../assets/images/memeTemplate/temp28.png";
+import temp29 from "../../assets/images/memeTemplate/temp29.png";
+import temp30 from "../../assets/images/memeTemplate/temp30.png";
+import temp31 from "../../assets/images/memeTemplate/temp31.png";
+import temp32 from "../../assets/images/memeTemplate/temp32.png";
+import temp33 from "../../assets/images/memeTemplate/temp33.png";
+import temp34 from "../../assets/images/memeTemplate/temp34.png";
+import temp35 from "../../assets/images/memeTemplate/temp35.png";
+
+import {
+	Container,
+	HomeCategory,
+	Flex,
+	Actions,
+	ActionButton,
+	EditView,
+	FileButtons,
+	Controls,
+} from "./Create.styled";
 
 // import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import ApolloClient from "apollo-boost";
@@ -820,248 +830,3 @@ export default function Create() {
 		</Container>
 	);
 }
-
-const Container = styled.main`
-	color: var(--text-dark);
-	max-width: 1100px;
-	margin: 50px auto 20px;
-	padding: 1rem;
-
-	input {
-		font-size: 16px;
-	}
-`;
-
-const HomeCategory = styled.section`
-	max-width: 1100px;
-	margin: 2rem auto;
-	padding: 1rem;
-
-	.categoryHeader {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		margin-bottom: 0.5rem;
-
-		.category {
-			border: var(--border-medium);
-			outline: none;
-			-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;
-			padding: 0.4rem 0.8rem;
-		}
-	}
-
-	.memeTemplates {
-		display: grid;
-		grid-template-columns: repeat(100, 1fr);
-		grid-template-rows: 100%;
-		flex-wrap: nowrap;
-		overflow: auto;
-
-		.card {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: space-between;
-			text-align: center;
-			text-decoration: none;
-			width: 150px;
-			border-radius: 5px;
-			margin: 0 0.1rem;
-			border: var(--border-medium);
-			cursor: pointer;
-
-			img {
-				border-top-left-radius: 5px;
-				border-top-right-radius: 5px;
-				width: 100%;
-				height: 150px;
-				object-fit: cover;
-			}
-
-			.tag {
-				padding: 0.5rem 0.1rem;
-				color: var(--text-priamry);
-				font-weight: 500;
-				font-size: 0.7rem;
-				letter-spacing: -0.5px;
-			}
-		}
-	}
-`;
-
-const Flex = styled.div`
-	max-width: 1000px;
-	margin-left: auto;
-	margin-right: auto;
-	display: grid;
-	grid-template-columns: 1fr 1.2fr;
-	gap: 15px;
-	background: white;
-	box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
-		rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-	border-radius: 5px;
-	border-radius: 3px;
-	padding: 1.5rem;
-
-	.editContainer .btn {
-		margin-top: 1.5rem;
-	}
-
-	@media (max-width: 900px) {
-		grid-template-columns: 1.2fr 1.2fr;
-	}
-	@media (max-width: 880px) {
-		grid-template-columns: 1fr;
-	}
-`;
-
-const Actions = styled.div`
-	display: flex;
-	gap: 10px;
-	padding-bottom: 10px;
-`;
-
-const ActionButton = styled.button`
-	padding: 0.5rem;
-	width: 50%;
-	border-radius: 3px;
-
-	i {
-		margin-left: 0.2rem;
-	}
-
-	&.delete {
-		border: 1px solid #f85656;
-		color: #f85656;
-		width: 20%;
-	}
-`;
-
-const EditView = styled.div`
-	flex-grow: 1;
-	padding: 10px;
-	border: var(--border-light);
-	background-size: 100%;
-	background-repeat: no-repeat;
-	background-position: top center;
-
-	@media (max-width: 900px) {
-		background-size: contain;
-	}
-
-	> * {
-		position: absolute;
-	}
-
-	[contenteditable] {
-		outline: none;
-		padding: 5px;
-		border: 1px solid transparent;
-		font-weight: bolder;
-		font-size: 26px;
-		text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
-		color: #fff;
-
-		:focus {
-			border: var(--border-dark);
-		}
-
-		.justify-center {
-			text-align: center;
-		}
-
-		.justify-left {
-			text-align: left;
-		}
-
-		.justify-right {
-			text-align: right;
-		}
-	}
-`;
-
-const FileButtons = styled.div``;
-
-const Controls = styled.div`
-	input,
-	textarea {
-		border: var(--border-medium);
-		border-radius: 3px;
-		padding: 5px;
-		outline: none;
-		font-family: "Poppins", sans-serif;
-		width: 100%;
-
-		&:focus {
-			border: var(--border-dark);
-		}
-	}
-
-	textarea {
-		resize: none;
-	}
-
-	.text {
-		input {
-			min-width: 100%;
-			width: 100%;
-		}
-	}
-
-	.formatting {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		padding: 8px 0;
-
-		@media (max-width: 768px) {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-		}
-
-		input {
-			margin-top: 0.5rem;
-			background: none;
-			border: var(--border-light);
-
-			&:focus {
-				background: var(--bg-gray);
-			}
-		}
-
-		[type="text"] {
-			width: 80px;
-		}
-
-		[type="color"] {
-			width: 50px;
-			box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.1);
-			height: 35px;
-		}
-
-		[type="range"] {
-			width: 100%;
-		}
-
-		.styling {
-			& > div * {
-				margin: 0.2rem;
-			}
-
-			button {
-				background: #fff;
-				color: var(--text-dark);
-				border: var(--border-light);
-				border-radius: 3px;
-				font-family: "Times New Roman", Serif;
-				font-weight: bold;
-				font-size: 1rem;
-				width: 35px;
-				height: 30px;
-				padding: 0.3rem 0.5rem 0.5rem;
-			}
-		}
-	}
-`;
