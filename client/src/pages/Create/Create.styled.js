@@ -117,6 +117,10 @@ export const ActionButton = styled.button`
 		color: #f85656;
 		width: 20%;
 	}
+
+	&.upload {
+		cursor: not-allowed;	
+	}
 `;
 
 export const EditView = styled.div`

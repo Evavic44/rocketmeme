@@ -704,7 +704,7 @@ export default function Create() {
 						}}
 					></EditView>
 					<Actions>
-						<ActionButton className="btn btn-light">
+						<ActionButton className="btn btn-light upload">
 							Upload <i className="fas fa-share-from-square"></i>
 						</ActionButton>
 						<ActionButton className="btn btn-secondary" onClick={downloadMeme}>
