@@ -1,20 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
-import {
-	Container,
-	GithubAuth,
-	GitlabAuth,
-	BitbucketAuth,
-	GmailAuth
-} from "./Login.styled";
+import { Container, GithubAuth, GmailAuth } from "./Login.styled";
 
 const clientID =
 	"578412719010-kunrheea50ajh6vi4ruhncf1ps8keebu.apps.googleusercontent.com";
 
 export default function Login() {
-	const onFailure = (r,
-		es) => {
+	const onFailure = (r, es) => {
 		alert("");
 	};
 
@@ -76,13 +69,6 @@ export default function Login() {
 				<GithubAuth className="button" href="/">
 					<i className="fab fa-github"></i> Continue with GitHub
 				</GithubAuth>
-
-				<p>
-					Don't have an account?
-					<NavLink className="signup" to="/SignUp">
-						Sign Up
-					</NavLink>
-				</p>
 			</header>
 		</Container>
 	);

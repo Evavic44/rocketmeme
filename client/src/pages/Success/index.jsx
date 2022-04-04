@@ -16,9 +16,9 @@ export default function Success() {
 					<div>
 						<h2>Login Successful 🎉</h2>
 						<p>
-							Thank you for choosing <span className="highlight">Memefy</span>.{" "}
-							Now you can store any meme you create and share with friends
-							easily.
+							Thank you for choosing{" "}
+							<span className="highlight">Rocketmeme</span>. Now you can store
+							any meme you create and share with friends easily.
 						</p>
 					</div>
 

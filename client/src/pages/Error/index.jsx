@@ -1,6 +1,6 @@
 import React from "react";
 import CoffeeWidget from "../../Components/CoffeeWidget";
-import {Container } from "./Error.styled";
+import { Container } from "./Error.styled";
 
 export default function Error() {
 	return (

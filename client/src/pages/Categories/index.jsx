@@ -9,10 +9,10 @@ export default function Categories() {
 				<section className="left-container">
 					<div>
 						<a href="https://github.com/Evavic44/rocketmeme/releases">
-							<a href="https://github.com/Evavic44/rocketmeme/releases/tag/v-0.1.0-beta">
+							<a href="https://github.com/Evavic44/rocketmeme/releases/tag/v-0.1.1">
 								<img
-									src="https://img.shields.io/static/v1?label=Beta&message=V0.1.0&color=ffcf4b&style=for-the-badge&logo=node&logoColor=white"
-									alt="Beta - V0.1.0"
+									src="https://img.shields.io/static/v1?label=Beta&message=V0.1.1&color=ffcf4b&style=for-the-badge&logo=node&logoColor=white"
+									alt="Beta - V0.1.1"
 								/>
 							</a>
 						</a>

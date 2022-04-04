@@ -2,11 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Comments from "../../Components/Comments";
 import CoffeeWidget from "../../Components/CoffeeWidget.jsx";
-import {
-	Container,
-	Header,
-	ContactCards
-} from "./Contact.styled";
+import { Container, Header, ContactCards } from "./Contact.styled";
 
 function Contact() {
 	// Fade top

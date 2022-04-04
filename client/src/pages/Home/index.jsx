@@ -12,7 +12,7 @@ import {
 	Form,
 	Input,
 	HomeCategory,
-	GridGallery
+	GridGallery,
 } from "./Home.styled";
 
 // import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
@@ -146,25 +146,24 @@ export default function Home() {
 							<i className="icon fas fa-search"></i>
 						</button>
 					</Form>
-					<h2
-					// variants={fadeTop}
-					// initial="hidden"
-					// animate="visible"
-					// transition={{ duration: 0.6 }}
+					<motion.h2
+						variants={fadeTop}
+						initial="hidden"
+						animate="visible"
+						transition={{ duration: 0.6 }}
 					>
 						Suggested: javascript, nft, stackoverflow
-					</h2>
+					</motion.h2>
 
-					<p
-					// variants={fadeTop}
-					// initial="hidden"
-					// animate="visible"
-					// transition={{ duration: 0.6 }}
+					<motion.p
+						variants={fadeTop}
+						initial="hidden"
+						animate="visible"
+						transition={{ duration: 0.6 }}
 					>
 						The Internet's most awesome free meme marketplace and editor for
-						creating and downloading memes
-						{/* <Image src="/images/cool_dog.gif" alt="nodding dodge dog"></Image> */}
-					</p>
+						creating and downloading memes.
+					</motion.p>
 				</Content>
 			</ContentContainer>
 
@@ -209,7 +208,11 @@ export default function Home() {
 							hasMore={count - 10 >= 0}
 							loader={
 								<div className="loader" key={0}>
-									Loading ...
+									<img
+										src="/images/loading.gif"
+										alt="Loading..."
+										width="60px"
+									/>
 								</div>
 							}
 						>
