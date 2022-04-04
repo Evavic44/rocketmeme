@@ -6,7 +6,7 @@ export const MenuItems = [
 	},
 	{
 		title: "📰 Blog",
-		path: "https://eke.hashnode.dev",
+		path: "https://eke.hashnode.dev/rocketmeme-a-meme-library-and-editor-for-creating-and-sharing-memes",
 		cName: "dropdown-link",
 	},
 	{
@@ -21,7 +21,7 @@ export const MenuItems = [
 	},
 	{
 		title: "⚡ Rocketmeme API",
-		path: "https://github.com/Evavic44/rocketmemes-api",
+		path: "https://rocketteam.gitbook.io/rocketmemes-api/",
 		cName: "dropdown-link",
 	},
 ];

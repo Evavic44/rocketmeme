@@ -61,7 +61,7 @@ function Footer({ scrollPosition }) {
 								<i className="fab fa-github"></i>
 							</a>
 							<a
-								href="eke.hashnode.dev/"
+								href="https://eke.hashnode.dev/rocketmeme-a-meme-library-and-editor-for-creating-and-sharing-memes"
 								title="Hashnode"
 								aria-label="Hashnode"
 							>
@@ -109,7 +109,7 @@ function Footer({ scrollPosition }) {
 					<div className="footer-contribute">
 						<h3>Developer</h3>
 						<a href="https://github.com/Evavic44/rocketmeme">Docs</a>
-						<a href="https://github.com/Evavic44/rocketmemes-api">API</a>
+						<a href="https://rocketteam.gitbook.io/rocketmemes-api/">API</a>
 					</div>
 				</FooterLink>
 			</Content>
