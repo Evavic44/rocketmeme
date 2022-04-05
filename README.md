@@ -86,6 +86,10 @@ git clone https://github.com/Evavic44/rocketmeme.git
 
 Change directory into the client folder. This is where the frontend code lives.
 
+```shell
+cd client
+```
+
 ### Install NPM
 
 ```shell
