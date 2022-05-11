@@ -11,7 +11,7 @@ function Navbar() {
 	const closeMobileMenu = () => setClick(false);
 
 	const onMouseEnter = () => {
-		setDropdown(window.innerWidth > 800);
+		setDropdown(window.innerWidth >= 800);
 	};
 
 	// Change it to onMouseLeave
