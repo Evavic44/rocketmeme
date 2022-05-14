@@ -11,20 +11,12 @@ function Navbar() {
 	const closeMobileMenu = () => setClick(false);
 
 	const onMouseEnter = () => {
-		if (window.innerWidth < 800) {
-			setDropdown(false);
-		} else {
-			setDropdown(true);
-		}
+		setDropdown(window.innerWidth >= 800);
 	};
 
 	// Change it to onMouseLeave
 	const onMouseLeave = () => {
-		if (window.innerWidth < 800) {
-			setDropdown(false);
-		} else {
-			setDropdown(false);
-		}
+		setDropdown(false);
 	};
 
 	return (
