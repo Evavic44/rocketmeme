@@ -49,5 +49,6 @@ You can refer to the following articles on basics of Git and Github and also con
 - <a href="https://towardsdatascience.com/getting-started-with-git-and-github-6fcd0f2d4ac6">Getting started with Git and GitHub</a>
 - <a href="https://lab.github.com/githubtraining/introduction-to-github">Learn GitHub from Scratch</a>
 
-Thank you for reading and Happy Coding. 🤩
-<img src="https://user-images.githubusercontent.com/62628408/156625624-1213ef38-be59-45a8-87eb-7359b6c6f5c0.png" width="100%" alt="rocketmeme banner">
+### Thank you for reading and Happy Coding. 🤩
+
+<img src="https://user-images.githubusercontent.com/62628408/168494869-26b94a85-e8ba-4c5c-87ff-f34cf6198f3b.png" width="100%" alt="rocketmeme banner">
