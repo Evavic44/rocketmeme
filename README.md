@@ -50,10 +50,11 @@
 
 <p align="center">
 <img src="https://forthebadge.com/images/badges/built-with-love.svg">
-<img src="https://forthebadge.com/images/badges/open-source.svg">
+<img src="https://forthebadge.com/images/badges/open-source.svg"><br><br>
+<a href="https://www.producthunt.com/posts/rocketmeme?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-rocketmeme" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=338739&theme=light" alt="Rocketmeme - Create&#0044;&#0032;share&#0032;&#0038;&#0032;download&#0032;memes&#0032;or&#0032;use&#0032;our&#0032;powerful&#0032;API | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 </p>
 
-<a href="https://www.producthunt.com/posts/rocketmeme?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-rocketmeme" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=338739&theme=light" alt="Rocketmeme - Create&#0044;&#0032;share&#0032;&#0038;&#0032;download&#0032;memes&#0032;or&#0032;use&#0032;our&#0032;powerful&#0032;API | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+
 
 # 👀 Preview
 
