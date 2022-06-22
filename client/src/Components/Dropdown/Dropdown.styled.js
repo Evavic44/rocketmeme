@@ -1,38 +1,6 @@
-import React, { useState } from "react";
-import { MenuItems } from "./MenuItems";
 import styled from "styled-components";
 
-function Dropdown() {
-	const [click, setClick] = useState(false);
-
-	const handleClick = () => setClick(!click);
-
-	return (
-		<DropDownContainer>
-			<ul
-				onClick={handleClick}
-				className={click ? "dropdown-menu clicked" : "dropdown-menu"}
-			>
-				{MenuItems.map((item, index) => {
-					return (
-						<li key={index}>
-							<a
-								className={item.cName}
-								href={item.path}
-								onClick={() => setClick(false)}
-							>
-								{item.title}
-							</a>
-						</li>
-					);
-				})}
-			</ul>
-		</DropDownContainer>
-	);
-}
-
-// Dropdown Menu
-const DropDownContainer = styled.div`
+export const DropDownContainer = styled.div`
 	position: relative;
 
 	.dropdown-menu {
@@ -93,5 +61,3 @@ const DropDownContainer = styled.div`
 		}
 	}
 `;
-
-export default Dropdown;
