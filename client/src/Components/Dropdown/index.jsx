@@ -20,6 +20,7 @@ function Dropdown() {
 								className={item.cName}
 								href={item.path}
 								onClick={() => setClick(false)}
+								target={item.target}
 							>
 								{item.title}
 							</a>
