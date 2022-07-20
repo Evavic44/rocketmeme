@@ -16,6 +16,17 @@
         "ideas",
         "review"
       ]
+    },
+    {
+      "login": "amarealcoder",
+      "name": "Ugorji Miracle",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74703564?v=4",
+      "profile": "https://www.linkedin.com/in/miracle-ugorji/",
+      "contributions": [
+        "code",
+        "design",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
