@@ -254,7 +254,7 @@ If you like this project, kindly star ⭐ and share this project. It means the w
 ## Contributors ✨
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -263,10 +263,13 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr>
-    <td align="center"><a href="https://spiffgreen.pages.dev/"><img src="https://avatars.githubusercontent.com/u/73044138?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Spiff Jekey-Green</b></sub></a><br /><a href="https://github.com/Evavic44/rocketmeme/issues?q=author%3ASpiffGreen" title="Bug reports">🐛</a> <a href="https://github.com/Evavic44/rocketmeme/commits?author=SpiffGreen" title="Code">💻</a> <a href="#ideas-SpiffGreen" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/Evavic44/rocketmeme/pulls?q=is%3Apr+reviewed-by%3ASpiffGreen" title="Reviewed Pull Requests">👀</a></td>
-    <td align="center"><a href="https://www.linkedin.com/in/miracle-ugorji/"><img src="https://avatars.githubusercontent.com/u/74703564?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ugorji Miracle</b></sub></a><br /><a href="https://github.com/Evavic44/rocketmeme/commits?author=amarealcoder" title="Code">💻</a> <a href="#design-amarealcoder" title="Design">🎨</a> <a href="#maintenance-amarealcoder" title="Maintenance">🚧</a></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://spiffgreen.pages.dev/"><img src="https://avatars.githubusercontent.com/u/73044138?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Spiff Jekey-Green</b></sub></a><br /><a href="https://github.com/Evavic44/rocketmeme/issues?q=author%3ASpiffGreen" title="Bug reports">🐛</a> <a href="https://github.com/Evavic44/rocketmeme/commits?author=SpiffGreen" title="Code">💻</a> <a href="#ideas-SpiffGreen" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/Evavic44/rocketmeme/pulls?q=is%3Apr+reviewed-by%3ASpiffGreen" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center"><a href="https://www.linkedin.com/in/miracle-ugorji/"><img src="https://avatars.githubusercontent.com/u/74703564?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ugorji Miracle</b></sub></a><br /><a href="https://github.com/Evavic44/rocketmeme/commits?author=amarealcoder" title="Code">💻</a> <a href="#design-amarealcoder" title="Design">🎨</a> <a href="#maintenance-amarealcoder" title="Maintenance">🚧</a></td>
+      <td align="center"><a href="http://victoreke.com"><img src="https://avatars.githubusercontent.com/u/62628408?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Victor Eke </b></sub></a><br /><a href="#maintenance-Evavic44" title="Maintenance">🚧</a> <a href="https://github.com/Evavic44/rocketmeme/commits?author=Evavic44" title="Code">💻</a> <a href="https://github.com/Evavic44/rocketmeme/commits?author=Evavic44" title="Documentation">📖</a> <a href="https://github.com/Evavic44/rocketmeme/issues?q=author%3AEvavic44" title="Bug reports">🐛</a></td>
+    </tr>
+  </tbody>
 </table>
 
 <!-- markdownlint-restore -->
