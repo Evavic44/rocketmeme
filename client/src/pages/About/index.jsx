@@ -37,7 +37,7 @@ export default function About({ images, scrollPosition }) {
 						developers.
 					</h2>
 					<p>
-						Wether you're a beginner or advanced developer, memes are something
+						Whether you're a beginner or advanced developer, memes are something
 						we can all relate with every once in a while.
 					</p>
 
